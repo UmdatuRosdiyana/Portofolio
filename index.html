@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Digital | Startup Business Simulation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            color: #2d3436;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 24px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+        }
+        .accent-gold { color: #C5A059; }
+        .bg-soft-green { background-color: #E8F3ED; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <nav class="fixed w-full z-50 px-6 py-4">
+        <div class="max-w-5xl mx-auto glass-card px-6 py-3 flex justify-between items-center">
+            <span class="font-bold tracking-tighter text-xl">UR.</span>
+            <div class="space-x-6 text-sm font-medium">
+                <a href="#home" class="hover:text-green-700 transition">Home</a>
+                <a href="#about" class="hover:text-green-700 transition">About</a>
+                <a href="#projects" class="hover:text-green-700 transition">Projects</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="min-h-screen flex flex-col items-center justify-center pt-20 px-6">
+        <div class="glass-card p-8 max-w-2xl w-full text-center">
+            <div class="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-6 border-4 border-white shadow-sm overflow-hidden">
+                <img src="foto-kamu.jpg" alt="Umdatu Rosdiyana" class="w-full h-full object-cover">
+            </div>
+            <h1 class="text-3xl font-bold mb-2">Umdatu Rosdiyana</h1>
+            <p class="accent-gold font-medium mb-4">Digital Business Student & Aspiring Founder</p>
+            <p class="text-gray-500 text-sm leading-relaxed">Fokus pada inovasi Startup, Fintech, dan pengembangan ekosistem digital yang inklusif.</p>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 px-6 max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="glass-card p-8">
+                <h2 class="text-xl font-bold mb-4">Tentang Saya</h2>
+                <p class="text-sm text-gray-600 leading-relaxed">
+                    Mahasiswa Bisnis Digital dengan konsentrasi Startup Development. Memiliki minat besar dalam membangun brand lokal melalui pendekatan teknologi modern.
+                </p>
+            </div>
+            <div class="glass-card p-8">
+                <h2 class="text-xl font-bold mb-4">Keahlian Utama</h2>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 bg-soft-green text-green-800 text-xs rounded-full font-semibold">Digital Marketing</span>
+                    <span class="px-3 py-1 bg-soft-green text-green-800 text-xs rounded-full font-semibold">Business Plan</span>
+                    <span class="px-3 py-1 bg-soft-green text-green-800 text-xs rounded-full font-semibold">Design Thinking</span>
+                    <span class="px-3 py-1 bg-soft-green text-green-800 text-xs rounded-full font-semibold">UI/UX Design</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-20 px-6 max-w-5xl mx-auto">
+        <h2 class="text-2xl font-bold mb-10 text-center">Project & Startup Idea</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="glass-card overflow-hidden transition-transform hover:scale-[1.02]">
+                <div class="h-48 bg-gray-100 flex items-center justify-center">
+                    <span class="text-gray-400 italic">Maison de Bakes Branding</span>
+                </div>
+                <div class="p-6">
+                    <h3 class="font-bold text-lg">Maison de Bakes</h3>
+                    <p class="text-xs text-gray-500 mb-4">Branding & Business Strategy</p>
+                    <p class="text-sm text-gray-600">Pengembangan identitas visual dan platform digital untuk bisnis bakery modern.</p>
+                </div>
+            </div>
+
+            <div class="glass-card overflow-hidden transition-transform hover:scale-[1.02]">
+                <div class="h-48 bg-soft-green flex items-center justify-center">
+                    <span class="text-green-800 font-semibold tracking-widest uppercase">SIPERKAT</span>
+                </div>
+                <div class="p-6">
+                    <h3 class="font-bold text-lg">SIPERKAT</h3>
+                    <p class="text-xs text-gray-500 mb-4">Digital Monitoring System</p>
+                    <p class="text-sm text-gray-600">Sistem monitoring organisasi berbasis Google Apps Script dengan fitur geofencing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-10 text-center text-gray-400 text-xs">
+        <p>© 2026 Umdatu Rosdiyana. Dibuat untuk Mata Kuliah Startup Business Simulation.</p>
+    </footer>
+
+</body>
+</html>
