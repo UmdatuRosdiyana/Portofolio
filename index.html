@@ -3,115 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio Pribadi | Maison de Bakes</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Portofolio Profesional | Umdatu Rosdiyana</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #050505;
-            --card-bg: rgba(255, 255, 255, 0.03);
-            --border: rgba(255, 255, 255, 0.1);
-            --accent: #d4af37; /* Warna Gold Mewah */
-            --text: #e2e8f0;
+            --emerald: #064e3b;
+            --gold: #d4af37;
+            --cream: #fdfbf7;
         }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-        
         body {
-            background-color: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-            background-image: radial-gradient(circle at 50% 50%, #1a1a1a 0%, #050505 100%);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--cream);
+            color: #1a1a1a;
+            scroll-behavior: smooth;
         }
-
-        .container { max-width: 900px; margin: 0 auto; padding: 2rem; }
-
-        /* Glassmorphism Card */
-        .card {
-            background: var(--card-bg);
-            backdrop-filter: blur(12px);
-            border: 1px solid var(--border);
-            border-radius: 24px;
-            padding: 3rem;
-            margin-bottom: 2rem;
-            transition: transform 0.3s ease;
-        }
-
-        .hero { text-align: center; }
-        .profile-img {
-            width: 140px; height: 140px;
-            border-radius: 50%;
-            border: 2px solid var(--accent);
-            padding: 5px;
-            margin-bottom: 1.5rem;
-        }
-
-        h1 { font-size: 2.5rem; margin-bottom: 0.5rem; letter-spacing: -1px; }
-        .tagline { color: var(--accent); font-weight: 600; margin-bottom: 1rem; text-transform: uppercase; font-size: 0.9rem; }
+        .serif { font-family: 'Playfair Display', serif; }
         
-        h2 { font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--accent); }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            gap: 15px;
+        /* Glassmorphism Card Design */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 24px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(6, 78, 59, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.5);
         }
 
-        .skill-item {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 12px;
-            border-radius: 12px;
-            text-align: center;
-            font-size: 0.9rem;
-            border: 1px solid transparent;
-            transition: 0.3s;
+        /* Luxury Gradient Text */
+        .text-gradient {
+            background: linear-gradient(to right, #064e3b, #d4af37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .skill-item:hover {
-            border-color: var(--accent);
-            background: rgba(212, 175, 55, 0.1);
-        }
-
-        .footer { text-align: center; opacity: 0.5; font-size: 0.8rem; margin-top: 4rem; }
-
-        @media (max-width: 600px) {
-            .card { padding: 1.5rem; }
-            h1 { font-size: 1.8rem; }
-        }
+        /* Custom Decorative Elements */
+        .gold-accent { width: 50px; height: 2px; background: var(--gold); }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <section class="card hero">
-        <img src="foto-diri.jpg" alt="Umdatu Rosdiyana" class="profile-img">
-        <p class="tagline">Startup Development & Digital Business</p>
-        <h1>Umdatu Rosdiyana</h1>
-        <p>Mahasiswa Bisnis Digital yang fokus pada inovasi teknologi dan strategi pertumbuhan startup.</p>
-    </section>
+    <nav class="fixed w-full z-50 px-8 py-6">
+        <div class="max-w-6xl mx-auto flex justify-between items-center glass-card px-8 py-4">
+            <span class="serif text-2xl font-bold tracking-widest text-emerald-900">UR.</span>
+            <div class="hidden md:flex space-x-10 text-sm font-semibold uppercase tracking-wider text-emerald-900">
+                <a href="#home" class="hover:text-gold transition">Beranda</a>
+                <a href="#about" class="hover:text-gold transition">Profil</a>
+                <a href="#projects" class="hover:text-gold transition">Karya</a>
+                <a href="#contact" class="hover:text-gold transition">Kontak</a>
+            </div>
+        </div>
+    </nav>
 
-    <section class="card">
-        <h2>Tentang Saya</h2>
-        <p>Halo! Saya adalah mahasiswi di Fakultas Teknologi dan Business. Saya memiliki minat besar dalam membangun kehadiran digital bagi bisnis, mengelola sistem monitoring, dan mengeksplorasi potensi Financial Technology.</p>
-        <br>
-        <p><strong>Pendidikan:</strong> S1 Bisnis Digital - Universitas [Nama Kampus]</p>
-    </section>
-
-    <section class="card">
-        <h2>Keahlian</h2>
-        <div class="skills-grid">
-            <div class="skill-item">Startup Strategy</div>
-            <div class="skill-item">Digital Branding</div>
-            <div class="skill-item">Business Planning</div>
-            <div class="skill-item">Data Analytics</div>
-            <div class="skill-item">Fintech Interest</div>
-            <div class="skill-item">Public Speaking</div>
+    <section id="home" class="min-h-screen flex items-center justify-center px-8 pt-20">
+        <div class="max-w-4xl text-center">
+            <div class="mb-6 flex justify-center">
+                <div class="w-40 h-40 rounded-full border-4 border-white shadow-2xl overflow-hidden ring-4 ring-emerald-100">
+                    <img src="foto-kamu.jpg" alt="Profile" class="w-full h-full object-cover">
+                </div>
+            </div>
+            <h2 class="text-gold uppercase tracking-[0.3em] text-sm font-bold mb-4">Startup Business Simulation</h2>
+            <h1 class="serif text-5xl md:text-7xl mb-6 text-emerald-900">Umdatu Rosdiyana</h1>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                Menghadirkan inovasi melalui strategi digital yang elegan. Mahasiswa Bisnis Digital dengan fokus pada pengembangan ekosistem startup masa depan.
+            </p>
         </div>
     </section>
 
-    <div class="footer">
-        &copy; 2026 Umdatu Rosdiyana. Built with GitHub Pages.
-    </div>
-</div>
+    <section id="projects" class="py-24 px-8 bg-white/50">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col items-center mb-16">
+                <h2 class="serif text-4xl mb-4">Portofolio Terpilih</h2>
+                <div class="gold-accent"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-10">
+                <div class="glass-card p-10">
+                    <div class="text-xs font-bold text-gold uppercase tracking-widest mb-4">Startup Idea</div>
+                    <h3 class="serif text-3xl mb-4 text-emerald-900">Maison de Bakes</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Sebuah konsep bisnis bakery premium yang menggabungkan cita rasa artisan dengan efisiensi platform digital D2C (Direct-to-Consumer).
+                    </p>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 bg-emerald-50 text-emerald-800 text-xs rounded-full">Branding</span>
+                        <span class="px-4 py-2 bg-emerald-50 text-emerald-800 text-xs rounded-full">Market Strategy</span>
+                    </div>
+                </div>
+
+                <div class="glass-card p-10">
+                    <div class="text-xs font-bold text-gold uppercase tracking-widest mb-4">Digital Product</div>
+                    <h3 class="serif text-3xl mb-4 text-emerald-900">SIPERKAT System</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Sistem pemantauan digital berbasis Google Apps Script dengan fitur validasi lokasi (Geofencing) untuk efisiensi manajemen organisasi.
+                    </p>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 bg-emerald-50 text-emerald-800 text-xs rounded-full">Automations</span>
+                        <span class="px-4 py-2 bg-emerald-50 text-emerald-800 text-xs rounded-full">Data Analytics</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-8 bg-emerald-900 text-white overflow-hidden relative">
+        <div class="max-w-4xl mx-auto relative z-10">
+            <h2 class="serif text-4xl mb-8">Value Proposition</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h4 class="text-gold font-bold mb-2">Target Pasar</h4>
+                    <p class="text-emerald-100/80">Profesional muda dan masyarakat urban yang mengutamakan kualitas produk artisan serta kemudahan akses digital.</p>
+                </div>
+                <div>
+                    <h4 class="text-gold font-bold mb-2">Visi Bisnis</h4>
+                    <p class="text-emerald-100/80">Menjadi pionir dalam industri bakery digital yang mengedepankan kepercayaan (Digital Trust) dan kualitas bahan premium.</p>
+                </div>
+            </div>
+        </div>
+        <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-gold/10 rounded-full blur-3xl"></div>
+    </section>
+
+    <footer id="contact" class="py-16 px-8 text-center border-t border-gold/10">
+        <div class="max-w-4xl mx-auto">
+            <h3 class="serif text-2xl mb-6">Mari Berdiskusi</h3>
+            <div class="flex justify-center space-x-8 mb-10">
+                <a href="#" class="text-emerald-900 hover:text-gold transition">Email</a>
+                <a href="#" class="text-emerald-900 hover:text-gold transition">LinkedIn</a>
+                <a href="#" class="text-emerald-900 hover:text-gold transition">WhatsApp</a>
+            </div>
+            <p class="text-xs text-gray-400 tracking-widest uppercase">
+                &copy; 2026 Umdatu Rosdiyana. Digital Business Student Portfolio.
+            </p>
+        </div>
+    </footer>
 
 </body>
 </html>
