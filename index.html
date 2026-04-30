@@ -3,282 +3,216 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Umdatu Rosdiyana | Portfolio</title>
+    <title>Umdatu Rosdiyana | Digital Business Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,500&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --peach: #ffb5a7;
-            --soft-bg: #fff5f3;
+            --emerald: #064e3b;
+            --gold: #d4af37;
+            --cream: #fafaf9;
         }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; color: #333; scroll-behavior: smooth; }
-        h1, h2, h3, .serif { font-family: 'Playfair Display', serif; }
+        body { font-family: 'Montserrat', sans-serif; background-color: var(--cream); color: #1c1917; scroll-behavior: smooth; }
+        .serif { font-family: 'Cormorant Garamond', serif; }
         
-        .nav-link {
-            font-size: 12px;
-            letter-spacing: 1.5px;
-            cursor: pointer;
-            transition: 0.3s;
-            color: #666;
-            text-transform: uppercase;
+        .glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(212, 175, 55, 0.1);
         }
-        .nav-link:hover, .nav-link.active { color: var(--peach); font-weight: 600; }
 
-        /* Logic for switching view */
-        .section-wrapper { display: block; animation: fadeIn 0.8s ease; }
+        .nav-link {
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: 0.4s;
+            color: #78716c;
+        }
+        .nav-link:hover, .nav-link.active { color: var(--gold); font-weight: 600; }
+
+        .section-wrapper { display: block; animation: slideUp 1s ease; }
         .filtered-view .section-wrapper { display: none; }
         .filtered-view .section-wrapper.active-section { display: block; }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        .btn-peach {
-            background-color: var(--peach);
-            color: white;
-            padding: 14px 40px;
-            font-size: 11px;
-            font-weight: bold;
+        .gold-button {
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            padding: 15px 40px;
+            font-size: 10px;
+            letter-spacing: 3px;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            transition: 0.3s;
-            display: inline-block;
+            transition: 0.5s;
         }
-        .btn-peach:hover { background-color: #ff9a8b; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(255,181,167,0.3); }
-
-        .line-accent {
-            width: 1px;
-            height: 60px;
-            background: linear-gradient(to bottom, var(--peach), transparent);
-            margin: 0 auto 30px;
-        }
+        .gold-button:hover { background: var(--gold); color: white; box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2); }
     </style>
 </head>
-<body class="bg-white">
+<body>
 
-    <!-- Navbar -->
-    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-50">
-        <div class="max-w-7xl mx-auto px-10 py-6 flex justify-between items-center">
-            <div class="flex items-center space-x-3">
-                <span class="serif text-2xl font-bold border-r pr-4 border-gray-200">UR.</span>
-                <div class="flex flex-col">
-                    <span class="text-[10px] uppercase tracking-[3px] text-gray-400 leading-none">Umdatu Rosdiyana</span>
-                    <span class="text-[8px] uppercase tracking-[2px] text-gray-300 mt-1">Digital Business</span>
-                </div>
-            </div>
-            <div class="hidden md:flex space-x-10">
-                <span onclick="filterPage('all')" class="nav-link active" id="link-all">Home</span>
-                <span onclick="filterPage('profile')" class="nav-link" id="link-profile">Profile</span>
-                <span onclick="filterPage('skills')" class="nav-link" id="link-skills">Keahlian</span>
-                <span onclick="filterPage('portfolio')" class="nav-link" id="link-portfolio">Portfolio</span>
-                <span onclick="filterPage('business')" class="nav-link" id="link-business">Business Idea</span>
-                <span onclick="filterPage('contact')" class="nav-link" id="link-contact">Contact</span>
+    <!-- Navigasi Minimalis -->
+    <nav class="fixed w-full z-50 bg-white/50 backdrop-blur-lg border-b border-stone-100">
+        <div class="max-w-7xl mx-auto px-8 py-6 flex justify-between items-center">
+            <span class="serif text-3xl italic font-semibold text-emerald-900 tracking-tighter">Umdatu.</span>
+            <div class="hidden md:flex space-x-8">
+                <span onclick="filter('all')" class="nav-link active" id="link-all">Home</span>
+                <span onclick="filter('profile')" class="nav-link" id="link-profile">Profile</span>
+                <span onclick="filter('skills')" class="nav-link" id="link-skills">Keahlian</span>
+                <span onclick="filter('portfolio')" class="nav-link" id="link-portfolio">Project</span>
+                <span onclick="filter('business')" class="nav-link" id="link-business">Idea</span>
+                <span onclick="filter('contact')" class="nav-link" id="link-contact">Contact</span>
             </div>
         </div>
     </nav>
 
-    <div id="content-container">
+    <div id="master-container">
         
-        <!-- 1. HERO / HOME SECTION -->
-        <section id="home" class="section-wrapper h-screen flex items-center justify-center relative overflow-hidden bg-gray-50">
-            <div class="absolute inset-0 z-0">
-                <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80" class="w-full h-full object-cover opacity-20">
-            </div>
-            <div class="relative z-10 text-center px-6">
-                <h1 class="text-5xl md:text-7xl mb-8 leading-tight text-gray-800 max-w-5xl mx-auto">Belajar, berkembang, dan membangun ide menjadi sesuatu yang nyata</h1>
-                <div class="line-accent"></div>
-                <button onclick="filterPage('profile')" class="btn-peach">Explore My Journey</button>
-            </div>
+        <!-- HOME / HERO -->
+        <section id="home" class="section-wrapper h-screen flex flex-col justify-center items-center text-center px-6">
+            <span class="text-[10px] uppercase tracking-[8px] text-stone-400 mb-6">Digital Business Student</span>
+            <h1 class="serif text-6xl md:text-8xl text-stone-800 leading-none mb-10 max-w-4xl">Belajar, berkembang, dan membangun ide nyata.</h1>
+            <div class="w-16 h-[1px] bg-gold mb-10"></div>
+            <button onclick="filter('profile')" class="gold-button">Mulai Eksplorasi</button>
         </section>
 
-        <!-- 2. PROFILE SECTION -->
-        <section id="profile" class="section-wrapper py-32 bg-[#fffcfb]">
-            <div class="max-w-4xl mx-auto px-10 text-center">
-                <div class="line-accent"></div>
-                <h2 class="text-5xl serif mb-12">Hai, Aku Umdatu Rosdiyana</h2>
-                <div class="space-y-8 text-gray-500 leading-relaxed text-xl font-light">
-                    <p>Saya adalah seseorang yang memiliki minat dalam bidang startup, bisnis digital, dan teknologi. Saya tertarik mempelajari bagaimana sebuah ide dapat dikembangkan menjadi produk atau usaha yang nyata.</p>
-                    <p>Saya pernah membuat website dan aplikasi sederhana, serta berhasil mempublikasikan website. Pengalaman tersebut membuat saya semakin tertarik untuk terus belajar dan mengembangkan kemampuan di bidang teknologi.</p>
-                    <p>Ke depannya, saya ingin terus berkembang dan membangun usaha sendiri yang berbasis digital.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- 3. KEAHLIAN SECTION -->
-        <section id="skills" class="section-wrapper py-32 bg-white">
-            <div class="max-w-6xl mx-auto px-10">
-                <div class="text-center mb-24">
-                    <h2 class="text-4xl serif">This Is What I Do</h2>
-                    <div class="w-12 h-1 bg-pink-100 mx-auto mt-4"></div>
-                </div>
-                <div class="grid md:grid-cols-3 gap-0 border border-gray-100">
-                    <div class="p-20 text-center border-r border-gray-100 hover:bg-orange-50/30 transition duration-500 group">
-                        <div class="w-20 h-20 rounded-full border border-pink-100 flex items-center justify-center mx-auto mb-10 group-hover:bg-white transition">
-                            <i class="fas fa-laptop-code text-2xl text-pink-300"></i>
-                        </div>
-                        <h3 class="text-lg font-semibold tracking-widest uppercase text-gray-700 mb-4">Development</h3>
-                        <p class="text-gray-400 text-sm italic">Basic Application Development</p>
+        <!-- PROFILE -->
+        <section id="profile" class="section-wrapper py-32">
+            <div class="max-w-5xl mx-auto px-8 grid md:grid-cols-2 gap-20 items-center">
+                <div class="relative">
+                    <div class="aspect-[3/4] bg-stone-200 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80" class="w-full h-full object-cover">
                     </div>
-                    <div class="p-20 text-center border-r border-gray-100 hover:bg-orange-50/30 transition duration-500 group">
-                        <div class="w-20 h-20 rounded-full border border-pink-100 flex items-center justify-center mx-auto mb-10 group-hover:bg-white transition">
-                            <i class="fas fa-tasks text-2xl text-pink-300"></i>
-                        </div>
-                        <h3 class="text-lg font-semibold tracking-widest uppercase text-gray-700 mb-4">Management</h3>
-                        <p class="text-gray-400 text-sm italic">Basic Operational Management</p>
-                    </div>
-                    <div class="p-20 text-center hover:bg-orange-50/30 transition duration-500 group">
-                        <div class="w-20 h-20 rounded-full border border-pink-100 flex items-center justify-center mx-auto mb-10 group-hover:bg-white transition">
-                            <i class="fas fa-table text-2xl text-pink-300"></i>
-                        </div>
-                        <h3 class="text-lg font-semibold tracking-widest uppercase text-gray-700 mb-4">Analysis</h3>
-                        <p class="text-gray-400 text-sm italic">Basic Excel</p>
+                    <div class="absolute -bottom-10 -right-10 w-64 h-64 border-2 border-gold -z-10"></div>
+                </div>
+                <div>
+                    <h2 class="serif text-5xl mb-8 italic">About Me</h2>
+                    <div class="space-y-6 text-stone-500 leading-loose font-light">
+                        <p>Saya adalah seseorang yang memiliki minat dalam bidang startup, bisnis digital, dan teknologi. Saya tertarik mempelajari bagaimana sebuah ide dapat dikembangkan menjadi produk nyata.</p>
+                        <p>Pengalaman membangun website dan aplikasi sederhana membuat saya semakin antusias untuk terus berkembang di industri kreatif berbasis digital.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 4. PORTFOLIO SECTION -->
-        <section id="portfolio" class="section-wrapper py-32 bg-gray-50">
-            <div class="max-w-7xl mx-auto px-10">
-                <div class="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-6">
-                    <div>
-                        <h2 class="text-5xl serif mb-4">Projects Portfolio</h2>
-                        <p class="text-gray-400 italic">A selection of my recent works and courses</p>
-                    </div>
-                    <div class="h-[1px] flex-grow mx-10 bg-gray-200 hidden md:block mb-4"></div>
+        <!-- KEAHLIAN -->
+        <section id="skills" class="section-wrapper py-32 bg-stone-100">
+            <div class="max-w-7xl mx-auto px-8">
+                <div class="flex flex-col items-center mb-20 text-center">
+                    <h2 class="serif text-5xl italic mb-4">Core Expertise</h2>
+                    <p class="text-stone-400 text-xs tracking-widest uppercase">Skils & Kapabilitas</p>
                 </div>
                 <div class="grid md:grid-cols-3 gap-12">
+                    <div class="glass p-12 text-center group hover:bg-emerald-900 transition duration-700">
+                        <i class="fas fa-terminal text-gold text-3xl mb-8 group-hover:text-white"></i>
+                        <h3 class="serif text-2xl mb-4 group-hover:text-white italic">Application Development</h3>
+                    </div>
+                    <div class="glass p-12 text-center group hover:bg-emerald-900 transition duration-700">
+                        <i class="fas fa-chart-pie text-gold text-3xl mb-8 group-hover:text-white"></i>
+                        <h3 class="serif text-2xl mb-4 group-hover:text-white italic">Operational Management</h3>
+                    </div>
+                    <div class="glass p-12 text-center group hover:bg-emerald-900 transition duration-700">
+                        <i class="fas fa-file-invoice-dollar text-gold text-3xl mb-8 group-hover:text-white"></i>
+                        <h3 class="serif text-2xl mb-4 group-hover:text-white italic">Excel & Data Analysis</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PORTFOLIO -->
+        <section id="portfolio" class="section-wrapper py-32">
+            <div class="max-w-7xl mx-auto px-8">
+                <h2 class="serif text-5xl italic mb-20 text-center">Featured Projects</h2>
+                <div class="grid md:grid-cols-3 gap-16">
                     <!-- Project 1 -->
-                    <div class="group">
-                        <div class="bg-white p-4 shadow-sm group-hover:shadow-xl transition-all duration-500 mb-6">
-                            <div class="h-72 overflow-hidden bg-gray-100">
-                                <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&q=80" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
-                            </div>
+                    <div class="group cursor-pointer">
+                        <div class="overflow-hidden mb-6 bg-stone-200">
+                            <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&q=80" class="w-full h-80 object-cover group-hover:scale-110 transition duration-1000">
                         </div>
-                        <h4 class="text-xl serif mb-3">Maison de Bakes</h4>
-                        <p class="text-gray-500 text-sm mb-6 leading-relaxed">Website pemesanan bakery dengan katalog dan sistem order WhatsApp sebagai prototype.</p>
-                        <a href="https://umdaturosdiyana.github.io/Maison-de-bakes/" target="_blank" class="text-[10px] font-bold tracking-[2px] text-pink-400 border-b border-pink-200 pb-2 hover:text-gray-800 transition">VIEW LIVE PROJECT</a>
+                        <h4 class="serif text-2xl italic mb-2">Maison de Bakes</h4>
+                        <p class="text-stone-400 text-xs mb-4">E-Commerce Prototype</p>
+                        <a href="https://umdaturosdiyana.github.io/Maison-de-bakes/" target="_blank" class="text-[10px] tracking-widest text-gold border-b border-gold pb-1">LIHAT DETAIL</a>
                     </div>
                     <!-- Project 2 -->
-                    <div class="group opacity-80 hover:opacity-100">
-                        <div class="bg-white p-4 shadow-sm mb-6">
-                            <div class="h-72 overflow-hidden bg-gray-100">
-                                <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700">
-                            </div>
+                    <div class="group">
+                        <div class="overflow-hidden mb-6 bg-stone-200">
+                            <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80" class="w-full h-80 object-cover grayscale">
                         </div>
-                        <h4 class="text-xl serif mb-3">Aplikasi Sederhana</h4>
-                        <p class="text-gray-500 text-sm mb-6 leading-relaxed">Latihan logika pemrograman dasar melalui pengembangan aplikasi sederhana.</p>
-                        <span class="text-[10px] font-bold tracking-[2px] text-gray-300">LOGIC EXERCISE</span>
+                        <h4 class="serif text-2xl italic mb-2">Aplikasi Sederhana</h4>
+                        <p class="text-stone-400 text-xs mb-4">Latihan Pengembangan</p>
                     </div>
                     <!-- Project 3 -->
-                    <div class="group opacity-80 hover:opacity-100">
-                        <div class="bg-white p-4 shadow-sm mb-6">
-                            <div class="h-72 overflow-hidden bg-gray-100">
-                                <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&q=80" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700">
-                            </div>
+                    <div class="group">
+                        <div class="overflow-hidden mb-6 bg-stone-200">
+                            <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&q=80" class="w-full h-80 object-cover grayscale">
                         </div>
-                        <h4 class="text-xl serif mb-3">Desain Logo</h4>
-                        <p class="text-gray-500 text-sm mb-6 leading-relaxed">Eksperimen identitas visual dan estetika desain untuk tugas proyek.</p>
-                        <span class="text-[10px] font-bold tracking-[2px] text-gray-300">VISUAL DESIGN</span>
+                        <h4 class="serif text-2xl italic mb-2">Desain Logo</h4>
+                        <p class="text-stone-400 text-xs mb-4">Identitas Visual</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 5. BUSINESS IDEA -->
-        <section id="business" class="section-wrapper py-32 bg-white">
-            <div class="max-w-6xl mx-auto px-10">
-                <div class="grid md:grid-cols-2 gap-0 border border-gray-100 shadow-2xl overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&q=80" class="w-full h-[650px] object-cover">
-                    <div class="p-20 bg-[#fffcfb] flex flex-col justify-center">
-                        <span class="text-pink-200 text-7xl serif italic opacity-40 block mb-6">01</span>
-                        <h2 class="text-4xl serif mb-8 text-gray-800">Maison de Bakes</h2>
-                        <div class="space-y-8">
-                            <div>
-                                <h5 class="text-[10px] uppercase tracking-[3px] text-pink-400 font-bold mb-2">The Story</h5>
-                                <p class="text-gray-600 italic">"Maison" (Prancis) berarti rumah. Bakery yang hangat, nyaman, dan penuh makna.</p>
-                            </div>
-                            <div>
-                                <h5 class="text-[10px] uppercase tracking-[3px] text-gray-400 font-bold mb-2">Target Market</h5>
-                                <p class="text-sm text-gray-500">Remaja, Mahasiswa, Pekerja, hingga Ibu Rumah Tangga.</p>
-                            </div>
-                            <div>
-                                <h5 class="text-[10px] uppercase tracking-[3px] text-gray-400 font-bold mb-2">Value Proposition</h5>
-                                <p class="text-sm text-gray-500">Pemesanan cepat melalui platform katalog digital praktis.</p>
-                            </div>
-                            <div class="pt-6">
-                                <a href="https://umdaturosdiyana.github.io/Maison-de-bakes/" target="_blank" class="btn-peach !py-3 !px-8">Explore Concept</a>
-                            </div>
-                        </div>
+        <!-- BUSINESS IDEA -->
+        <section id="business" class="section-wrapper py-32 bg-emerald-900 text-stone-100">
+            <div class="max-w-6xl mx-auto px-8 grid md:grid-cols-2 gap-0 items-stretch">
+                <div class="p-16 flex flex-col justify-center border border-white/10">
+                    <span class="text-gold tracking-[8px] text-[10px] mb-8 block uppercase">Innovation Idea</span>
+                    <h2 class="serif text-5xl mb-8 italic">Maison de Bakes</h2>
+                    <div class="space-y-6 text-stone-300 font-light text-sm leading-loose">
+                        <p><strong class="text-gold uppercase tracking-widest text-[10px] block mb-1">Filosofi:</strong> "Maison" berarti rumah dalam bahasa Prancis.</p>
+                        <p><strong class="text-gold uppercase tracking-widest text-[10px] block mb-1">Target:</strong> Remaja, mahasiswa, hingga ibu rumah tangga.</p>
+                        <p><strong class="text-gold uppercase tracking-widest text-[10px] block mb-1">Value:</strong> Pemesanan praktis dan cepat via web.</p>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- 6. CONTACT SECTION -->
-        <section id="contact" class="section-wrapper py-40 bg-[#fffcfb]">
-            <div class="max-w-4xl mx-auto px-10 text-center">
-                <div class="line-accent"></div>
-                <h2 class="text-6xl serif mb-16">Contact Me</h2>
-                <div class="flex flex-wrap justify-center gap-12 md:gap-24">
-                    <a href="https://wa.me/6289677414850" target="_blank" class="group flex flex-col items-center">
-                        <div class="w-20 h-20 rounded-full border border-gray-200 flex items-center justify-center group-hover:bg-white group-hover:border-pink-200 group-hover:shadow-lg transition duration-500">
-                            <i class="fab fa-whatsapp text-3xl text-gray-300 group-hover:text-pink-400"></i>
-                        </div>
-                        <span class="text-[10px] uppercase tracking-widest mt-6 text-gray-400 group-hover:text-gray-800 transition">WhatsApp</span>
-                    </a>
-                    <a href="https://instagram.com/leonaxyna" target="_blank" class="group flex flex-col items-center">
-                        <div class="w-20 h-20 rounded-full border border-gray-200 flex items-center justify-center group-hover:bg-white group-hover:border-pink-200 group-hover:shadow-lg transition duration-500">
-                            <i class="fab fa-instagram text-3xl text-gray-300 group-hover:text-pink-400"></i>
-                        </div>
-                        <span class="text-[10px] uppercase tracking-widest mt-6 text-gray-400 group-hover:text-gray-800 transition">Instagram</span>
-                    </a>
-                    <a href="https://tiktok.com/@_menelrch" target="_blank" class="group flex flex-col items-center">
-                        <div class="w-20 h-20 rounded-full border border-gray-200 flex items-center justify-center group-hover:bg-white group-hover:border-pink-200 group-hover:shadow-lg transition duration-500">
-                            <i class="fab fa-tiktok text-3xl text-gray-300 group-hover:text-pink-400"></i>
-                        </div>
-                        <span class="text-[10px] uppercase tracking-widest mt-6 text-gray-400 group-hover:text-gray-800 transition">TikTok</span>
-                    </a>
+                <div class="bg-stone-300">
+                    <img src="https://images.unsplash.com/photo-1517433670267-08bbd4be890f?auto=format&fit=crop&q=80" class="w-full h-full object-cover">
                 </div>
             </div>
         </section>
 
-        <!-- Footer -->
-        <footer class="py-12 bg-white border-t border-gray-50 text-center">
-            <p class="text-[10px] uppercase tracking-[4px] text-gray-300">&copy; 2026 Umdatu Rosdiyana. All Rights Reserved.</p>
-        </footer>
+        <!-- CONTACT -->
+        <section id="contact" class="section-wrapper py-40 text-center">
+            <h2 class="serif text-6xl italic mb-16">Get in Touch</h2>
+            <div class="flex justify-center space-x-12">
+                <a href="https://wa.me/6289677414850" target="_blank" class="w-16 h-16 rounded-full border border-gold flex items-center justify-center hover:bg-gold hover:text-white transition duration-500">
+                    <i class="fab fa-whatsapp text-xl"></i>
+                </a>
+                <a href="https://instagram.com/leonaxyna" target="_blank" class="w-16 h-16 rounded-full border border-gold flex items-center justify-center hover:bg-gold hover:text-white transition duration-500">
+                    <i class="fab fa-instagram text-xl"></i>
+                </a>
+                <a href="https://tiktok.com/@_menelrch" target="_blank" class="w-16 h-16 rounded-full border border-gold flex items-center justify-center hover:bg-gold hover:text-white transition duration-500">
+                    <i class="fab fa-tiktok text-xl"></i>
+                </a>
+            </div>
+            <p class="mt-16 text-[10px] tracking-[4px] text-stone-400">&copy; 2026 UMDATU ROSDIYANA</p>
+        </section>
 
     </div>
 
     <script>
-        function filterPage(targetId) {
-            const body = document.body;
+        function filter(id) {
+            const container = document.body;
             const sections = document.querySelectorAll('.section-wrapper');
             const links = document.querySelectorAll('.nav-link');
-            
-            // Update Active Link
-            links.forEach(l => l.classList.remove('active'));
-            document.getElementById('link-' + targetId).classList.add('active');
 
-            if (targetId === 'all') {
-                // Tampilkan semua (Single Page mode)
-                body.classList.remove('filtered-view');
-                sections.forEach(s => s.classList.remove('active-section'));
-                window.scrollTo(0, 0);
+            links.forEach(l => l.classList.remove('active'));
+            document.getElementById('link-' + id).classList.add('active');
+
+            if (id === 'all') {
+                container.classList.remove('filtered-view');
             } else {
-                // Sembunyikan yang lain, tampilkan target saja
-                body.classList.add('filtered-view');
+                container.classList.add('filtered-view');
                 sections.forEach(s => {
-                    if(s.id === targetId) {
-                        s.classList.add('active-section');
-                    } else {
-                        s.classList.remove('active-section');
-                    }
+                    if(s.id === id) s.classList.add('active-section');
+                    else s.classList.remove('active-section');
                 });
-                window.scrollTo(0, 0);
             }
+            window.scrollTo(0,0);
         }
     </script>
 </body>
