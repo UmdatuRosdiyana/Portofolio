@@ -3,161 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile | Maison de Bakes</title>
+    <title>Umda | Digital Innovator</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background: #f3e8ff; /* Light Lilac Background */
-            color: #2d1b4e;
+            background-color: #050505;
+            color: #e0e0e0;
+            font-family: 'Space Grotesk', sans-serif;
+            overflow-x: hidden;
         }
 
-        .bento-container {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: auto;
-            gap: 1.5rem;
-            padding: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
+        /* Background Glow */
+        .glow {
+            position: fixed;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(191, 123, 255, 0.15) 0%, rgba(0,0,0,0) 70%);
+            border-radius: 50%;
+            z-index: -1;
+            filter: blur(50px);
         }
 
-        .card {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(216, 180, 254, 0.5);
-            border-radius: 2rem;
-            padding: 2rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.1);
+        .lilac-text { color: #d8b4fe; }
+        .lilac-border { border-color: #d8b4fe; }
+        .lilac-bg { background-color: #d8b4fe; }
+
+        .glass-card {
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px solid rgba(216, 180, 254, 0.1);
+            backdrop-filter: blur(12px);
+            border-radius: 30px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
-        .card:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.9);
-            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.2);
+        .glass-card:hover {
+            border-color: #d8b4fe;
+            transform: scale(1.02);
+            box-shadow: 0 0 30px rgba(216, 180, 254, 0.1);
         }
 
-        .lilac-gradient {
-            background: linear-gradient(135deg, #a855f7 0%, #7e22ce 100%);
-            color: white;
+        .btn-lilac {
+            background: #d8b4fe;
+            color: #050505;
+            padding: 12px 24px;
+            border-radius: 100px;
+            font-weight: bold;
+            transition: 0.3s;
         }
 
-        /* Responsive Grid */
-        @media (max-width: 1024px) {
-            .bento-container { grid-template-columns: repeat(2, 1fr); }
-        }
-        @media (max-width: 640px) {
-            .bento-container { grid-template-columns: 1fr; }
+        .btn-lilac:hover {
+            box-shadow: 0 0 20px #d8b4fe;
+            transform: translateY(-2px);
         }
 
-        .floating {
-            animation: floating 3s ease-in-out infinite;
-        }
-
-        @keyframes floating {
-            0% { transform: translatey(0px); }
-            50% { transform: translatey(-10px); }
-            100% { transform: translatey(0px); }
-        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #050505; }
+        ::-webkit-scrollbar-thumb { background: #d8b4fe; border-radius: 10px; }
     </style>
 </head>
-<body>
+<body class="p-6 md:p-12">
 
-    <div class="bento-container">
+    <!-- Ambient Background Lights -->
+    <div class="glow" style="top: -100px; right: -100px;"></div>
+    <div class="glow" style="bottom: -100px; left: -100px;"></div>
+
+    <main class="max-w-6xl mx-auto space-y-10">
         
-        <!-- SECTION 1: HOME/HERO (Col-span 2) -->
-        <div class="card lilac-gradient col-span-2 flex flex-col justify-center min-h-[300px]">
-            <h1 class="text-4xl font-extrabold mb-4">Halo, Saya Umda.</h1>
-            <p class="text-xl opacity-90 leading-relaxed">
-                "Belajar, berkembang, dan membangun ide menjadi sesuatu yang nyata"
-            </p>
-        </div>
-
-        <!-- SECTION 2: PROFILE -->
-        <div class="card col-span-2 md:col-span-1">
-            <h3 class="text-purple-600 font-bold mb-3 uppercase tracking-widest text-sm">Tentang Saya</h3>
-            <p class="text-sm leading-relaxed">
-                Minat mendalam di bidang <b>startup, bisnis digital,</b> dan <b>teknologi</b>. Fokus pada transformasi ide menjadi produk nyata.
-            </p>
-        </div>
-
-        <!-- SECTION 3: SOCIALS -->
-        <div class="card col-span-1 flex flex-col justify-around items-center">
-            <a href="https://wa.me/6289677414850" target="_blank" class="text-3xl hover:text-green-500 transition-colors"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://instagram.com/leonaxyna" target="_blank" class="text-3xl hover:text-pink-500 transition-colors"><i class="fab fa-instagram"></i></a>
-            <a href="https://tiktok.com/@_menelrch" target="_blank" class="text-3xl hover:text-black transition-colors"><i class="fab fa-tiktok"></i></a>
-        </div>
-
-        <!-- SECTION 4: KEAHLIAN (Full Width on small) -->
-        <div class="card col-span-2 md:col-span-1 bg-white">
-            <h3 class="text-purple-600 font-bold mb-4">Keahlian</h3>
-            <ul class="space-y-2">
-                <li class="flex items-center gap-2"><span class="w-2 h-2 bg-purple-400 rounded-full"></span> App Development</li>
-                <li class="flex items-center gap-2"><span class="w-2 h-2 bg-purple-400 rounded-full"></span> Ops Management</li>
-                <li class="flex items-center gap-2"><span class="w-2 h-2 bg-purple-400 rounded-full"></span> Microsoft Excel</li>
-            </ul>
-        </div>
-
-        <!-- SECTION 5: STARTUP IDEA (Highlight Card) -->
-        <div class="card col-span-2 bg-purple-100 border-2 border-dashed border-purple-300">
-            <div class="flex justify-between items-start">
+        <!-- HERO SECTION -->
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="md:col-span-2 glass-card p-10 flex flex-col justify-center">
+                <span class="lilac-text font-medium tracking-widest uppercase mb-4 text-sm">Startup & Digital Strategy</span>
+                <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-6">
+                    Belajar, <span class="lilac-text italic">berkembang,</span> & membangun.
+                </h1>
+                <p class="text-gray-400 text-lg max-w-lg">
+                    Mengubah ide mentah menjadi produk digital yang nyata dan berdampak.
+                </p>
+            </div>
+            
+            <div class="glass-card p-10 flex flex-col items-center justify-center text-center space-y-6">
+                <div class="w-32 h-32 lilac-bg rounded-full flex items-center justify-center text-5xl font-bold text-black shadow-[0_0_40px_rgba(216,180,254,0.5)]">
+                    U
+                </div>
                 <div>
-                    <h3 class="text-2xl font-bold text-purple-800">Maison de Bakes</h3>
-                    <p class="text-xs text-purple-500 italic mb-4">"Rumah penuh makna dalam setiap rasa"</p>
+                    <h2 class="text-2xl font-bold">Umdaturosdiyana</h2>
+                    <p class="text-gray-500">Digital Business Student</p>
                 </div>
-                <span class="bg-purple-600 text-white text-[10px] px-3 py-1 rounded-full uppercase">Startup Idea</span>
-            </div>
-            <p class="text-sm mb-4">Platform digital pemesanan produk bakery (cake & dessert) dengan integrasi WhatsApp yang praktis.</p>
-            <div class="grid grid-cols-2 gap-4 text-[11px]">
-                <div class="p-3 bg-white rounded-xl">
-                    <p class="font-bold">Target Pasar:</p>
-                    <p>Mahasiswa, Pekerja, Masyarakat umum.</p>
-                </div>
-                <div class="p-3 bg-white rounded-xl">
-                    <p class="font-bold">Value:</p>
-                    <p>Pemesanan cepat & katalog estetik.</p>
+                <div class="flex gap-4">
+                    <a href="https://wa.me/6289677414850" class="text-xl hover:text-purple-300 transition"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://instagram.com/leonaxyna" class="text-xl hover:text-purple-300 transition"><i class="fab fa-instagram"></i></a>
+                    <a href="https://tiktok.com/@_menelrch" class="text-xl hover:text-purple-300 transition"><i class="fab fa-tiktok"></i></a>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- SECTION 6: PROJECTS / PORTFOLIO -->
-        <div class="card col-span-2 md:col-span-4 grid grid-cols-1 md:grid-cols-3 gap-6">
-            <!-- Project 1 -->
-            <div class="group">
-                <div class="overflow-hidden rounded-2xl mb-4">
-                    <img src="https://images.unsplash.com/photo-1517433447755-d1dd91d28b3b?auto=format&fit=crop&q=80&w=500" class="group-hover:scale-110 transition-transform duration-500">
-                </div>
-                <h4 class="font-bold">Maison de Bakes Web</h4>
-                <p class="text-xs opacity-70 mb-2">Website pemesanan bakery via WhatsApp.</p>
-                <a href="https://umdaturosdiyana.github.io/Maison-de-bakes/" class="text-purple-600 text-xs font-bold underline">Lihat Demo →</a>
+        <!-- CONTENT SECTION -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Profile -->
+            <div class="glass-card p-8">
+                <h3 class="text-2xl font-bold mb-4 lilac-text italic">// Profile</h3>
+                <p class="text-gray-300 leading-relaxed">
+                    Saya tertarik mempelajari bagaimana sebuah ide dapat dikembangkan menjadi produk nyata. Pernah mempublikasikan website sederhana, dan kini fokus membangun masa depan di dunia bisnis digital.
+                </p>
             </div>
-            <!-- Project 2 -->
-            <div class="group">
-                <div class="aspect-video bg-purple-200 rounded-2xl mb-4 flex items-center justify-center">
-                    <i class="fas fa-mobile-alt text-4xl text-purple-400"></i>
-                </div>
-                <h4 class="font-bold">Simple App</h4>
-                <p class="text-xs opacity-70">Latihan dasar pengembangan aplikasi mobile.</p>
-            </div>
-            <!-- Project 3 -->
-            <div class="group">
-                <div class="aspect-video bg-purple-200 rounded-2xl mb-4 flex items-center justify-center">
-                    <i class="fas fa-pen-nib text-4xl text-purple-400"></i>
-                </div>
-                <h4 class="font-bold">Logo Design</h4>
-                <p class="text-xs opacity-70">Eksperimen branding & identitas visual.</p>
-            </div>
-        </div>
 
-        <!-- FOOTER CARD -->
-        <div class="card col-span-2 md:col-span-4 text-center py-8">
-            <p class="text-sm opacity-50">Dibuat dengan ❤️ oleh Umda &bull; 2026</p>
-        </div>
+            <!-- Skills -->
+            <div class="glass-card p-8">
+                <h3 class="text-2xl font-bold mb-6 lilac-text italic">// Keahlian</h3>
+                <div class="flex flex-wrap gap-3">
+                    <span class="px-4 py-2 border lilac-border rounded-full text-sm">App Development</span>
+                    <span class="px-4 py-2 border lilac-border rounded-full text-sm">Ops Management</span>
+                    <span class="px-4 py-2 border lilac-border rounded-full text-sm">Data Analysis (Excel)</span>
+                </div>
+            </div>
+        </section>
 
-    </div>
+        <!-- MAISON DE BAKES SPECIAL SECTION -->
+        <section class="glass-card p-1 md:p-2 overflow-hidden">
+            <div class="bg-gradient-to-r from-purple-900/40 to-transparent p-8 md:p-12 rounded-[28px] flex flex-col md:flex-row items-center justify-between gap-10">
+                <div class="max-w-xl">
+                    <h2 class="text-4xl font-bold mb-2">Maison de Bakes</h2>
+                    <p class="lilac-text italic mb-6">"Rumah penuh makna dalam setiap produk"</p>
+                    <p class="text-gray-400 mb-8">Prototype platform digital untuk pemesanan bakery (cake & dessert) dengan alur praktis via WhatsApp.</p>
+                    <a href="https://umdaturosdiyana.github.io/Maison-de-bakes/" target="_blank" class="btn-lilac inline-block text-center">Buka Website →</a>
+                </div>
+                <div class="hidden md:grid grid-cols-2 gap-4">
+                    <div class="h-32 w-32 bg-purple-500/20 rounded-2xl flex items-center justify-center text-3xl"><i class="fas fa-bread-slice lilac-text"></i></div>
+                    <div class="h-32 w-32 bg-purple-500/20 rounded-2xl flex items-center justify-center text-3xl mt-6"><i class="fas fa-mobile-screen lilac-text"></i></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- OTHER PROJECTS -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="glass-card p-8 border-l-4 lilac-border">
+                <h4 class="font-bold text-xl mb-2 italic">Aplikasi Sederhana</h4>
+                <p class="text-gray-400 text-sm">Eksperimen logika pemrograman untuk memahami dasar pengembangan aplikasi.</p>
+            </div>
+            <div class="glass-card p-8 border-l-4 lilac-border">
+                <h4 class="font-bold text-xl mb-2 italic">Desain Logo</h4>
+                <p class="text-gray-400 text-sm">Melatih kemampuan visual branding untuk kebutuhan identitas bisnis.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="text-center py-12 text-gray-600 text-xs tracking-widest uppercase">
+        Built for the Future &bull; 2026
+    </footer>
 
 </body>
 </html>
