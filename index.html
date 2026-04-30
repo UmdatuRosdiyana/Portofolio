@@ -9,31 +9,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fcfcfc; color: #334155; scroll-behavior: smooth; }
-        .premium-card {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(231, 229, 228, 0.6);
-            border-radius: 32px;
-            transition: all 0.4s ease;
-        }
-        .premium-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.08);
-            border-color: #cb997e;
-        }
+        .premium-card { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); border: 1px solid rgba(231, 229, 228, 0.6); border-radius: 32px; transition: all 0.4s ease; }
+        .premium-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.08); border-color: #cb997e; }
         .nav-active { color: #cb997e !important; font-weight: 800; border-bottom: 2px solid #cb997e; }
-        .soft-text-gradient {
-            background: linear-gradient(135deg, #6b705c, #cb997e);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+        .soft-text-gradient { background: linear-gradient(135deg, #6b705c, #cb997e); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     </style>
 </head>
 <body class="antialiased">
 
     <nav class="fixed w-full z-50 top-6 px-6">
-        <div class="max-w-4xl mx-auto bg-white/70 backdrop-blur-2xl rounded-full px-8 py-4 flex justify-center items-center shadow-sm border border-stone-100">
-            <div class="flex space-x-6 md:space-x-10 text-[10px] font-bold uppercase tracking-[0.2em] text-stone-400">
+        <div class="max-w-4xl mx-auto bg-white/70 backdrop-blur-2xl rounded-full px-8 py-4 flex justify-between items-center shadow-sm border border-stone-100">
+            <div class="hidden md:flex space-x-10 text-[10px] font-bold uppercase tracking-[0.2em] text-stone-400">
                 <a href="javascript:void(0)" onclick="showSection('all')" id="nav-all" class="hover:text-stone-800 transition nav-active">Home</a>
                 <a href="javascript:void(0)" onclick="showSection('profile')" id="nav-profile" class="hover:text-stone-800 transition">Profile</a>
                 <a href="javascript:void(0)" onclick="showSection('expertise')" id="nav-expertise" class="hover:text-stone-800 transition">Skill</a>
@@ -41,6 +27,17 @@
                 <a href="javascript:void(0)" onclick="showSection('startup')" id="nav-startup" class="hover:text-stone-800 transition">Business Idea</a>
                 <a href="javascript:void(0)" onclick="showSection('contact')" id="nav-contact" class="hover:text-stone-800 transition">Contact</a>
             </div>
+            <button class="md:hidden text-stone-600 text-xl" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden mt-4 mx-6 bg-white rounded-2xl shadow-lg border border-stone-100 p-6 flex flex-col space-y-4 text-center text-xs font-bold uppercase tracking-[0.2em] text-stone-600">
+            <a href="javascript:void(0)" onclick="showSection('all'); toggleMobileMenu()">Home</a>
+            <a href="javascript:void(0)" onclick="showSection('profile'); toggleMobileMenu()">Profile</a>
+            <a href="javascript:void(0)" onclick="showSection('expertise'); toggleMobileMenu()">Skill</a>
+            <a href="javascript:void(0)" onclick="showSection('work'); toggleMobileMenu()">Portfolio</a>
+            <a href="javascript:void(0)" onclick="showSection('startup'); toggleMobileMenu()">Business Idea</a>
+            <a href="javascript:void(0)" onclick="showSection('contact'); toggleMobileMenu()">Contact</a>
         </div>
     </nav>
 
@@ -60,7 +57,7 @@
             </div>
         </section>
 
-        <section id="profile-sec" class="all-sec mb-20 min-h-[50vh]">
+        <section id="profile-sec" class="all-sec mb-20">
             <div class="premium-card p-8 md:p-12 flex flex-col md:flex-row gap-10 items-center">
                 <div class="w-full md:w-1/3 flex-shrink-0">
                     <div class="aspect-[3/4] overflow-hidden rounded-3xl shadow-lg border border-stone-100">
@@ -77,61 +74,40 @@
             </div>
         </section>
 
-        <section id="expertise-sec" class="all-sec mb-20 min-h-[50vh]">
-            <h2 class="text-xs font-bold text-stone-400 uppercase tracking-[0.4em] mb-10 text-center">Skills </h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="premium-card p-10 text-center hover:border-[#cb997e]">
-                    <div class="w-16 h-16 bg-stone-50 rounded-full flex items-center justify-center mx-auto mb-6 text-[#cb997e]">
-                        <i class="fas fa-layer-group text-2xl"></i>
-                    </div>
-                    <h3 class="font-bold text-stone-800">Basic Application Development</h3>
-                </div>
-                <div class="premium-card p-10 text-center hover:border-[#cb997e]">
-                    <div class="w-16 h-16 bg-stone-50 rounded-full flex items-center justify-center mx-auto mb-6 text-[#cb997e]">
-                        <i class="fas fa-tasks text-2xl"></i>
-                    </div>
-                    <h3 class="font-bold text-stone-800">Basic Operational Management</h3>
-                </div>
-                <div class="premium-card p-10 text-center hover:border-[#cb997e]">
-                    <div class="w-16 h-16 bg-stone-50 rounded-full flex items-center justify-center mx-auto mb-6 text-[#cb997e]">
-                        <i class="fas fa-file-excel text-2xl"></i>
-                    </div>
-                    <h3 class="font-bold text-stone-800">Basic Excel</h3>
-                </div>
-            </div>
-        </section>
-
         <section id="work-sec" class="all-sec mb-20">
-            <h2 class="text-xs font-bold text-stone-400 uppercase tracking-[0.4em] mb-12 text-center">Portofolio / Project</h2>
+            <h2 class="text-xs font-bold text-stone-400 uppercase tracking-[0.4em] mb-12 text-center">Portfolio / Project</h2>
             <div class="space-y-8">
+                
                 <div class="premium-card grid grid-cols-1 md:grid-cols-2 overflow-hidden items-center">
                     <div class="h-64 md:h-full bg-stone-200">
                         <img src="bakery.jpeg" alt="Project 1" class="w-full h-full object-cover">
                     </div>
-    
-                        </div>
-                        <h3 class="text-3xl font-bold text-stone-900 mb-4"> Pengembangan Website</h3>
-                        <p class="text-stone-500 leading-relaxed mb-6">Website pemesanan produk bakery dengan tampilan katalog yang menarik dan sistem pemesanan terintegrasi langsung ke WhatsApp, sehingga memudahkan pelanggan dalam melakukan order. Website ini juga dilengkapi fitur optimasi pencarian agar mudah ditemukan di mesin pencari, serta terhubung dengan WhatsApp untuk meningkatkan visibilitas bisnis dan mempermudah pelanggan menemukan serta memesan produk dengan cepat.</p>
-        
+                    <div class="p-10 md:p-16">
+                        <h3 class="text-3xl font-bold text-stone-900 mb-4">Pengembangan Website</h3>
+                        <p class="text-stone-500 leading-relaxed mb-6">Website pemesanan produk bakery dengan tampilan katalog yang menarik dan sistem pemesanan terintegrasi langsung ke WhatsApp. Website ini membantu meningkatkan visibilitas bisnis dan mempermudah pelanggan dalam memesan produk.</p>
                     </div>
                 </div>
+
                 <div class="premium-card grid grid-cols-1 md:grid-cols-2 overflow-hidden items-center">
-                    <div class="p-10 md:p-16 order-2 md:order-1">
-                        </div>
-                         <h3 class="text-3xl font-bold text-stone-900 mb-4">Desain Logo</h3>
-                        <p class="text-stone-500 leading-relaxed mb-6">MMembuat desain logo sederhana sebagai bagian dari tugas proyek untuk melatih kemampuan dasar dalam desain</p>
-                        <a href="#" class="inline-block px-8 py-3 bg-[#cb997e] text-white rounded-full font-bold hover:bg-[#a67c66] transition">READ MORE</a>
-                    <div class="h-64 md:h-full bg-stone-200 order-1 md:order-2">
-                        <img src="logo.jpeg" alt="" class="w-full h-full object-cover">
-        
+                    <div class="p-10 md:p-16 md:order-1 order-2">
+                        <h3 class="text-3xl font-bold text-stone-900 mb-4">Desain Logo</h3>
+                        <p class="text-stone-500 leading-relaxed mb-6">Membuat desain logo sederhana sebagai bagian dari tugas proyek untuk melatih kemampuan dasar dalam desain dan branding.</p>
                     </div>
-                        <h3 class="text-3xl font-bold text-stone-900 mb-4">Aplikasi Sederhana</h3>
-                        <p class="text-stone-500 leading-relaxed mb-6">Membuat aplikasi sederhana sebagai latihan dalam memahami dasar pengembangan aplikasi</p>
-                        <a href="#" class="inline-block px-8 py-3 bg-[#cb997e] text-white rounded-full font-bold hover:bg-[#a67c66] transition"></a>
-                    <div class="h-64 md:h-full bg-stone-200 order-1 md:order-2">
-                        <img src="apk.jpeg" alt=" class="w-full h-full object-cover">
+                    <div class="h-64 md:h-full bg-stone-200 md:order-2 order-1">
+                        <img src="logo.jpeg" alt="Project 2" class="w-full h-full object-cover">
                     </div>
                 </div>
+
+                 <div class="premium-card grid grid-cols-1 md:grid-cols-2 overflow-hidden items-center">
+                    <div class="h-64 md:h-full bg-stone-200">
+                        <img src="apk.jpeg" alt="Project 3" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-10 md:p-16">
+                        <h3 class="text-3xl font-bold text-stone-900 mb-4">Aplikasi Sederhana</h3>
+                        <p class="text-stone-500 leading-relaxed mb-6">Membuat aplikasi sederhana sebagai latihan dalam memahami dasar pengembangan aplikasi dan logika pemrograman.</p>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -144,31 +120,6 @@
                             <h3 class="text-5xl font-bold text-stone-900 mb-4">Mansion de Bakes</h3>
                             <p class="text-stone-500 text-lg italic max-w-md">"Terinspirasi dari Maison (Prancis) berarti rumah, mencerminkan bakery sebagai tempat yang hangat & penuh makna."</p>
                         </div>
-                        <div class="mt-6 md:mt-0 px-6 py-2 bg-[#cb997e]/10 text-[#cb997e] rounded-full font-bold text-sm">
-                            <i class="fas fa-star mr-2"></i> Startup Concept
-                        </div>
-                    </div>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div class="bg-stone-50 p-6 rounded-2xl border border-stone-100">
-                            <div class="text-[#cb997e] mb-3 text-xl"><i class="fas fa-box-open"></i></div>
-                            <h4 class="font-bold text-stone-900 mb-1">Produk/ Layanan</h4>
-                            <p class="text-sm text-stone-500">Platform digital sederhana untuk menampilkan dan memesan produk bakery seperti cake dan dessert, dengan sistem pemesanan langsung melalui WhatsApp</p>
-                        </div>
-                        <div class="bg-stone-50 p-6 rounded-2xl border border-stone-100">
-                            <div class="text-[#cb997e] mb-3 text-xl"><i class="fas fa-users"></i></div>
-                            <h4 class="font-bold text-stone-900 mb-1">Target</h4>
-                            <p class="text-sm text-stone-500">Berbagai kalangan, mulai dari remaja, mahasiswa, pekerja, hingga ibu rumah tangga dan masyarakat umum yang membutuhkan produk bakery untuk kebutuhan sehari-hari maupun momen spesial</p>
-                        </div>
-                        <div class="bg-stone-50 p-6 rounded-2xl border border-stone-100">
-                            <div class="text-[#cb997e] mb-3 text-xl"><i class="fas fa-heart"></i></div>
-                            <h4 class="font-bold text-stone-900 mb-1">Value Proposition</h4>
-                            <p class="text-sm text-stone-500">Memberikan kemudahan dalam melihat produk dan melakukan pemesanan secara cepat melalui website, dengan tampilan yang sederhana dan proses order yang praktis</p>
-                        </div>
-                        <div class="bg-stone-50 p-6 rounded-2xl border border-stone-100">
-                            <div class="text-[#cb997e] mb-3 text-xl"><i class="fas fa-heart"></i></div>
-                            <h4 class="font-bold text-stone-900 mb-1">Pengembangan</h4>
-                            <p class="text-sm text-stone-500">Mansion de Bakes telah dikembangkan dalam bentuk website sederhana sebagai prototype untuk menampilkan produk dan memudahkan proses pemesanan</p>
                     </div>
                 </div>
             </div>
@@ -183,9 +134,6 @@
                     </a>
                     <a href="https://instagram.com/leonaxyna" class="flex flex-col items-center hover:scale-110 transition-transform">
                         <div class="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center text-white text-2xl hover:bg-pink-600 transition-colors"><i class="fab fa-instagram"></i></div>
-                    </a>
-                    <a href="https://tiktok.com/@_menelrch" class="flex flex-col items-center hover:scale-110 transition-transform">
-                        <div class="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center text-white text-2xl hover:bg-black transition-colors"><i class="fab fa-tiktok"></i></div>
                     </a>
                 </div>
             </div>
@@ -204,9 +152,16 @@
             } else {
                 allSections.forEach(sec => sec.style.display = 'none');
                 document.getElementById(id + '-sec').style.display = 'block';
-                document.getElementById('nav-' + id).classList.add('nav-active');
+                // Menangani link di mobile menu agar tetap aktif
+                const activeNav = document.getElementById('nav-' + id);
+                if(activeNav) activeNav.classList.add('nav-active');
             }
             window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
         }
     </script>
 </body>
