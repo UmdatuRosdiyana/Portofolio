@@ -10,7 +10,7 @@
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fcfcfc; color: #334155; scroll-behavior: smooth; }
         .premium-card {
-            background: rgba(255, 255, 255, 0.7);
+            background: rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(12px);
             border: 1px solid rgba(231, 229, 228, 0.6);
             border-radius: 32px;
@@ -18,8 +18,8 @@
         }
         .premium-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.05);
-            border-color: #d6ccc2;
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.08);
+            border-color: #cb997e;
         }
         .nav-active { color: #cb997e !important; font-weight: 800; border-bottom: 2px solid #cb997e; }
         .soft-text-gradient {
@@ -47,11 +47,12 @@
     <main class="max-w-5xl mx-auto px-6 pt-40 pb-20">
         
         <section id="home-sec" class="all-sec mb-24">
-            <div class="text-center py-10">
+            <div class="text-center py-20 px-6 premium-card border-none bg-gradient-to-b from-stone-50 to-white">
                 <h1 class="text-6xl md:text-8xl font-bold tracking-tighter text-stone-900 mb-8">
                     Umdatu <span class="soft-text-gradient">Rosdiyana</span>
                 </h1>
-                <p class="text-lg md:text-xl text-stone-400 max-w-2xl mx-auto leading-relaxed italic">
+                <div class="w-20 h-[2px] bg-[#cb997e] mx-auto mb-8"></div>
+                <p class="text-lg md:text-xl text-stone-500 max-w-2xl mx-auto leading-relaxed italic">
                     "Belajar, berkembang, dan membangun ide menjadi sesuatu yang nyata"
                 </p>
             </div>
@@ -94,62 +95,64 @@
                 </div>
             </div>
         </section>
-<section id="work-sec" class="all-sec mb-20">
-    <h2 class="text-xs font-bold text-stone-400 uppercase tracking-[0.4em] mb-12 text-center">Portofolio / Project</h2>
-    
-    <div class="space-y-8">
-        
-        <div class="premium-card grid grid-cols-1 md:grid-cols-2 overflow-hidden items-center">
-            <div class="h-64 md:h-full bg-stone-200">
-                <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&q=80&w=800" alt="Project 1" class="w-full h-full object-cover">
-            </div>
-            <div class="p-10 md:p-16">
-                <div class="flex items-baseline space-x-2 mb-4">
-                    <span class="text-6xl font-bold text-[#cb997e]">10</span>
-                    <span class="text-sm font-semibold text-stone-400 uppercase tracking-widest">Jan, 2026</span>
-                </div>
-                <h3 class="text-3xl font-bold text-stone-900 mb-4">Website Mansion de Bakes</h3>
-                <p class="text-stone-500 leading-relaxed mb-6">Website pemesanan produk bakery dengan tampilan katalog dan sistem order melalui WhatsApp. Dikembangkan sebagai prototype untuk memudahkan pemesanan.</p>
-                <div class="space-y-2 text-sm text-stone-400 mb-8">
-                    <p><i class="fas fa-map-marker-alt mr-2"></i>GitHub Pages - Online</p>
-                    <p><i class="fas fa-clock mr-2"></i>Project Development</p>
-                </div>
-                <a href="https://umdaturosdiyana.github.io/Maison-de-bakes/" class="inline-block px-8 py-3 bg-[#cb997e] text-white rounded-full font-bold hover:bg-[#a67c66] transition">READ MORE</a>
-            </div>
-        </div>
 
-        <div class="premium-card grid grid-cols-1 md:grid-cols-2 overflow-hidden items-center">
-            <div class="p-10 md:p-16 order-2 md:order-1">
-                <div class="flex items-baseline space-x-2 mb-4">
-                    <span class="text-6xl font-bold text-[#cb997e]">21</span>
-                    <span class="text-sm font-semibold text-stone-400 uppercase tracking-widest">Feb, 2026</span>
+        <section id="work-sec" class="all-sec mb-20">
+            <h2 class="text-xs font-bold text-stone-400 uppercase tracking-[0.4em] mb-12 text-center">Portofolio / Project</h2>
+            <div class="space-y-8">
+                <div class="premium-card grid grid-cols-1 md:grid-cols-2 overflow-hidden items-center">
+                    <div class="h-64 md:h-full bg-stone-200">
+                        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&q=80&w=800" alt="Project 1" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-10 md:p-16">
+                        <div class="flex items-baseline space-x-2 mb-4">
+                            <span class="text-6xl font-bold text-[#cb997e]">10</span>
+                            <span class="text-sm font-semibold text-stone-400 uppercase tracking-widest">Jan, 2026</span>
+                        </div>
+                        <h3 class="text-3xl font-bold text-stone-900 mb-4">Website Mansion de Bakes</h3>
+                        <p class="text-stone-500 leading-relaxed mb-6">Website pemesanan produk bakery dengan tampilan katalog dan sistem order melalui WhatsApp. Dikembangkan sebagai prototype untuk memudahkan pemesanan.</p>
+                        <a href="https://umdaturosdiyana.github.io/Maison-de-bakes/" class="inline-block px-8 py-3 bg-[#cb997e] text-white rounded-full font-bold hover:bg-[#a67c66] transition">READ MORE</a>
+                    </div>
                 </div>
-                <h3 class="text-3xl font-bold text-stone-900 mb-4">SIPERKAT HMI</h3>
-                <p class="text-stone-500 leading-relaxed mb-6">Sistem monitoring aktivitas anggota, poin, dan kehadiran menggunakan teknologi geofencing untuk efisiensi organisasi.</p>
-                <div class="space-y-2 text-sm text-stone-400 mb-8">
-                    <p><i class="fas fa-map-marker-alt mr-2"></i>Web Application</p>
-                    <p><i class="fas fa-clock mr-2"></i>Monthly Attendance Tracking</p>
+
+                <div class="premium-card grid grid-cols-1 md:grid-cols-2 overflow-hidden items-center">
+                    <div class="p-10 md:p-16 order-2 md:order-1">
+                        <div class="flex items-baseline space-x-2 mb-4">
+                            <span class="text-6xl font-bold text-[#cb997e]">21</span>
+                            <span class="text-sm font-semibold text-stone-400 uppercase tracking-widest">Feb, 2026</span>
+                        </div>
+                        <h3 class="text-3xl font-bold text-stone-900 mb-4">SIPERKAT HMI</h3>
+                        <p class="text-stone-500 leading-relaxed mb-6">Sistem monitoring aktivitas anggota, poin, dan kehadiran menggunakan teknologi geofencing untuk efisiensi organisasi.</p>
+                        <a href="#" class="inline-block px-8 py-3 bg-[#cb997e] text-white rounded-full font-bold hover:bg-[#a67c66] transition">READ MORE</a>
+                    </div>
+                    <div class="h-64 md:h-full bg-stone-200 order-1 md:order-2">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800" alt="Project 2" class="w-full h-full object-cover">
+                    </div>
                 </div>
-                <a href="#" class="inline-block px-8 py-3 bg-[#cb997e] text-white rounded-full font-bold hover:bg-[#a67c66] transition">READ MORE</a>
             </div>
-            <div class="h-64 md:h-full bg-stone-200 order-1 md:order-2">
-                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800" alt="Project 2" class="w-full h-full object-cover">
-            </div>
-        </div>
+        </section>
 
-    </div>
-</section>
-
-        <section id="startup-sec" class="all-sec mb-20 min-h-[50vh]">
-            <div class="premium-card p-12 bg-stone-900 text-white border-none relative overflow-hidden">
-                <h2 class="text-xs font-bold text-[#cb997e] uppercase tracking-[0.5em] mb-8">Startup Idea</h2>
-                <h3 class="text-4xl font-bold mb-4">Mansion de Bakes</h3>
-                <p class="text-stone-400 text-lg mb-10 italic">"Terinspirasi dari Maison (Prancis) berarti rumah, mencerminkan bakery sebagai tempat yang hangat & penuh makna."</p>
-                
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-10 pt-10 border-t border-stone-800">
-                    <div><h4 class="text-[10px] uppercase font-bold text-stone-500 mb-2">Produk / Layanan</h4><p class="text-sm font-medium">Platform katalog digital & order WhatsApp</p></div>
-                    <div><h4 class="text-[10px] uppercase font-bold text-stone-500 mb-2">Target Pasar</h4><p class="text-sm font-medium">Remaja, Mahasiswa, Pekerja, Ibu Rumah Tangga</p></div>
-                    <div><h4 class="text-[10px] uppercase font-bold text-stone-500 mb-2">Value</h4><p class="text-sm font-medium">Kemudahan akses produk & order praktis</p></div>
+        <section id="startup-sec" class="all-sec mb-20">
+            <h2 class="text-xs font-bold text-stone-400 uppercase tracking-[0.4em] mb-12 text-center">Startup Idea</h2>
+            <div class="premium-card p-10 md:p-16 border-l-4 border-l-[#cb997e]">
+                <div class="max-w-2xl">
+                    <h3 class="text-4xl font-bold mb-6 text-stone-900">Mansion de Bakes</h3>
+                    <p class="text-stone-500 text-lg mb-10 italic leading-relaxed">
+                        "Terinspirasi dari Maison (Prancis) berarti rumah, mencerminkan bakery sebagai tempat yang hangat & penuh makna."
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="border-t border-stone-200 pt-4">
+                            <h4 class="text-[10px] uppercase font-bold text-stone-400 mb-2 tracking-widest">Produk</h4>
+                            <p class="text-sm font-semibold text-stone-700">Katalog Digital & Order WA</p>
+                        </div>
+                        <div class="border-t border-stone-200 pt-4">
+                            <h4 class="text-[10px] uppercase font-bold text-stone-400 mb-2 tracking-widest">Target</h4>
+                            <p class="text-sm font-semibold text-stone-700">Pelajar & Pekerja</p>
+                        </div>
+                        <div class="border-t border-stone-200 pt-4">
+                            <h4 class="text-[10px] uppercase font-bold text-stone-400 mb-2 tracking-widest">Value</h4>
+                            <p class="text-sm font-semibold text-stone-700">Aksesibilitas Tinggi</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
