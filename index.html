@@ -15,32 +15,19 @@
             border: 1px solid rgba(231, 229, 228, 0.6);
             border-radius: 32px;
             transition: all 0.4s ease;
+            overflow: hidden;
         }
-        .premium-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.08);
-            border-color: #cb997e;
-        }
+        .premium-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.08); border-color: #cb997e; }
         .nav-active { color: #cb997e !important; font-weight: 800; border-bottom: 2px solid #cb997e; }
-        .soft-text-gradient {
-            background: linear-gradient(135deg, #6b705c, #cb997e);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        /* Style untuk mobile menu yang terbuka */
-        #mobile-menu {
-            transition: all 0.3s ease-in-out;
-        }
+        .soft-text-gradient { background: linear-gradient(135deg, #6b705c, #cb997e); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        #mobile-menu { transition: all 0.3s ease-in-out; }
     </style>
 </head>
 <body class="antialiased">
 
     <nav class="fixed w-full z-50 top-6 px-6">
         <div class="max-w-4xl mx-auto bg-white/70 backdrop-blur-2xl rounded-full px-8 py-4 flex justify-between items-center shadow-sm border border-stone-100">
-            <div class="text-sm font-bold text-stone-900 tracking-[0.1em] uppercase">
-                Umdatu Rosdiyana
-            </div>
-            
+            <div class="text-sm font-bold text-stone-900 tracking-[0.1em] uppercase">Umdatu Rosdiyana</div>
             <button class="text-stone-600 text-2xl" onclick="toggleMobileMenu()">
                 <i class="fas fa-bars"></i>
             </button>
@@ -80,9 +67,9 @@
                     </div>
                 </div>
                 <div class="flex-grow">
-                    <span class="text-[#cb997e] font-bold text-[10px] uppercase tracking-[0.3em]">About Me</span>
+                    <span class="text-[#cb997e] font-bold text-[10px] uppercase tracking-[0.3em]"></span>
                     <h3 class="text-3xl font-bold text-stone-900 mt-2 mb-6"></h3>
-                    <p class="text-stone-600 leading-loose text-lg font-light text-justify">
+                    <p class="text-stone-600 leading-relaxed text-lg font-light text-justify">
                         Saya adalah seseorang yang memiliki minat dalam bidang startup, bisnis digital, dan teknologi. Saya tertarik mempelajari bagaimana sebuah ide dapat dikembangkan menjadi produk atau usaha yang nyata. Saya pernah membuat website dan aplikasi sederhana, serta berhasil mempublikasikan website. Pengalaman tersebut membuat saya semakin tertarik untuk terus belajar dan mengembangkan kemampuan di bidang teknologi. Ke depannya, saya ingin terus berkembang dan membangun usaha sendiri yang berbasis digital.
                     </p>
                 </div>
@@ -90,7 +77,7 @@
         </section>
 
         <section id="expertise-sec" class="all-sec mb-20 min-h-[50vh]">
-            <h2 class="text-xs font-bold text-stone-400 uppercase tracking-[0.4em] mb-10 text-center">Skills</h2>
+            <h2 class="text-xs font-bold text-stone-400 uppercase tracking-[0.4em] mb-10 text-center">Skill</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div class="premium-card p-10 text-center hover:border-[#cb997e]">
                     <div class="w-16 h-16 bg-stone-50 rounded-full flex items-center justify-center mx-auto mb-6 text-[#cb997e]">
@@ -116,23 +103,23 @@
         <section id="work-sec" class="all-sec mb-20">
             <h2 class="text-xs font-bold text-stone-400 uppercase tracking-[0.4em] mb-12 text-center">Portofolio / Project</h2>
             <div class="space-y-8">
-                <div class="premium-card grid grid-cols-1 md:grid-cols-2 overflow-hidden items-center">
-                    <div class="h-64 md:h-full bg-stone-200">
+                <div class="premium-card grid grid-cols-1 md:grid-cols-2 items-stretch">
+                    <div class="h-64 md:h-auto bg-stone-200">
                         <img src="d1.jpeg" alt="Aplikasi Sederhana" class="w-full h-full object-cover">
                     </div>
-                    <div class="p-10 md:p-16">
+                    <div class="p-8 md:p-12 flex flex-col justify-center">
                         <h3 class="text-3xl font-bold text-stone-900 mb-4">Aplikasi Sederhana</h3>
-                        <p class="text-stone-500 leading-relaxed mb-6">Membuat aplikasi sederhana sebagai latihan dalam memahami dasar pengembangan aplikasi</p>
+                        <p class="text-stone-500 leading-relaxed text-justify">Membuat aplikasi sederhana sebagai latihan dalam memahami dasar pengembangan aplikasi</p>
                     </div>
                 </div>
 
-                <div class="premium-card grid grid-cols-1 md:grid-cols-2 overflow-hidden items-center">
-                    <div class="p-10 md:p-16 order-2 md:order-1">
+                <div class="premium-card grid grid-cols-1 md:grid-cols-2 items-stretch">
+                    <div class="p-8 md:p-12 flex flex-col justify-center order-2 md:order-1">
                         <h3 class="text-3xl font-bold text-stone-900 mb-4">Desain Logo</h3>
-                        <p class="text-stone-500 leading-relaxed mb-6">MMembuat desain logo sederhana sebagai bagian dari tugas proyek untuk melatih kemampuan dasar dalam desain</p>
-                        <a href="#" class="inline-block px-8 py-3 bg-[#cb997e] text-white rounded-full font-bold hover:bg-[#a67c66] transition">READ MORE</a>
+                        <p class="text-stone-500 leading-relaxed text-justify mb-6">Membuat desain logo sederhana sebagai bagian dari tugas proyek untuk melatih kemampuan dasar dalam desain</p>
+                        <a href="#" class="inline-block px-8 py-3 bg-[#cb997e] text-white rounded-full font-bold hover:bg-[#a67c66] transition w-max">READ MORE</a>
                     </div>
-                    <div class="h-64 md:h-full bg-stone-200 order-1 md:order-2">
+                    <div class="h-64 md:h-auto bg-stone-200 order-1 md:order-2">
                         <img src="hjb.jpeg" alt="Desain Logo" class="w-full h-full object-cover">
                     </div>
                 </div>
@@ -145,14 +132,13 @@
                 <div class="bg-white p-10 md:p-16 rounded-[31px]">
                     <div class="flex flex-col md:flex-row justify-between items-start mb-10">
                         <div>
-                            <h3 class="text-5xl font-bold text-stone-900 mb-4">Mansion de Bakes</h3>
+                            <h3 class="text-5xl font-bold text-stone-900 mb-4">Maison de Bakes</h3>
                             <p class="text-stone-500 text-lg italic max-w-md">"Terinspirasi dari Maison (Prancis) berarti rumah, mencerminkan bakery sebagai tempat yang hangat & penuh makna."</p>
                         </div>
                         <div class="mt-6 md:mt-0 px-6 py-2 bg-[#cb997e]/10 text-[#cb997e] rounded-full font-bold text-sm flex items-center">
                             <i class="fas fa-star mr-2"></i> Startup Concept
                         </div>
                     </div>
-                    
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                         <div class="bg-stone-50 p-6 rounded-2xl border border-stone-100 flex flex-col">
                             <div class="text-[#cb997e] mb-3 text-xl"><i class="fas fa-box-open"></i></div>
@@ -209,7 +195,6 @@
             } else {
                 allSections.forEach(sec => sec.style.display = 'none');
                 document.getElementById(id + '-sec').style.display = 'block';
-                // Aktifkan nav yang diklik
                 const activeNav = document.getElementById('nav-' + id);
                 if(activeNav) activeNav.classList.add('nav-active');
             }
