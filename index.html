@@ -16,6 +16,11 @@
             border-radius: 32px;
             transition: all 0.4s ease;
         }
+        .premium-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.05);
+            border-color: #d6ccc2;
+        }
         .nav-active { color: #cb997e !important; font-weight: 800; border-bottom: 2px solid #cb997e; }
         .soft-text-gradient {
             background: linear-gradient(135deg, #6b705c, #cb997e);
@@ -29,7 +34,7 @@
     <nav class="fixed w-full z-50 top-6 px-6">
         <div class="max-w-4xl mx-auto bg-white/70 backdrop-blur-2xl rounded-full px-8 py-4 flex justify-center items-center shadow-sm border border-stone-100">
             <div class="flex space-x-6 md:space-x-10 text-[10px] font-bold uppercase tracking-[0.2em] text-stone-400">
-                <a href="javascript:void(0)" onclick="showSection('home')" id="nav-home" class="hover:text-stone-800 transition nav-active">Home</a>
+                <a href="javascript:void(0)" onclick="showSection('all')" id="nav-all" class="hover:text-stone-800 transition nav-active">Home</a>
                 <a href="javascript:void(0)" onclick="showSection('profile')" id="nav-profile" class="hover:text-stone-800 transition">Profile</a>
                 <a href="javascript:void(0)" onclick="showSection('expertise')" id="nav-expertise" class="hover:text-stone-800 transition">Skill</a>
                 <a href="javascript:void(0)" onclick="showSection('work')" id="nav-work" class="hover:text-stone-800 transition">Portfolio</a>
@@ -52,7 +57,7 @@
             </div>
         </section>
 
-        <section id="profile-sec" class="all-sec mb-20 hidden">
+        <section id="profile-sec" class="all-sec mb-20 min-h-[50vh]">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="premium-card p-3 aspect-square flex items-center justify-center overflow-hidden">
                     <img src="foto-kamu.jpg" alt="Profile" class="w-full h-full object-cover rounded-[24px]">
@@ -60,89 +65,110 @@
                 <div class="premium-card p-10 md:col-span-2 flex flex-col justify-center">
                     <h3 class="text-stone-400 font-bold text-xs uppercase tracking-widest mb-6">About Me</h3>
                     <p class="text-lg text-stone-600 leading-relaxed font-light text-justify">
-                        Saya adalah seseorang yang memiliki minat dalam bidang startup, bisnis digital, dan teknologi. Saya tertarik mempelajari bagaimana sebuah ide dapat dikembangkan menjadi produk atau usaha yang nyata. Saya pernah membuat website dan aplikasi sederhana, serta berhasil mempublikasikan website. 
+                        Saya adalah seseorang yang memiliki minat dalam bidang startup, bisnis digital, dan teknologi. Saya tertarik mempelajari bagaimana sebuah ide dapat dikembangkan menjadi produk atau usaha yang nyata. Saya pernah membuat website dan aplikasi sederhana, serta berhasil mempublikasikan website. Pengalaman tersebut membuat saya semakin tertarik untuk terus belajar dan mengembangkan kemampuan di bidang teknologi. Ke depannya, saya ingin terus berkembang dan membangun usaha sendiri yang berbasis digital.
                     </p>
                 </div>
             </div>
         </section>
 
-        <section id="expertise-sec" class="all-sec mb-20 hidden">
+        <section id="expertise-sec" class="all-sec mb-20 min-h-[50vh]">
             <h2 class="text-xs font-bold text-stone-400 uppercase tracking-[0.4em] mb-10 text-center">Keahlian Utama</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div class="premium-card p-10 text-center hover:border-[#cb997e]">
-                    <div class="w-16 h-16 bg-stone-50 rounded-full flex items-center justify-center mx-auto mb-6 text-[#cb997e]"><i class="fas fa-layer-group text-2xl"></i></div>
-                    <h3 class="font-bold text-stone-800">Basic App Development</h3>
+                    <div class="w-16 h-16 bg-stone-50 rounded-full flex items-center justify-center mx-auto mb-6 text-[#cb997e]">
+                        <i class="fas fa-layer-group text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-stone-800">Basic Application Development</h3>
                 </div>
                 <div class="premium-card p-10 text-center hover:border-[#cb997e]">
-                    <div class="w-16 h-16 bg-stone-50 rounded-full flex items-center justify-center mx-auto mb-6 text-[#cb997e]"><i class="fas fa-tasks text-2xl"></i></div>
-                    <h3 class="font-bold text-stone-800">Operational Management</h3>
+                    <div class="w-16 h-16 bg-stone-50 rounded-full flex items-center justify-center mx-auto mb-6 text-[#cb997e]">
+                        <i class="fas fa-tasks text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-stone-800">Basic Operational Management</h3>
                 </div>
                 <div class="premium-card p-10 text-center hover:border-[#cb997e]">
-                    <div class="w-16 h-16 bg-stone-50 rounded-full flex items-center justify-center mx-auto mb-6 text-[#cb997e]"><i class="fas fa-file-excel text-2xl"></i></div>
+                    <div class="w-16 h-16 bg-stone-50 rounded-full flex items-center justify-center mx-auto mb-6 text-[#cb997e]">
+                        <i class="fas fa-file-excel text-2xl"></i>
+                    </div>
                     <h3 class="font-bold text-stone-800">Basic Excel</h3>
                 </div>
             </div>
         </section>
-
-        <section id="work-sec" class="all-sec mb-20 hidden">
-            <h2 class="text-xs font-bold text-stone-400 uppercase tracking-[0.4em] mb-12 text-center">Portofolio / Project</h2>
-            <div class="space-y-8">
-                <div class="premium-card grid grid-cols-1 md:grid-cols-2 overflow-hidden items-center">
-                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&q=80&w=800" class="h-64 md:h-full object-cover">
-                    <div class="p-10">
-                        <h3 class="text-3xl font-bold text-stone-900 mb-4">Website Mansion de Bakes</h3>
-                        <p class="text-stone-500 mb-6">Website pemesanan produk bakery dengan sistem order WhatsApp.</p>
-                        <a href="#" class="px-8 py-3 bg-[#cb997e] text-white rounded-full font-bold hover:bg-[#a67c66] transition">READ MORE</a>
-                    </div>
-                </div>
+<section id="work-sec" class="all-sec mb-20">
+    <h2 class="text-xs font-bold text-stone-400 uppercase tracking-[0.4em] mb-12 text-center">Portofolio / Project</h2>
+    
+    <div class="space-y-8">
+        
+        <div class="premium-card grid grid-cols-1 md:grid-cols-2 overflow-hidden items-center">
+            <div class="h-64 md:h-full bg-stone-200">
+                <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&q=80&w=800" alt="Project 1" class="w-full h-full object-cover">
             </div>
-        </section>
+            <div class="p-10 md:p-16">
+                <div class="flex items-baseline space-x-2 mb-4">
+                    <span class="text-6xl font-bold text-[#cb997e]">10</span>
+                    <span class="text-sm font-semibold text-stone-400 uppercase tracking-widest">Jan, 2026</span>
+                </div>
+                <h3 class="text-3xl font-bold text-stone-900 mb-4">Website Mansion de Bakes</h3>
+                <p class="text-stone-500 leading-relaxed mb-6">Website pemesanan produk bakery dengan tampilan katalog dan sistem order melalui WhatsApp. Dikembangkan sebagai prototype untuk memudahkan pemesanan.</p>
+                <div class="space-y-2 text-sm text-stone-400 mb-8">
+                    <p><i class="fas fa-map-marker-alt mr-2"></i>GitHub Pages - Online</p>
+                    <p><i class="fas fa-clock mr-2"></i>Project Development</p>
+                </div>
+                <a href="https://umdaturosdiyana.github.io/Maison-de-bakes/" class="inline-block px-8 py-3 bg-[#cb997e] text-white rounded-full font-bold hover:bg-[#a67c66] transition">READ MORE</a>
+            </div>
+        </div>
 
-        <section id="startup-sec" class="all-sec mb-24 hidden">
-            <h2 class="text-xs font-bold text-stone-400 uppercase tracking-[0.4em] mb-12 text-center">Business Idea</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="premium-card grid grid-cols-1 md:grid-cols-2 overflow-hidden items-center">
+            <div class="p-10 md:p-16 order-2 md:order-1">
+                <div class="flex items-baseline space-x-2 mb-4">
+                    <span class="text-6xl font-bold text-[#cb997e]">21</span>
+                    <span class="text-sm font-semibold text-stone-400 uppercase tracking-widest">Feb, 2026</span>
+                </div>
+                <h3 class="text-3xl font-bold text-stone-900 mb-4">SIPERKAT HMI</h3>
+                <p class="text-stone-500 leading-relaxed mb-6">Sistem monitoring aktivitas anggota, poin, dan kehadiran menggunakan teknologi geofencing untuk efisiensi organisasi.</p>
+                <div class="space-y-2 text-sm text-stone-400 mb-8">
+                    <p><i class="fas fa-map-marker-alt mr-2"></i>Web Application</p>
+                    <p><i class="fas fa-clock mr-2"></i>Monthly Attendance Tracking</p>
+                </div>
+                <a href="#" class="inline-block px-8 py-3 bg-[#cb997e] text-white rounded-full font-bold hover:bg-[#a67c66] transition">READ MORE</a>
+            </div>
+            <div class="h-64 md:h-full bg-stone-200 order-1 md:order-2">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800" alt="Project 2" class="w-full h-full object-cover">
+            </div>
+        </div>
+
+    </div>
+</section>
+
+        <section id="startup-sec" class="all-sec mb-20 min-h-[50vh]">
+            <div class="premium-card p-12 bg-stone-900 text-white border-none relative overflow-hidden">
+                <h2 class="text-xs font-bold text-[#cb997e] uppercase tracking-[0.5em] mb-8">Startup Idea</h2>
+                <h3 class="text-4xl font-bold mb-4">Mansion de Bakes</h3>
+                <p class="text-stone-400 text-lg mb-10 italic">"Terinspirasi dari Maison (Prancis) berarti rumah, mencerminkan bakery sebagai tempat yang hangat & penuh makna."</p>
                 
-                <div class="bg-white rounded-2xl shadow-sm border border-stone-100 overflow-hidden group hover:shadow-xl transition-all duration-300 flex flex-col">
-                    <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&q=80&w=800" class="w-full h-48 object-cover">
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h4 class="text-stone-900 font-bold mb-2">Produk / Layanan</h4>
-                        <p class="text-stone-500 text-sm mb-6 flex-grow">Platform katalog digital & order WhatsApp yang memudahkan pemesanan.</p>
-                        <a href="#" class="text-[#cb997e] font-bold text-sm hover:underline flex items-center">Know More <i class="fas fa-chevron-right ml-2 text-xs"></i></a>
-                    </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10 pt-10 border-t border-stone-800">
+                    <div><h4 class="text-[10px] uppercase font-bold text-stone-500 mb-2">Produk / Layanan</h4><p class="text-sm font-medium">Platform katalog digital & order WhatsApp</p></div>
+                    <div><h4 class="text-[10px] uppercase font-bold text-stone-500 mb-2">Target Pasar</h4><p class="text-sm font-medium">Remaja, Mahasiswa, Pekerja, Ibu Rumah Tangga</p></div>
+                    <div><h4 class="text-[10px] uppercase font-bold text-stone-500 mb-2">Value</h4><p class="text-sm font-medium">Kemudahan akses produk & order praktis</p></div>
                 </div>
-
-                <div class="bg-white rounded-2xl shadow-sm border border-stone-100 overflow-hidden group hover:shadow-xl transition-all duration-300 flex flex-col">
-                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=800" class="w-full h-48 object-cover">
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h4 class="text-stone-900 font-bold mb-2">Target Pasar</h4>
-                        <p class="text-stone-500 text-sm mb-6 flex-grow">Remaja, Mahasiswa, Pekerja, dan Ibu Rumah Tangga.</p>
-                        <a href="#" class="text-[#cb997e] font-bold text-sm hover:underline flex items-center">Know More <i class="fas fa-chevron-right ml-2 text-xs"></i></a>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-2xl shadow-sm border border-stone-100 overflow-hidden group hover:shadow-xl transition-all duration-300 flex flex-col relative">
-                    <div class="absolute top-3 right-3 flex flex-col gap-2 z-10">
-                        <button class="bg-blue-600 text-white text-[10px] px-3 py-1.5 rounded-lg shadow-md font-bold hover:bg-blue-700 transition">Buy Now</button>
-                        <button class="bg-stone-800 text-white text-[10px] px-3 py-1.5 rounded-lg shadow-md font-bold hover:bg-stone-900 transition">Customize</button>
-                    </div>
-                    <img src="https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&q=80&w=800" class="w-full h-48 object-cover">
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h4 class="text-stone-900 font-bold mb-2">Value</h4>
-                        <p class="text-stone-500 text-sm mb-6 flex-grow">Kemudahan akses produk & order praktis untuk efisiensi.</p>
-                        <a href="#" class="text-[#cb997e] font-bold text-sm hover:underline flex items-center">Know More <i class="fas fa-chevron-right ml-2 text-xs"></i></a>
-                    </div>
-                </div>
-
             </div>
         </section>
 
-        <section id="contact-sec" class="all-sec min-h-[40vh] hidden">
+        <section id="contact-sec" class="all-sec min-h-[40vh]">
             <div class="premium-card p-16 text-center">
                 <h2 class="text-3xl font-bold mb-12">Hubungi Saya</h2>
                 <div class="flex justify-center space-x-12">
                     <a href="https://wa.me/089677414850" class="group flex flex-col items-center">
-                        <div class="w-16 h-16 rounded-full border border-stone-100 flex items-center justify-center text-stone-400 group-hover:text-green-500 transition-all"><i class="fab fa-whatsapp text-2xl"></i></div>
+                        <div class="w-16 h-16 rounded-full border border-stone-100 flex items-center justify-center text-stone-400 group-hover:text-green-500 group-hover:bg-green-50 transition-all"><i class="fab fa-whatsapp text-2xl"></i></div>
                         <span class="text-[9px] font-bold mt-4 tracking-widest opacity-50">WHATSAPP</span>
+                    </a>
+                    <a href="https://instagram.com/leonaxyna" class="group flex flex-col items-center">
+                        <div class="w-16 h-16 rounded-full border border-stone-100 flex items-center justify-center text-stone-400 group-hover:text-pink-500 group-hover:bg-pink-50 transition-all"><i class="fab fa-instagram text-2xl"></i></div>
+                        <span class="text-[9px] font-bold mt-4 tracking-widest opacity-50">INSTAGRAM</span>
+                    </a>
+                    <a href="https://tiktok.com/@_menelrch" class="group flex flex-col items-center">
+                        <div class="w-16 h-16 rounded-full border border-stone-100 flex items-center justify-center text-stone-400 group-hover:text-black group-hover:bg-stone-50 transition-all"><i class="fab fa-tiktok text-2xl"></i></div>
+                        <span class="text-[9px] font-bold mt-4 tracking-widest opacity-50">TIKTOK</span>
                     </a>
                 </div>
             </div>
@@ -155,11 +181,15 @@
             const allSections = document.querySelectorAll('.all-sec');
             const allNavs = document.querySelectorAll('nav a');
             allNavs.forEach(nav => nav.classList.remove('nav-active'));
-            allSections.forEach(sec => sec.classList.add('hidden'));
             
-            document.getElementById(id + '-sec').classList.remove('hidden');
-            document.getElementById('nav-' + id).classList.add('nav-active');
-            
+            if(id === 'all') {
+                allSections.forEach(sec => sec.style.display = 'block');
+                document.getElementById('nav-all').classList.add('nav-active');
+            } else {
+                allSections.forEach(sec => sec.style.display = 'none');
+                document.getElementById(id + '-sec').style.display = 'block';
+                document.getElementById('nav-' + id).classList.add('nav-active');
+            }
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     </script>
