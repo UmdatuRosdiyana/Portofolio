@@ -3,168 +3,187 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Umdatu Rosdiyana | Digital Business Portfolio</title>
+    <title>Umdatu Rosdiyana | Portofolio Bisnis Digital</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        :root {
+            --soft-pink: #fdf0ed;
+            --accent-pink: #f7cac9;
+            --deep-text: #2d2d2d;
+        }
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #fff0f3; /* Pink Soft yang lebih manis */
-            color: #333;
-            scroll-behavior: smooth;
+            color: var(--deep-text);
+            background-color: #ffffff;
         }
-        /* Glass Card Style */
-        .glass-card {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            border-radius: 20px;
-            transition: all 0.3s ease;
+        h1, h2, h3, .serif {
+            font-family: 'Playfair Display', serif;
         }
-        .glass-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(255, 182, 193, 0.4);
-            background: rgba(255, 255, 255, 0.9);
-        }
+        .bg-soft { background-color: var(--soft-pink); }
         .nav-link {
             font-size: 11px;
-            font-weight: 700;
+            font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
-            color: #666;
-            transition: 0.3s;
+            color: #ffffff;
         }
-        .nav-link:hover { color: #ff4d6d; }
-        .pink-btn {
-            background: #ff4d6d;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 12px;
-            font-size: 12px;
-            font-weight: bold;
-            transition: 0.3s;
+        .hero-overlay {
+            background: rgba(0, 0, 0, 0.3);
         }
-        .pink-btn:hover { background: #ff758f; }
-        section { padding: 80px 20px; }
+        .btn-peach {
+            background-color: var(--accent-pink);
+            transition: all 0.3s ease;
+        }
+        .btn-peach:hover {
+            background-color: #f2b1b0;
+            transform: translateY(-2px);
+        }
+        section { padding: 100px 20px; }
     </style>
 </head>
 <body>
 
-    <!-- Header / Navbar -->
-    <nav class="fixed w-full z-50 top-0 bg-white/50 backdrop-blur-md border-b border-pink-100">
-        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <span class="text-xl font-black tracking-tighter text-[#ff4d6d]">UR.</span>
-            <div class="hidden md:flex space-x-6">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#profile" class="nav-link">Profile</a>
-                <a href="#skills" class="nav-link">Keahlian</a>
-                <a href="#portfolio" class="nav-link">Portfolio</a>
-                <a href="#idea" class="nav-link">Startup</a>
-                <a href="#contact" class="nav-link">Contact</a>
-            </div>
+    <!-- Transparent Navbar -->
+    <nav class="absolute w-full z-50 py-8 px-10 flex justify-between items-center">
+        <span class="text-2xl font-bold text-white tracking-tighter">UR.</span>
+        <div class="hidden md:flex space-x-8">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#profile" class="nav-link">About Me</a>
+            <a href="#skills" class="nav-link">Keahlian</a>
+            <a href="#portfolio" class="nav-link">Portfolio</a>
+            <a href="#idea" class="nav-link">Startup</a>
+            <a href="#contact" class="nav-link">Contact</a>
         </div>
     </nav>
 
-    <!-- 1. Home -->
-    <section id="home" class="min-h-screen flex flex-col items-center justify-center text-center">
-        <div class="mb-6">
-            <img src="foto-kamu.jpg" alt="Umdatu" class="w-32 h-32 rounded-full border-4 border-white shadow-lg mx-auto object-cover">
+    <!-- 1. Home / Hero -->
+    <div id="home" class="relative h-screen flex items-center justify-start px-10 md:px-32 bg-cover bg-center" style="background-image: url('foto-background-kamu.jpg');">
+        <div class="absolute inset-0 hero-overlay"></div>
+        <div class="relative z-10 max-w-2xl text-white">
+            <h1 class="text-6xl md:text-8xl mb-6 leading-tight">Happiness Depends upon Ourselves</h1>
+            <p class="text-lg font-light mb-8 opacity-90">"Belajar, berkembang, dan membangun ide menjadi sesuatu yang nyata"</p>
+            <a href="#profile" class="btn-peach text-white px-10 py-4 uppercase text-xs font-bold tracking-widest inline-block">Read More</a>
         </div>
-        <h1 class="text-4xl md:text-6xl font-extrabold text-gray-800 mb-4">Umdatu Rosdiyana</h1>
-        <p class="text-lg text-gray-500 italic max-w-2xl mx-auto">
-            "Belajar, berkembang, dan membangun ide menjadi sesuatu yang nyata"
-        </p>
-    </section>
+    </div>
 
-    <!-- 2. Profile -->
-    <section id="profile" class="max-w-4xl mx-auto">
-        <div class="glass-card p-8 md:p-12">
-            <h2 class="text-2xl font-bold mb-6 text-[#ff4d6d]">Tentang Saya</h2>
-            <div class="space-y-4 text-gray-600 leading-relaxed">
-                <p>Saya adalah seseorang yang memiliki minat dalam bidang startup, bisnis digital, dan teknologi. Saya tertarik mempelajari bagaimana sebuah ide dapat dikembangkan menjadi produk atau usaha yang nyata.</p>
-                <p>Saya pernah membuat website dan aplikasi sederhana, serta berhasil mempublikasikan website. Pengalaman tersebut membuat saya semakin tertarik untuk terus belajar dan mengembangkan kemampuan di bidang teknologi.</p>
-                <p class="font-semibold">Ke depannya, saya ingin terus berkembang dan membangun usaha sendiri yang berbasis digital.</p>
+    <!-- 2. Profile Section -->
+    <section id="profile" class="max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+            <div class="relative">
+                <div class="absolute -top-4 -left-4 w-full h-full border-2 border-pink-100"></div>
+                <img src="foto-kamu.jpg" alt="Profile" class="relative z-10 w-full h-[600px] object-cover shadow-2xl">
             </div>
-        </div>
-    </section>
-
-    <!-- 3. Keahlian -->
-    <section id="skills" class="max-w-5xl mx-auto">
-        <h2 class="text-center text-2xl font-bold mb-10 text-gray-800">Keahlian</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="glass-card p-6 text-center">
-                <i class="fas fa-laptop-code text-3xl text-pink-400 mb-4"></i>
-                <h3 class="font-bold">Basic Application Development</h3>
-            </div>
-            <div class="glass-card p-6 text-center">
-                <i class="fas fa-tasks text-3xl text-pink-400 mb-4"></i>
-                <h3 class="font-bold">Basic Operational Management</h3>
-            </div>
-            <div class="glass-card p-6 text-center">
-                <i class="fas fa-file-excel text-3xl text-pink-400 mb-4"></i>
-                <h3 class="font-bold">Basic Excel</h3>
-            </div>
-        </div>
-    </section>
-
-    <!-- 4. Portofolio -->
-    <section id="portfolio" class="max-w-6xl mx-auto">
-        <h2 class="text-center text-2xl font-bold mb-10 text-gray-800">Project Portofolio</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="glass-card p-8">
-                <h3 class="font-bold text-xl mb-3">Mansion de Bakes</h3>
-                <p class="text-sm text-gray-500 mb-6">Website pemesanan bakery dengan katalog dan sistem order WhatsApp.</p>
-                <a href="https://umdaturosdiyana.github.io/Maison-de-bakes/" target="_blank" class="text-[#ff4d6d] font-bold text-sm">Lihat Project →</a>
-            </div>
-            <div class="glass-card p-8">
-                <h3 class="font-bold text-xl mb-3">Aplikasi Sederhana</h3>
-                <p class="text-sm text-gray-500">Latihan dalam memahami dasar pengembangan aplikasi digital.</p>
-            </div>
-            <div class="glass-card p-8">
-                <h3 class="font-bold text-xl mb-3">Desain Logo</h3>
-                <p class="text-sm text-gray-500">Pembuatan logo sebagai bagian dari tugas proyek branding.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- 5. Business Idea -->
-    <section id="idea" class="max-w-5xl mx-auto">
-        <div class="glass-card p-8 md:p-12 border-l-8 border-[#ff4d6d]">
-            <h2 class="text-3xl font-black text-gray-800 mb-2">Mansion de Bakes</h2>
-            <p class="text-gray-500 italic mb-8">"Terinspirasi dari kata Maison (Prancis) yang berarti rumah"</p>
-            
-            <div class="grid md:grid-cols-2 gap-8">
-                <div>
-                    <h4 class="font-bold text-pink-500 uppercase text-xs mb-2">Produk & Layanan</h4>
-                    <p class="text-sm text-gray-600">Platform digital untuk menampilkan dan memesan cake & dessert via WhatsApp.</p>
-                </div>
-                <div>
-                    <h4 class="font-bold text-pink-500 uppercase text-xs mb-2">Target Pasar</h4>
-                    <p class="text-sm text-gray-600">Remaja, mahasiswa, pekerja, hingga ibu rumah tangga.</p>
-                </div>
-                <div>
-                    <h4 class="font-bold text-pink-500 uppercase text-xs mb-2">Value Proposition</h4>
-                    <p class="text-sm text-gray-600">Kemudahan melihat produk dan pemesanan cepat secara praktis.</p>
-                </div>
-                <div>
-                    <h4 class="font-bold text-pink-500 uppercase text-xs mb-2">Status Pengembangan</h4>
-                    <p class="text-sm text-gray-600">Telah dikembangkan dalam bentuk prototype website sederhana.</p>
+            <div>
+                <span class="text-pink-300 font-bold text-sm tracking-[0.5em] uppercase mb-4 block">About Me</span>
+                <h2 class="text-5xl mb-8">Hi, My Name Is Umdatu</h2>
+                <div class="text-gray-500 leading-relaxed space-y-6">
+                    <p>Saya adalah seseorang yang memiliki minat dalam bidang startup, bisnis digital, dan teknologi. Saya tertarik mempelajari bagaimana sebuah ide dapat dikembangkan menjadi produk atau usaha yang nyata.</p>
+                    <p>Pengalaman mempublikasikan website membuat saya semakin tertarik untuk terus belajar dan membangun usaha sendiri yang berbasis digital ke depannya.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 6. Contact -->
+    <!-- 3. Keahlian (This Is What I Do) -->
+    <section id="skills" class="bg-white border-t border-gray-50">
+        <div class="text-center mb-20">
+            <h2 class="text-4xl mb-4">This Is What I Do</h2>
+            <div class="w-16 h-0.5 bg-pink-200 mx-auto"></div>
+        </div>
+        <div class="grid md:grid-cols-3 gap-0 max-w-7xl mx-auto border-t border-b border-pink-50">
+            <div class="p-20 text-center border-r border-pink-50 hover:bg-soft transition-all">
+                <i class="fas fa-laptop-code text-4xl mb-8 text-pink-200"></i>
+                <h3 class="text-2xl mb-4">I Develop</h3>
+                <p class="text-sm text-gray-400 font-light leading-relaxed">Basic Application Development</p>
+            </div>
+            <div class="p-20 text-center border-r border-pink-50 hover:bg-soft transition-all">
+                <i class="fas fa-briefcase text-4xl mb-8 text-pink-200"></i>
+                <h3 class="text-2xl mb-4">I Manage</h3>
+                <p class="text-sm text-gray-400 font-light leading-relaxed">Basic Operational Management</p>
+            </div>
+            <div class="p-20 text-center hover:bg-soft transition-all">
+                <i class="fas fa-file-invoice text-4xl mb-8 text-pink-200"></i>
+                <h3 class="text-2xl mb-4">I Analyze</h3>
+                <p class="text-sm text-gray-400 font-light leading-relaxed">Basic Excel Skills</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Portfolio Grid -->
+    <section id="portfolio" class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl mb-4">My Portfolio</h2>
+            <p class="text-gray-400 italic">Kumpulan karya dan proyek digital</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-10">
+            <!-- Project 1 -->
+            <div class="group">
+                <div class="overflow-hidden mb-6 h-64 bg-gray-100">
+                    <img src="mansion-bakes.jpg" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700">
+                </div>
+                <h3 class="text-xl mb-2">Mansion de Bakes</h3>
+                <p class="text-gray-400 text-sm mb-4">Website pemesanan bakery dengan katalog dan WhatsApp order.</p>
+                <a href="https://umdaturosdiyana.github.io/Maison-de-bakes/" target="_blank" class="text-xs font-bold border-b border-pink-200 pb-1 uppercase tracking-widest">Live View</a>
+            </div>
+            <!-- Project 2 -->
+            <div class="group">
+                <div class="overflow-hidden mb-6 h-64 bg-gray-100">
+                    <img src="app-dev.jpg" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700">
+                </div>
+                <h3 class="text-xl mb-2">Aplikasi Sederhana</h3>
+                <p class="text-gray-400 text-sm mb-4">Latihan pengembangan logika sistem dan antarmuka aplikasi.</p>
+            </div>
+            <!-- Project 3 -->
+            <div class="group">
+                <div class="overflow-hidden mb-6 h-64 bg-gray-100">
+                    <img src="logo-design.jpg" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700">
+                </div>
+                <h3 class="text-xl mb-2">Desain Logo</h3>
+                <p class="text-gray-400 text-sm mb-4">Pembuatan identitas visual untuk melatih estetika desain.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Business Idea Section -->
+    <section id="idea" class="bg-soft">
+        <div class="max-w-5xl mx-auto text-center px-10">
+            <span class="text-pink-300 font-bold text-xs tracking-[0.5em] uppercase mb-6 block">Startup Idea</span>
+            <h2 class="text-5xl mb-12">Mansion de Bakes</h2>
+            <div class="grid md:grid-cols-2 gap-16 text-left border-t border-white pt-16">
+                <div>
+                    <h4 class="serif text-2xl mb-4 italic">Filosofi & Layanan</h4>
+                    <p class="text-gray-500 text-sm leading-relaxed">Terinspirasi dari kata Maison (Rumah), mencerminkan bakery yang hangat. Kami menyediakan platform digital untuk pemesanan cake & dessert yang praktis.</p>
+                </div>
+                <div>
+                    <h4 class="serif text-2xl mb-4 italic">Target & Value</h4>
+                    <p class="text-gray-500 text-sm leading-relaxed">Menargetkan remaja hingga ibu rumah tangga dengan nilai kecepatan order melalui website prototype yang sudah dikembangkan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Contact Section -->
     <section id="contact" class="max-w-4xl mx-auto text-center">
-        <h2 class="text-2xl font-bold mb-10 text-gray-800">Mari Terhubung</h2>
-        <div class="flex justify-center space-x-10 mb-12">
-            <a href="https://wa.me/089677414850" target="_blank" class="text-4xl text-gray-400 hover:text-green-500 transition"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://instagram.com/leonaxyna" target="_blank" class="text-4xl text-gray-400 hover:text-pink-500 transition"><i class="fab fa-instagram"></i></a>
-            <a href="https://tiktok.com/@_menelrch" target="_blank" class="text-4xl text-gray-400 hover:text-black transition"><i class="fab fa-tiktok"></i></a>
+        <h2 class="text-5xl mb-16">Contact Me</h2>
+        <div class="flex justify-center space-x-12 mb-20">
+            <a href="https://wa.me/089677414850" target="_blank" class="text-gray-300 hover:text-pink-300 transition text-4xl"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://instagram.com/leonaxyna" target="_blank" class="text-gray-300 hover:text-pink-300 transition text-4xl"><i class="fab fa-instagram"></i></a>
+            <a href="https://tiktok.com/@_menelrch" target="_blank" class="text-gray-300 hover:text-pink-300 transition text-4xl"><i class="fab fa-tiktok"></i></a>
         </div>
-        <p class="text-xs text-gray-400 font-bold tracking-widest uppercase">&copy; 2026 Umdatu Rosdiyana</p>
+        <div class="bg-soft p-16">
+            <p class="text-gray-400 text-xs tracking-[0.5em] uppercase">Subscribe to My Newsletter</p>
+            <div class="mt-8 flex max-w-md mx-auto border-b border-gray-200 pb-2">
+                <input type="email" placeholder="Enter your email" class="bg-transparent w-full text-sm outline-none px-4">
+                <button class="text-xs font-bold uppercase tracking-widest text-pink-300">Submit</button>
+            </div>
+        </div>
     </section>
+
+    <footer class="py-10 text-center border-t border-gray-50">
+        <p class="text-[10px] text-gray-300 font-bold tracking-widest uppercase">&copy; 2026 Umdatu Rosdiyana. Digital Business Project.</p>
+    </footer>
 
 </body>
 </html>
