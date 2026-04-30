@@ -3,217 +3,228 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Umdatu Rosdiyana | Digital Business Portfolio</title>
+    <title>UR | Digital Narrative</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,500&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Unna:ital,wght@0,400;0,700;1,400&family=Inter:wght@200;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --emerald: #064e3b;
-            --gold: #d4af37;
-            --cream: #fafaf9;
+            --bg: #f4f1ea;
+            --accent: #064e3b; /* Deep Emerald */
+            --gold: #c5a059;
         }
-        body { font-family: 'Montserrat', sans-serif; background-color: var(--cream); color: #1c1917; scroll-behavior: smooth; }
-        .serif { font-family: 'Cormorant Garamond', serif; }
+        body { 
+            background-color: var(--bg); 
+            font-family: 'Inter', sans-serif; 
+            overflow-x: hidden;
+            cursor: none;
+        }
+        .serif { font-family: 'Unna', serif; }
         
-        .glass {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(212, 175, 55, 0.1);
+        /* Custom Cursor */
+        #cursor {
+            width: 20px; height: 20px;
+            background: var(--gold);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            mix-blend-mode: difference;
+            transition: transform 0.1s;
         }
 
-        .nav-link {
-            font-size: 11px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: 0.4s;
-            color: #78716c;
-        }
-        .nav-link:hover, .nav-link.active { color: var(--gold); font-weight: 600; }
-
-        .section-wrapper { display: block; animation: slideUp 1s ease; }
-        .filtered-view .section-wrapper { display: none; }
-        .filtered-view .section-wrapper.active-section { display: block; }
-
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+        /* Abstract Layout */
+        .grid-custom {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 20px;
         }
 
-        .gold-button {
-            border: 1px solid var(--gold);
-            color: var(--gold);
-            padding: 15px 40px;
-            font-size: 10px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            transition: 0.5s;
+        .nav-vertical {
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
         }
-        .gold-button:hover { background: var(--gold); color: white; box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2); }
+
+        .section-wrapper { display: none; animation: blurIn 1s ease forwards; }
+        .active-section { display: block; }
+        
+        @keyframes blurIn {
+            from { filter: blur(10px); opacity: 0; transform: scale(1.1); }
+            to { filter: blur(0); opacity: 1; transform: scale(1); }
+        }
+
+        .hover-reveal {
+            transition: 0.5s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+        }
+        .hover-reveal:hover {
+            transform: translateY(-10px) rotate(-2deg);
+        }
+
+        /* Floating Text Decor */
+        .bg-text {
+            position: absolute;
+            font-size: 15vw;
+            font-weight: 900;
+            color: rgba(0,0,0,0.03);
+            z-index: -1;
+            white-space: nowrap;
+        }
     </style>
 </head>
 <body>
 
-    <!-- Navigasi Minimalis -->
-    <nav class="fixed w-full z-50 bg-white/50 backdrop-blur-lg border-b border-stone-100">
-        <div class="max-w-7xl mx-auto px-8 py-6 flex justify-between items-center">
-            <span class="serif text-3xl italic font-semibold text-emerald-900 tracking-tighter">Umdatu.</span>
-            <div class="hidden md:flex space-x-8">
-                <span onclick="filter('all')" class="nav-link active" id="link-all">Home</span>
-                <span onclick="filter('profile')" class="nav-link" id="link-profile">Profile</span>
-                <span onclick="filter('skills')" class="nav-link" id="link-skills">Keahlian</span>
-                <span onclick="filter('portfolio')" class="nav-link" id="link-portfolio">Project</span>
-                <span onclick="filter('business')" class="nav-link" id="link-business">Idea</span>
-                <span onclick="filter('contact')" class="nav-link" id="link-contact">Contact</span>
-            </div>
+    <div id="cursor"></div>
+
+    <!-- Navigation Side -->
+    <nav class="fixed left-0 top-0 h-screen w-20 border-r border-stone-200 flex flex-col justify-between py-10 items-center z-50 bg-white">
+        <span class="serif text-2xl font-bold text-emerald-900">UR.</span>
+        <div class="nav-vertical space-y-8 text-[10px] tracking-[4px] uppercase text-stone-400">
+            <span onclick="showSec('home')" class="cursor-pointer hover:text-emerald-900 transition">Main</span>
+            <span onclick="showSec('profile')" class="cursor-pointer hover:text-emerald-900 transition">About</span>
+            <span onclick="showSec('portfolio')" class="cursor-pointer hover:text-emerald-900 transition">Works</span>
+            <span onclick="showSec('idea')" class="cursor-pointer hover:text-emerald-900 transition">Ideation</span>
+        </div>
+        <div class="space-y-4">
+            <a href="https://instagram.com/leonaxyna" target="_blank"><i class="fab fa-instagram text-stone-400"></i></a>
         </div>
     </nav>
 
-    <div id="master-container">
+    <main class="ml-20">
         
-        <!-- HOME / HERO -->
-        <section id="home" class="section-wrapper h-screen flex flex-col justify-center items-center text-center px-6">
-            <span class="text-[10px] uppercase tracking-[8px] text-stone-400 mb-6">Digital Business Student</span>
-            <h1 class="serif text-6xl md:text-8xl text-stone-800 leading-none mb-10 max-w-4xl">Belajar, berkembang, dan membangun ide nyata.</h1>
-            <div class="w-16 h-[1px] bg-gold mb-10"></div>
-            <button onclick="filter('profile')" class="gold-button">Mulai Eksplorasi</button>
-        </section>
-
-        <!-- PROFILE -->
-        <section id="profile" class="section-wrapper py-32">
-            <div class="max-w-5xl mx-auto px-8 grid md:grid-cols-2 gap-20 items-center">
-                <div class="relative">
-                    <div class="aspect-[3/4] bg-stone-200 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80" class="w-full h-full object-cover">
-                    </div>
-                    <div class="absolute -bottom-10 -right-10 w-64 h-64 border-2 border-gold -z-10"></div>
+        <!-- HOME SECTION -->
+        <section id="home" class="section-wrapper active-section min-h-screen flex items-center px-20 relative overflow-hidden">
+            <div class="bg-text top-0 left-0">DIGITAL BUSINESS</div>
+            <div class="grid-custom w-full">
+                <div class="grid col-span-8">
+                    <h1 class="serif text-[8vw] leading-[0.9] text-emerald-900">Umdatu <br> <span class="italic font-light ml-20 text-stone-400">Rosdiyana</span></h1>
+                    <p class="mt-10 max-w-md text-stone-500 uppercase tracking-widest text-xs leading-loose">
+                        Mahasiswa Digital Business dengan konsentrasi Startup Development. Memadukan estetika visual dengan strategi data.
+                    </p>
                 </div>
-                <div>
-                    <h2 class="serif text-5xl mb-8 italic">About Me</h2>
-                    <div class="space-y-6 text-stone-500 leading-loose font-light">
-                        <p>Saya adalah seseorang yang memiliki minat dalam bidang startup, bisnis digital, dan teknologi. Saya tertarik mempelajari bagaimana sebuah ide dapat dikembangkan menjadi produk nyata.</p>
-                        <p>Pengalaman membangun website dan aplikasi sederhana membuat saya semakin antusias untuk terus berkembang di industri kreatif berbasis digital.</p>
+                <div class="col-span-4 relative">
+                    <div class="w-full aspect-[3/4] bg-stone-300 grayscale hover:grayscale-0 transition duration-1000 shadow-2xl rotate-3 hover:rotate-0">
+                        <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&q=80" class="w-full h-full object-cover">
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- KEAHLIAN -->
-        <section id="skills" class="section-wrapper py-32 bg-stone-100">
-            <div class="max-w-7xl mx-auto px-8">
-                <div class="flex flex-col items-center mb-20 text-center">
-                    <h2 class="serif text-5xl italic mb-4">Core Expertise</h2>
-                    <p class="text-stone-400 text-xs tracking-widest uppercase">Skils & Kapabilitas</p>
-                </div>
-                <div class="grid md:grid-cols-3 gap-12">
-                    <div class="glass p-12 text-center group hover:bg-emerald-900 transition duration-700">
-                        <i class="fas fa-terminal text-gold text-3xl mb-8 group-hover:text-white"></i>
-                        <h3 class="serif text-2xl mb-4 group-hover:text-white italic">Application Development</h3>
-                    </div>
-                    <div class="glass p-12 text-center group hover:bg-emerald-900 transition duration-700">
-                        <i class="fas fa-chart-pie text-gold text-3xl mb-8 group-hover:text-white"></i>
-                        <h3 class="serif text-2xl mb-4 group-hover:text-white italic">Operational Management</h3>
-                    </div>
-                    <div class="glass p-12 text-center group hover:bg-emerald-900 transition duration-700">
-                        <i class="fas fa-file-invoice-dollar text-gold text-3xl mb-8 group-hover:text-white"></i>
-                        <h3 class="serif text-2xl mb-4 group-hover:text-white italic">Excel & Data Analysis</h3>
+        <!-- PROFILE / ABOUT -->
+        <section id="profile" class="section-wrapper min-h-screen py-40 px-20">
+            <div class="max-w-4xl">
+                <h2 class="text-xs tracking-[10px] uppercase text-gold mb-20">— The Narrative</h2>
+                <div class="relative">
+                    <p class="serif text-5xl leading-tight text-emerald-900">
+                        "Saya percaya bahwa <span class="italic text-stone-400">teknologi</span> adalah kanvas, dan <span class="italic text-stone-400">bisnis</span> adalah cara kita melukis masa depan."
+                    </p>
+                    <div class="mt-20 grid grid-cols-2 gap-20">
+                        <div class="text-stone-500 font-light leading-relaxed">
+                            Fokus saya adalah memahami bagaimana sebuah ide dapat dikembangkan menjadi produk nyata melalui pendekatan digital yang elegan dan efisien.
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex justify-between border-b border-stone-200 pb-2">
+                                <span class="text-[10px] uppercase tracking-widest">Skill 01</span>
+                                <span class="serif italic">Development</span>
+                            </div>
+                            <div class="flex justify-between border-b border-stone-200 pb-2">
+                                <span class="text-[10px] uppercase tracking-widest">Skill 02</span>
+                                <span class="serif italic">Management</span>
+                            </div>
+                            <div class="flex justify-between border-b border-stone-200 pb-2">
+                                <span class="text-[10px] uppercase tracking-widest">Skill 03</span>
+                                <span class="serif italic">Analysis</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- PORTFOLIO -->
-        <section id="portfolio" class="section-wrapper py-32">
-            <div class="max-w-7xl mx-auto px-8">
-                <h2 class="serif text-5xl italic mb-20 text-center">Featured Projects</h2>
-                <div class="grid md:grid-cols-3 gap-16">
-                    <!-- Project 1 -->
-                    <div class="group cursor-pointer">
-                        <div class="overflow-hidden mb-6 bg-stone-200">
-                            <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&q=80" class="w-full h-80 object-cover group-hover:scale-110 transition duration-1000">
+        <section id="portfolio" class="section-wrapper min-h-screen py-40 px-20">
+            <div class="grid-custom">
+                <div class="col-span-12 mb-20 flex justify-between items-end">
+                    <h2 class="serif text-7xl italic">Selected Works</h2>
+                    <span class="text-[10px] tracking-widest text-stone-400">2025 — 2026</span>
+                </div>
+                
+                <!-- Project Card 1: Maison de Bakes -->
+                <div class="col-span-7 hover-reveal">
+                    <div class="bg-white p-6 shadow-sm">
+                        <div class="aspect-video bg-stone-100 mb-8 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&q=80" class="w-full h-full object-cover">
                         </div>
-                        <h4 class="serif text-2xl italic mb-2">Maison de Bakes</h4>
-                        <p class="text-stone-400 text-xs mb-4">E-Commerce Prototype</p>
-                        <a href="https://umdaturosdiyana.github.io/Maison-de-bakes/" target="_blank" class="text-[10px] tracking-widest text-gold border-b border-gold pb-1">LIHAT DETAIL</a>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <h3 class="serif text-3xl">Maison de Bakes</h3>
+                                <p class="text-[10px] tracking-widest text-stone-400 uppercase mt-2">Digital Bakery Store</p>
+                            </div>
+                            <a href="https://umdaturosdiyana.github.io/Maison-de-bakes/" class="w-12 h-12 rounded-full border border-stone-200 flex items-center justify-center hover:bg-emerald-900 hover:text-white transition">
+                                <i class="fas fa-arrow-right -rotate-45"></i>
+                            </a>
+                        </div>
                     </div>
-                    <!-- Project 2 -->
-                    <div class="group">
-                        <div class="overflow-hidden mb-6 bg-stone-200">
-                            <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80" class="w-full h-80 object-cover grayscale">
-                        </div>
-                        <h4 class="serif text-2xl italic mb-2">Aplikasi Sederhana</h4>
-                        <p class="text-stone-400 text-xs mb-4">Latihan Pengembangan</p>
-                    </div>
-                    <!-- Project 3 -->
-                    <div class="group">
-                        <div class="overflow-hidden mb-6 bg-stone-200">
-                            <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&q=80" class="w-full h-80 object-cover grayscale">
-                        </div>
-                        <h4 class="serif text-2xl italic mb-2">Desain Logo</h4>
-                        <p class="text-stone-400 text-xs mb-4">Identitas Visual</p>
+                </div>
+
+                <!-- Small Project -->
+                <div class="col-span-4 col-start-9 mt-40 hover-reveal">
+                    <div class="bg-emerald-900 p-10 text-white">
+                        <h3 class="serif text-2xl italic mb-4">SIPERKAT System</h3>
+                        <p class="text-xs leading-loose text-stone-400">
+                            Digital monitoring system dengan fitur geofencing dan gamifikasi.
+                        </p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- BUSINESS IDEA -->
-        <section id="business" class="section-wrapper py-32 bg-emerald-900 text-stone-100">
-            <div class="max-w-6xl mx-auto px-8 grid md:grid-cols-2 gap-0 items-stretch">
-                <div class="p-16 flex flex-col justify-center border border-white/10">
-                    <span class="text-gold tracking-[8px] text-[10px] mb-8 block uppercase">Innovation Idea</span>
-                    <h2 class="serif text-5xl mb-8 italic">Maison de Bakes</h2>
-                    <div class="space-y-6 text-stone-300 font-light text-sm leading-loose">
-                        <p><strong class="text-gold uppercase tracking-widest text-[10px] block mb-1">Filosofi:</strong> "Maison" berarti rumah dalam bahasa Prancis.</p>
-                        <p><strong class="text-gold uppercase tracking-widest text-[10px] block mb-1">Target:</strong> Remaja, mahasiswa, hingga ibu rumah tangga.</p>
-                        <p><strong class="text-gold uppercase tracking-widest text-[10px] block mb-1">Value:</strong> Pemesanan praktis dan cepat via web.</p>
+        <!-- STARTUP IDEA -->
+        <section id="idea" class="section-wrapper min-h-screen py-40 px-20 bg-emerald-900 text-white relative">
+            <div class="bg-text top-0 right-0 !text-white/5">INNOVATION</div>
+            <div class="max-w-4xl">
+                <span class="text-gold tracking-[10px] uppercase text-[10px] mb-10 block">Thesis Concept</span>
+                <h2 class="serif text-8xl mb-20 leading-none">Maison <br> <span class="italic text-gold ml-20">De Bakes.</span></h2>
+                <div class="grid grid-cols-2 gap-20">
+                    <div class="space-y-10">
+                        <p class="text-lg font-light leading-relaxed">
+                            Menghubungkan kehangatan rumah dengan efisiensi teknologi digital melalui platform e-bakery yang terintegrasi.
+                        </p>
+                        <div class="flex space-x-4">
+                            <div class="px-6 py-2 border border-white/20 rounded-full text-[10px] tracking-widest uppercase">Target: Gen Z</div>
+                            <div class="px-6 py-2 border border-white/20 rounded-full text-[10px] tracking-widest uppercase">Market: Digital</div>
+                        </div>
+                    </div>
+                    <div class="aspect-square bg-white/10 backdrop-blur-xl p-10 flex items-center justify-center">
+                        <i class="fas fa-lightbulb text-gold text-6xl opacity-50"></i>
                     </div>
                 </div>
-                <div class="bg-stone-300">
-                    <img src="https://images.unsplash.com/photo-1517433670267-08bbd4be890f?auto=format&fit=crop&q=80" class="w-full h-full object-cover">
-                </div>
             </div>
         </section>
 
-        <!-- CONTACT -->
-        <section id="contact" class="section-wrapper py-40 text-center">
-            <h2 class="serif text-6xl italic mb-16">Get in Touch</h2>
-            <div class="flex justify-center space-x-12">
-                <a href="https://wa.me/6289677414850" target="_blank" class="w-16 h-16 rounded-full border border-gold flex items-center justify-center hover:bg-gold hover:text-white transition duration-500">
-                    <i class="fab fa-whatsapp text-xl"></i>
-                </a>
-                <a href="https://instagram.com/leonaxyna" target="_blank" class="w-16 h-16 rounded-full border border-gold flex items-center justify-center hover:bg-gold hover:text-white transition duration-500">
-                    <i class="fab fa-instagram text-xl"></i>
-                </a>
-                <a href="https://tiktok.com/@_menelrch" target="_blank" class="w-16 h-16 rounded-full border border-gold flex items-center justify-center hover:bg-gold hover:text-white transition duration-500">
-                    <i class="fab fa-tiktok text-xl"></i>
-                </a>
-            </div>
-            <p class="mt-16 text-[10px] tracking-[4px] text-stone-400">&copy; 2026 UMDATU ROSDIYANA</p>
-        </section>
+    </main>
 
-    </div>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <script>
-        function filter(id) {
-            const container = document.body;
-            const sections = document.querySelectorAll('.section-wrapper');
-            const links = document.querySelectorAll('.nav-link');
+        // Custom Cursor Logic
+        const cursor = document.getElementById('cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
 
-            links.forEach(l => l.classList.remove('active'));
-            document.getElementById('link-' + id).classList.add('active');
-
-            if (id === 'all') {
-                container.classList.remove('filtered-view');
-            } else {
-                container.classList.add('filtered-view');
-                sections.forEach(s => {
-                    if(s.id === id) s.classList.add('active-section');
-                    else s.classList.remove('active-section');
-                });
-            }
+        // Navigation Logic
+        function showSec(id) {
+            document.querySelectorAll('.section-wrapper').forEach(s => s.classList.remove('active-section'));
+            document.getElementById(id).classList.add('active-section');
             window.scrollTo(0,0);
         }
+
+        // Hover effect for cursor
+        document.querySelectorAll('span, a, button').forEach(el => {
+            el.addEventListener('mouseenter', () => cursor.style.transform = 'scale(3)');
+            el.addEventListener('mouseleave', () => cursor.style.transform = 'scale(1)');
+        });
     </script>
 </body>
 </html>
