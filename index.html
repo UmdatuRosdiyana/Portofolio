@@ -3,99 +3,186 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio Digital | Startup Business Simulation</title>
+    <title>Portofolio Profesional | Umdatu Rosdiyana</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
+        :root {
+            --forest: #064e3b;
+            --gold: #d4af37;
+            --pearl: #fdfbf7;
+        }
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
-            color: #2d3436;
+            background-color: var(--pearl);
+            color: #1a1a1a;
+            scroll-behavior: smooth;
         }
+        .serif { font-family: 'Playfair Display', serif; }
+        
+        /* Glassmorphism Luxury Card */
         .glass-card {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 24px;
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 30px;
+            transition: all 0.5s ease;
         }
-        .accent-gold { color: #C5A059; }
-        .bg-soft-green { background-color: #E8F3ED; }
+        .glass-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 25px 50px rgba(6, 78, 59, 0.12);
+            border: 1px solid var(--gold);
+        }
+
+        /* Gold Accent Animation */
+        .gold-line {
+            height: 3px;
+            width: 60px;
+            background: var(--gold);
+            margin: 1rem auto;
+            border-radius: 2px;
+        }
+
+        /* Profile Image Ring */
+        .profile-ring {
+            border: 4px solid white;
+            box-shadow: 0 0 0 4px var(--gold), 0 15px 30px rgba(0,0,0,0.1);
+        }
     </style>
 </head>
 <body class="antialiased">
 
-    <nav class="fixed w-full z-50 px-6 py-4">
-        <div class="max-w-5xl mx-auto glass-card px-6 py-3 flex justify-between items-center">
-            <span class="font-bold tracking-tighter text-xl">UR.</span>
-            <div class="space-x-6 text-sm font-medium">
-                <a href="#home" class="hover:text-green-700 transition">Home</a>
-                <a href="#about" class="hover:text-green-700 transition">About</a>
-                <a href="#projects" class="hover:text-green-700 transition">Projects</a>
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 px-6 py-6">
+        <div class="max-w-5xl mx-auto glass-card px-8 py-4 flex justify-between items-center border-none shadow-lg">
+            <span class="serif text-2xl font-bold tracking-widest text-emerald-900">UR.</span>
+            <div class="hidden md:flex space-x-8 text-xs font-bold uppercase tracking-widest">
+                <a href="#home" class="hover:text-amber-600 transition">Beranda</a>
+                <a href="#about" class="hover:text-amber-600 transition">Profil</a>
+                <a href="#projects" class="hover:text-amber-600 transition">Portofolio</a>
+                <a href="#contact" class="hover:text-amber-600 transition">Kontak</a>
             </div>
         </div>
     </nav>
 
-    <section id="home" class="min-h-screen flex flex-col items-center justify-center pt-20 px-6">
-        <div class="glass-card p-8 max-w-2xl w-full text-center">
-            <div class="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-6 border-4 border-white shadow-sm overflow-hidden">
+    <!-- 1. Home Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center px-6">
+        <div class="glass-card p-12 max-w-3xl w-full text-center">
+            <div class="w-40 h-40 rounded-full mx-auto mb-8 overflow-hidden profile-ring">
                 <img src="foto-kamu.jpg" alt="Umdatu Rosdiyana" class="w-full h-full object-cover">
             </div>
-            <h1 class="text-3xl font-bold mb-2">Umdatu Rosdiyana</h1>
-            <p class="accent-gold font-medium mb-4">Digital Business Student & Aspiring Founder</p>
-            <p class="text-gray-500 text-sm leading-relaxed">Fokus pada inovasi Startup, Fintech, dan pengembangan ekosistem digital yang inklusif.</p>
+            <h1 class="serif text-4xl md:text-5xl mb-4 text-emerald-900">Umdatu Rosdiyana</h1>
+            <div class="gold-line"></div>
+            <p class="text-xl font-medium italic text-gray-600 mt-4 italic">
+                "Belajar, berkembang, dan membangun ide menjadi sesuatu yang nyata"
+            </p>
         </div>
     </section>
 
-    <section id="about" class="py-20 px-6 max-w-5xl mx-auto">
-        <div class="grid md:grid-cols-2 gap-8">
-            <div class="glass-card p-8">
-                <h2 class="text-xl font-bold mb-4">Tentang Saya</h2>
-                <p class="text-sm text-gray-600 leading-relaxed">
-                    Mahasiswa Bisnis Digital dengan konsentrasi Startup Development. Memiliki minat besar dalam membangun brand lokal melalui pendekatan teknologi modern.
-                </p>
-            </div>
-            <div class="glass-card p-8">
-                <h2 class="text-xl font-bold mb-4">Keahlian Utama</h2>
-                <div class="flex flex-wrap gap-2">
-                    <span class="px-3 py-1 bg-soft-green text-green-800 text-xs rounded-full font-semibold">Digital Marketing</span>
-                    <span class="px-3 py-1 bg-soft-green text-green-800 text-xs rounded-full font-semibold">Business Plan</span>
-                    <span class="px-3 py-1 bg-soft-green text-green-800 text-xs rounded-full font-semibold">Design Thinking</span>
-                    <span class="px-3 py-1 bg-soft-green text-green-800 text-xs rounded-full font-semibold">UI/UX Design</span>
+    <!-- 2. Profile Section -->
+    <section id="about" class="py-24 px-6 max-w-5xl mx-auto">
+        <div class="glass-card p-10 md:p-16">
+            <h2 class="serif text-3xl mb-8 text-center text-emerald-900 font-bold">Profil Profesional</h2>
+            <p class="text-gray-700 leading-relaxed text-center max-w-3xl mx-auto mb-10">
+                Saya adalah seseorang yang memiliki minat dalam bidang startup, bisnis digital, dan teknologi. Saya tertarik mempelajari bagaimana sebuah ide dapat dikembangkan menjadi produk atau usaha yang nyata. Pernah membuat website dan aplikasi sederhana membuat saya semakin tertarik untuk terus belajar dan membangun usaha sendiri yang berbasis digital ke depannya.
+            </p>
+            
+            <!-- 3. Keahlian -->
+            <div class="grid md:grid-cols-3 gap-6 text-center pt-8 border-t border-gold/20">
+                <div class="p-4">
+                    <i class="fas fa-code text-gold text-2xl mb-3"></i>
+                    <h4 class="font-bold text-sm uppercase mb-2">App Development</h4>
+                    <p class="text-xs text-gray-500">Basic Application Development</p>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects" class="py-20 px-6 max-w-5xl mx-auto">
-        <h2 class="text-2xl font-bold mb-10 text-center">Project & Startup Idea</h2>
-        <div class="grid md:grid-cols-2 gap-8">
-            <div class="glass-card overflow-hidden transition-transform hover:scale-[1.02]">
-                <div class="h-48 bg-gray-100 flex items-center justify-center">
-                    <span class="text-gray-400 italic">Maison de Bakes Branding</span>
+                <div class="p-4 border-x border-gold/10">
+                    <i class="fas fa-tasks text-gold text-2xl mb-3"></i>
+                    <h4 class="font-bold text-sm uppercase mb-2">Management</h4>
+                    <p class="text-xs text-gray-500">Basic Operational Management</p>
                 </div>
-                <div class="p-6">
-                    <h3 class="font-bold text-lg">Maison de Bakes</h3>
-                    <p class="text-xs text-gray-500 mb-4">Branding & Business Strategy</p>
-                    <p class="text-sm text-gray-600">Pengembangan identitas visual dan platform digital untuk bisnis bakery modern.</p>
-                </div>
-            </div>
-
-            <div class="glass-card overflow-hidden transition-transform hover:scale-[1.02]">
-                <div class="h-48 bg-soft-green flex items-center justify-center">
-                    <span class="text-green-800 font-semibold tracking-widest uppercase">SIPERKAT</span>
-                </div>
-                <div class="p-6">
-                    <h3 class="font-bold text-lg">SIPERKAT</h3>
-                    <p class="text-xs text-gray-500 mb-4">Digital Monitoring System</p>
-                    <p class="text-sm text-gray-600">Sistem monitoring organisasi berbasis Google Apps Script dengan fitur geofencing.</p>
+                <div class="p-4">
+                    <i class="fas fa-table text-gold text-2xl mb-3"></i>
+                    <h4 class="font-bold text-sm uppercase mb-2">Data Analysis</h4>
+                    <p class="text-xs text-gray-500">Basic Excel Skills</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="py-10 text-center text-gray-400 text-xs">
-        <p>© 2026 Umdatu Rosdiyana. Dibuat untuk Mata Kuliah Startup Business Simulation.</p>
+    <!-- 4. Portfolio Section -->
+    <section id="projects" class="py-24 px-6 max-w-6xl mx-auto">
+        <h2 class="serif text-4xl text-center mb-16 text-emerald-900">Project Terpilih</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Project 1 -->
+            <div class="glass-card overflow-hidden">
+                <div class="h-48 bg-emerald-900 flex items-center justify-center text-white">
+                    <i class="fas fa-store text-5xl"></i>
+                </div>
+                <div class="p-8">
+                    <h3 class="font-bold text-xl mb-3 text-emerald-900">Maison de Bakes</h3>
+                    <p class="text-sm text-gray-600 mb-6">Website pemesanan bakery dengan tampilan katalog dan sistem order via WhatsApp.</p>
+                    <a href="https://umdaturosdiyana.github.io/Maison-de-bakes/" target="_blank" class="text-gold font-bold text-xs uppercase tracking-widest hover:underline">Lihat Proyek →</a>
+                </div>
+            </div>
+            <!-- Project 2 -->
+            <div class="glass-card overflow-hidden">
+                <div class="h-48 bg-amber-600 flex items-center justify-center text-white">
+                    <i class="fas fa-mobile-alt text-5xl"></i>
+                </div>
+                <div class="p-8">
+                    <h3 class="font-bold text-xl mb-3 text-emerald-900">Aplikasi Sederhana</h3>
+                    <p class="text-sm text-gray-600 mb-6">Latihan pengembangan aplikasi mobile sederhana untuk memahami alur logika dasar sistem.</p>
+                </div>
+            </div>
+            <!-- Project 3 -->
+            <div class="glass-card overflow-hidden">
+                <div class="h-48 bg-emerald-800 flex items-center justify-center text-white">
+                    <i class="fas fa-pen-nib text-5xl"></i>
+                </div>
+                <div class="p-8">
+                    <h3 class="font-bold text-xl mb-3 text-emerald-900">Desain Logo</h3>
+                    <p class="text-sm text-gray-600 mb-6">Pembuatan identitas visual brand untuk melatih kemampuan dasar desain grafis.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Business Idea Section -->
+    <section class="py-24 bg-emerald-900 text-white px-6">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="serif text-4xl mb-12 text-center text-gold">Startup Idea: Maison de Bakes</h2>
+            <div class="grid md:grid-cols-2 gap-10">
+                <div class="glass-card p-8 bg-white/5 border-none">
+                    <h4 class="font-bold text-gold mb-4 uppercase tracking-widest text-sm">Produk & Pasar</h4>
+                    <p class="text-sm text-emerald-50 mb-4 leading-relaxed">Platform digital pemesanan cake dan dessert dengan target pasar remaja, mahasiswa, hingga ibu rumah tangga.</p>
+                </div>
+                <div class="glass-card p-8 bg-white/5 border-none">
+                    <h4 class="font-bold text-gold mb-4 uppercase tracking-widest text-sm">Value Proposition</h4>
+                    <p class="text-sm text-emerald-50 mb-4 leading-relaxed">Kemudahan akses katalog dan pemesanan praktis melalui integrasi langsung ke WhatsApp.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Contact Section -->
+    <footer id="contact" class="py-20 text-center px-6">
+        <h2 class="serif text-3xl mb-10 text-emerald-900">Mari Terhubung</h2>
+        <div class="flex justify-center space-x-10 mb-12">
+            <a href="https://wa.me/089677414850" target="_blank" class="text-3xl text-emerald-800 hover:text-gold transition">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="https://instagram.com/leonaxyna" target="_blank" class="text-3xl text-emerald-800 hover:text-gold transition">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://tiktok.com/@_menelrach" target="_blank" class="text-3xl text-emerald-800 hover:text-gold transition">
+                <i class="fab fa-tiktok"></i>
+            </a>
+        </div>
+        <p class="text-xs text-gray-400 uppercase tracking-widest">
+            &copy; 2026 Umdatu Rosdiyana. Startup Business Simulation Project.
+        </p>
     </footer>
 
 </body>
