@@ -3,215 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Umdatu Rosdiyana | Digital Business Profile</title>
+    <title>Umdatu Rosdiyana | Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #f8fafc;
-            color: #0f172a;
-            scroll-behavior: smooth;
-        }
-        .font-syne { font-family: 'Syne', sans-serif; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fdfcfd; color: #334155; }
+        .lilac-gradient { background: linear-gradient(135deg, #a855f7, #d8b4fe); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .bg-lilac-subtle { background-color: #f5f3ff; }
+        .lilac-border { border: 1px solid #e9d5ff; }
         
-        /* Blue Gradient Text & Accents */
-        .blue-gradient {
-            background: linear-gradient(135deg, #2563eb, #60a5fa);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        /* Bento Grid Custom Layout */
-        .bento-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-            max-width: 1200px;
-            margin: auto;
-        }
-
-        /* Advanced Card Design */
-        .bento-card {
-            background: #ffffff;
-            border-radius: 40px;
-            padding: 2.5rem;
-            border: 1px solid rgba(226, 232, 240, 0.8);
-            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .bento-card:hover {
-            transform: translateY(-10px) scale(1.01);
-            box-shadow: 0 40px 80px -20px rgba(37, 99, 235, 0.15);
-            border-color: #bfdbfe;
-        }
-
-        .blue-pill {
-            background: rgba(37, 99, 235, 0.08);
-            color: #2563eb;
-            border-radius: 100px;
-            padding: 8px 20px;
-            font-size: 11px;
-            font-weight: 800;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-        }
-
-        /* Decoration Shapes */
-        .shape-blob {
-            position: absolute;
-            width: 150px;
-            height: 150px;
-            background: #dbeafe;
-            filter: blur(50px);
-            border-radius: 50%;
-            z-index: 0;
-            opacity: 0.5;
-        }
-
-        @media (max-width: 1024px) {
-            .bento-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-        @media (max-width: 640px) {
-            .bento-grid { grid-template-columns: 1fr; }
-        }
+        /* Custom Bento Grid Styles */
+        .creative-card { background: #ffffff; border-radius: 32px; border: 1px solid #f3e8ff; transition: 0.4s; }
+        .creative-card:hover { border-color: #c084fc; box-shadow: 0 20px 40px -15px rgba(168, 85, 247, 0.15); }
+        
+        /* Navbar Blur */
+        .glass-nav { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(12px); }
     </style>
 </head>
-<body class="p-6 md:p-12">
+<body class="antialiased">
 
-    <!-- Navbar Minimalis Modern -->
-    <nav class="fixed top-8 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-2xl">
-        <div class="bg-white/80 backdrop-blur-xl border border-slate-200/60 px-10 py-5 rounded-full shadow-2xl flex justify-between items-center">
-            <span class="font-black text-xl blue-gradient">UR.</span>
-            <div class="flex space-x-8 text-[11px] font-bold uppercase tracking-[0.2em] text-slate-400">
-                <a href="#home" class="hover:text-blue-600 transition-colors">Home</a>
-                <a href="#about" class="hover:text-blue-600 transition-colors">About</a>
-                <a href="#projects" class="hover:text-blue-600 transition-colors">Work</a>
+    <nav class="fixed w-full z-50 top-6 px-6">
+        <div class="max-w-3xl mx-auto glass-nav border border-purple-100 rounded-full px-8 py-3 flex justify-between items-center shadow-sm">
+            <span class="font-bold text-lg lilac-gradient">UR.</span>
+            <div class="flex space-x-6 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500">
+                <a href="#home" class="hover:text-purple-600 transition">Home</a>
+                <a href="#about" class="hover:text-purple-600 transition">Profile</a>
+                <a href="#work" class="hover:text-purple-600 transition">Work</a>
+                <a href="#contact" class="hover:text-purple-600 transition">Contact</a>
             </div>
         </div>
     </nav>
 
-    <div class="bento-grid mt-32">
-        
-        <!-- 1. HOME & TAGLINE (Polesan Sedikit) -->
-        <div id="home" class="bento-card col-span-1 md:col-span-3 min-h-[480px] flex flex-col justify-end">
-            <div class="shape-blob -top-10 -left-10"></div>
-            <div class="relative z-10">
-                <div class="inline-block mb-8"><span class="blue-pill">Digital Business Strategy</span></div>
-                <h1 class="text-6xl md:text-8xl font-syne font-extrabold leading-[0.9] tracking-tighter mb-8">
-                    UMDATU <br><span class="blue-gradient">ROSDIYANA.</span>
-                </h1>
-                <p class="text-2xl text-slate-400 italic max-w-xl font-light">
-                    “Belajar, berkembang, dan membangun ide menjadi sesuatu yang nyata”
+    <section id="home" class="pt-48 pb-20 px-6 text-center">
+        <h1 class="text-6xl md:text-8xl font-extrabold tracking-tighter text-slate-900 mb-6">
+            Umdatu <span class="lilac-gradient">Rosdiyana</span>
+        </h1>
+        <p class="text-xl text-purple-400 max-w-lg mx-auto font-medium italic">
+            "Belajar, berkembang, dan membangun ide menjadi sesuatu yang nyata"
+        </p>
+    </section>
+
+    <section id="about" class="py-10 px-6 max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bento-card p-4 flex items-center justify-center overflow-hidden">
+                <img src="foto-kamu.jpg" alt="Profile" class="w-full h-full object-cover rounded-[24px]">
+            </div>
+            <div class="bento-card p-10 md:col-span-2">
+                <h3 class="text-blue-600 font-bold text-xs uppercase tracking-widest mb-4">The Profile</h3>
+                <p class="text-lg text-slate-600 leading-relaxed">
+                    Saya adalah mahasiswa Digital Business dengan minat besar di dunia startup dan teknologi. Ketertarikan saya berawal dari pengalaman membangun website dan aplikasi sederhana. Ke depannya, saya berkomitmen untuk terus berkembang dan membangun usaha sendiri yang berbasis digital.
                 </p>
             </div>
         </div>
-
-        <!-- 2. SOCIALS (Sidebar Style) -->
-        <div class="bento-card col-span-1 flex flex-col justify-between items-center bg-slate-900 border-none py-12 shadow-2xl">
-            <div class="w-px h-16 bg-gradient-to-b from-transparent to-blue-500 opacity-50"></div>
-            <div class="flex flex-col space-y-10">
-                <a href="https://wa.me/6289677414850" target="_blank" class="text-3xl text-white/50 hover:text-blue-400 hover:scale-125 transition-all"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://instagram.com/leonaxyna" target="_blank" class="text-3xl text-white/50 hover:text-blue-400 hover:scale-125 transition-all"><i class="fab fa-instagram"></i></a>
-                <a href="https://tiktok.com/@_menelrch" target="_blank" class="text-3xl text-white/50 hover:text-blue-400 hover:scale-125 transition-all"><i class="fab fa-tiktok"></i></a>
-            </div>
-            <p class="rotate-90 text-[10px] tracking-[0.8em] uppercase text-blue-500 font-black mt-4">Connect</p>
+    </section>
+    <section class="py-20 px-6 max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold mb-10 text-center">Expertise</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="creative-card p-8 text-center"><div class="text-purple-500 mb-4 text-2xl"><i class="fas fa-code"></i></div><h4 class="font-bold text-sm">App Development</h4></div>
+            <div class="creative-card p-8 text-center"><div class="text-purple-500 mb-4 text-2xl"><i class="fas fa-chart-line"></i></div><h4 class="font-bold text-sm">Operational Mgmt</h4></div>
+            <div class="creative-card p-8 text-center"><div class="text-purple-500 mb-4 text-2xl"><i class="fas fa-table"></i></div><h4 class="font-bold text-sm">Basic Excel</h4></div>
         </div>
+    </section>
 
-        <!-- 3. PROFILE (Desain yang kamu suka - Isinya tetap) -->
-        <div id="about" class="bento-card col-span-1 md:col-span-2 border-l-8 border-l-blue-500">
-            <h3 class="text-blue-600 font-black text-xs uppercase tracking-[0.4em] mb-8">01. Identity</h3>
-            <div class="space-y-6 text-lg text-slate-600 leading-relaxed">
-                <p>Saya adalah seseorang yang memiliki minat dalam bidang <span class="text-slate-900 font-bold">startup, bisnis digital, dan teknologi</span>. Saya tertarik mempelajari bagaimana sebuah ide dapat dikembangkan menjadi produk atau usaha yang nyata.</p>
-                <p>Saya pernah membuat website dan aplikasi sederhana, serta berhasil mempublikasikan website. Pengalaman tersebut membuat saya semakin tertarik untuk terus belajar dan mengembangkan kemampuan di bidang teknologi.</p>
-                <p class="text-slate-900 font-bold border-b-4 border-blue-100 inline-block">Ke depannya, saya ingin terus berkembang dan membangun usaha sendiri yang berbasis digital.</p>
-            </div>
-        </div>
-
-        <!-- 4. KEAHLIAN (Modern List Style) -->
-        <div class="bento-card col-span-1 md:col-span-2 bg-blue-50/30">
-            <h3 class="text-blue-600 font-black text-xs uppercase tracking-[0.4em] mb-10">02. Expertise</h3>
-            <div class="space-y-4">
-                <div class="group flex items-center justify-between p-5 bg-white rounded-3xl border border-blue-100/50 hover:bg-blue-600 transition-all duration-500 shadow-sm">
-                    <span class="font-bold text-slate-800 group-hover:text-white transition-colors">Basic Application Development</span>
-                    <i class="fas fa-terminal text-blue-200 group-hover:text-white/50"></i>
-                </div>
-                <div class="group flex items-center justify-between p-5 bg-white rounded-3xl border border-blue-100/50 hover:bg-blue-600 transition-all duration-500 shadow-sm">
-                    <span class="font-bold text-slate-800 group-hover:text-white transition-colors">Basic Operational Management</span>
-                    <i class="fas fa-project-diagram text-blue-200 group-hover:text-white/50"></i>
-                </div>
-                <div class="group flex items-center justify-between p-5 bg-white rounded-3xl border border-blue-100/50 hover:bg-blue-600 transition-all duration-500 shadow-sm">
-                    <span class="font-bold text-slate-800 group-hover:text-white transition-colors">Basic Excel</span>
-                    <i class="fas fa-table text-blue-200 group-hover:text-white/50"></i>
-                </div>
+    <section class="py-10 px-6 max-w-4xl mx-auto">
+        <div class="creative-card p-12 bg-purple-600 text-white border-none shadow-xl">
+            <h3 class="text-purple-200 text-xs font-bold uppercase tracking-widest mb-2">Startup Vision</h3>
+            <h2 class="text-4xl font-bold mb-6">Mansion de Bakes</h2>
+            <p class="italic opacity-80 mb-8 leading-relaxed max-w-lg">"Mansion terinspirasi dari Maison (Prancis) yang berarti rumah—mencerminkan kehangatan dalam setiap produk."</p>
+            <div class="grid grid-cols-2 gap-6 border-t border-purple-500 pt-8">
+                <div><p class="text-[10px] uppercase font-bold opacity-60">Layanan</p><p class="text-sm">Platform order via WhatsApp</p></div>
+                <div><p class="text-[10px] uppercase font-bold opacity-60">Target</p><p class="text-sm">Mahasiswa, Pekerja, Umum</p></div>
             </div>
         </div>
+    </section>
 
-        <!-- 5. STARTUP IDEA (Large Featured Card) -->
-        <div id="startup" class="bento-card col-span-1 md:col-span-4 bg-gradient-to-br from-blue-600 to-blue-800 text-white border-none">
-            <div class="relative z-10 flex flex-col md:flex-row gap-12 items-center">
-                <div class="flex-1">
-                    <span class="text-blue-200 font-black text-[10px] uppercase tracking-[0.6em] mb-6 block">The Visionary Concept</span>
-                    <h2 class="text-5xl font-syne font-extrabold mb-6 italic tracking-tighter">Mansion de Bakes</h2>
-                    <p class="text-blue-100 text-lg leading-relaxed mb-8 font-light italic">
-                        "Terinspirasi dari Maison (Prancis) yang berarti rumah—mencerminkan kehangatan dalam setiap produk yang dibuat."
-                    </p>
-                    <div class="flex flex-wrap gap-4">
-                        <div class="px-6 py-3 bg-white/10 backdrop-blur-md rounded-2xl border border-white/10">
-                            <p class="text-[10px] font-bold opacity-60 uppercase mb-1">Target</p>
-                            <p class="text-sm font-bold">Gen-Z & Professionals</p>
-                        </div>
-                        <div class="px-6 py-3 bg-white/10 backdrop-blur-md rounded-2xl border border-white/10">
-                            <p class="text-[10px] font-bold opacity-60 uppercase mb-1">Status</p>
-                            <p class="text-sm font-bold">Live Prototype</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-full md:w-1/3 bg-white p-10 rounded-[40px] text-slate-900 shadow-2xl">
-                    <h4 class="font-black text-xs uppercase tracking-widest text-blue-600 mb-4">Value Proposition</h4>
-                    <p class="text-sm leading-relaxed text-slate-500 italic">
-                        "Kemudahan katalog digital dan kepraktisan order via WhatsApp untuk pengalaman belanja bakery yang modern."
-                    </p>
-                </div>
+    <section id="work" class="py-20 px-6 max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold mb-12 text-center">Portfolio</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+            <a href="https://umdaturosdiyana.github.io/Maison-de-bakes/" class="creative-card p-8 md:col-span-2 group">
+                <h3 class="text-xl font-bold mb-3 group-hover:text-purple-600 transition">Mansion de Bakes</h3>
+                <p class="text-slate-500 text-sm">Prototype website katalog bakery dengan sistem order WhatsApp.</p>
+            </a>
+            <div class="space-y-6">
+                <div class="creative-card p-6"><h4 class="font-bold text-sm">Aplikasi Sederhana</h4></div>
+                <div class="creative-card p-6"><h4 class="font-bold text-sm">Desain Logo</h4></div>
             </div>
         </div>
+    </section>
 
-        <!-- 6. PORTFOLIO SECTION -->
-        <div id="projects" class="col-span-1 md:col-span-4 pt-16">
-            <h2 class="text-4xl font-syne font-black uppercase tracking-tighter">Creative <span class="blue-gradient">Projects</span></h2>
+    <footer id="contact" class="py-20">
+        <div class="flex justify-center gap-8">
+            <a href="https://wa.me/089677414850" class="w-16 h-16 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 hover:bg-purple-600 hover:text-white transition-all"><i class="fab fa-whatsapp text-2xl"></i></a>
+            <a href="https://instagram.com/leonaxyna" class="w-16 h-16 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 hover:bg-purple-600 hover:text-white transition-all"><i class="fab fa-instagram text-2xl"></i></a>
+            <a href="https://tiktok.com/@_menelrch" class="w-16 h-16 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 hover:bg-purple-600 hover:text-white transition-all"><i class="fab fa-tiktok text-2xl"></i></a>
         </div>
-
-        <!-- Main Project Link -->
-        <a href="https://umdaturosdiyana.github.io/Maison-de-bakes/" target="_blank" class="bento-card col-span-1 md:col-span-2 group border-2 border-blue-50">
-            <div class="flex justify-between items-start mb-12">
-                <div class="w-16 h-16 bg-blue-50 rounded-3xl flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500 shadow-inner">
-                    <i class="fas fa-arrow-up-right-from-square text-2xl"></i>
-                </div>
-                <span class="blue-pill">Live Website</span>
-            </div>
-            <h4 class="text-2xl font-black mb-4 group-hover:text-blue-600 transition-colors">Mansion de Bakes Website</h4>
-            <p class="text-slate-500 leading-relaxed italic">Prototype pemesanan bakery dengan katalog interaktif dan sistem direct-to-WhatsApp.</p>
-        </a>
-
-        <!-- Small Projects -->
-        <div class="bento-card col-span-1 border-dashed bg-slate-50/50">
-            <h4 class="font-bold text-lg mb-3 italic">Aplikasi Sederhana</h4>
-            <p class="text-xs text-slate-400 font-medium">Latihan logika pemrograman dasar untuk pengembangan aplikasi digital masa depan.</p>
-        </div>
-        <div class="bento-card col-span-1 border-dashed bg-slate-50/50">
-            <h4 class="font-bold text-lg mb-3 italic">Desain Logo</h4>
-            <p class="text-xs text-slate-400 font-medium">Eksperimen branding visual untuk melatih kepekaan estetika dan identitas bisnis.</p>
-        </div>
-
-    </div>
-
-    <!-- Footer Modern -->
-    <footer class="mt-32 pb-16 text-center">
-        <p class="text-[11px] font-black text-slate-300 tracking-[1.5em] uppercase mb-6">Umdaturosdiyana &copy; 2026</p>
-        <div class="w-12 h-1 bg-blue-100 mx-auto rounded-full"></div>
     </footer>
 
 </body>
