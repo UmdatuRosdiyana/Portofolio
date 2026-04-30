@@ -3,187 +3,253 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Umdatu Rosdiyana | Portofolio Bisnis Digital</title>
+    <title>Umdatu Rosdiyana | Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --soft-pink: #fdf0ed;
-            --accent-pink: #f7cac9;
-            --deep-text: #2d2d2d;
+            --peach: #ffb5a7;
+            --soft-bg: #fff5f3;
         }
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            color: var(--deep-text);
-            background-color: #ffffff;
-        }
-        h1, h2, h3, .serif {
-            font-family: 'Playfair Display', serif;
-        }
-        .bg-soft { background-color: var(--soft-pink); }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; color: #333; }
+        h1, h2, h3, .serif { font-family: 'Playfair Display', serif; }
+        
         .nav-link {
-            font-size: 11px;
-            font-weight: 600;
+            font-size: 13px;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: 0.3s;
+            color: #666;
+        }
+        .nav-link:hover, .nav-link.active { color: var(--peach); font-weight: 600; }
+
+        .page-content { display: none; animation: fadeIn 0.8s ease; }
+        .page-content.active { display: block; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .btn-peach {
+            background-color: var(--peach);
+            color: white;
+            padding: 12px 35px;
+            font-size: 12px;
+            font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 1px;
-            color: #ffffff;
         }
-        .hero-overlay {
-            background: rgba(0, 0, 0, 0.3);
+        .section-header {
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: white;
+            text-align: center;
         }
-        .btn-peach {
-            background-color: var(--accent-pink);
-            transition: all 0.3s ease;
-        }
-        .btn-peach:hover {
-            background-color: #f2b1b0;
-            transform: translateY(-2px);
-        }
-        section { padding: 100px 20px; }
     </style>
 </head>
-<body>
+<body class="bg-white">
 
-    <!-- Transparent Navbar -->
-    <nav class="absolute w-full z-50 py-8 px-10 flex justify-between items-center">
-        <span class="text-2xl font-bold text-white tracking-tighter">UR.</span>
-        <div class="hidden md:flex space-x-8">
-            <a href="#home" class="nav-link">Home</a>
-            <a href="#profile" class="nav-link">About Me</a>
-            <a href="#skills" class="nav-link">Keahlian</a>
-            <a href="#portfolio" class="nav-link">Portfolio</a>
-            <a href="#idea" class="nav-link">Startup</a>
-            <a href="#contact" class="nav-link">Contact</a>
+    <!-- Header / Navbar (Mirip Screenshot 2026-04-30 103301.jpg) -->
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-10 py-6 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <span class="serif text-2xl font-bold border-r pr-3 border-gray-300">UR.</span>
+                <span class="text-[10px] uppercase tracking-widest leading-tight text-gray-500">Umdatu Rosdiyana<br>Digital Business</span>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <span onclick="showPage('home')" class="nav-link active" id="link-home">Home</span>
+                <span onclick="showPage('profile')" class="nav-link" id="link-profile">About Me</span>
+                <span onclick="showPage('skills')" class="nav-link" id="link-skills">Skills</span>
+                <span onclick="showPage('portfolio')" class="nav-link" id="link-portfolio">Portfolio</span>
+                <span onclick="showPage('business')" class="nav-link" id="link-business">Business Idea</span>
+                <span onclick="showPage('contact')" class="nav-link" id="link-contact">Contact</span>
+            </div>
         </div>
     </nav>
 
-    <!-- 1. Home / Hero -->
-    <div id="home" class="relative h-screen flex items-center justify-start px-10 md:px-32 bg-cover bg-center" style="background-image: url('foto-background-kamu.jpg');">
-        <div class="absolute inset-0 hero-overlay"></div>
-        <div class="relative z-10 max-w-2xl text-white">
-            <h1 class="text-6xl md:text-8xl mb-6 leading-tight">Happiness Depends upon Ourselves</h1>
-            <p class="text-lg font-light mb-8 opacity-90">"Belajar, berkembang, dan membangun ide menjadi sesuatu yang nyata"</p>
-            <a href="#profile" class="btn-peach text-white px-10 py-4 uppercase text-xs font-bold tracking-widest inline-block">Read More</a>
+    <!-- 1. HOME (Screenshot 2026-04-30 103301.jpg) -->
+    <div id="home" class="page-content active">
+        <div class="relative h-screen flex items-center bg-gray-100 overflow-hidden">
+            <!-- Background Image Mockup -->
+            <div class="absolute inset-0 bg-cover bg-center opacity-90" style="background-image: url('https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80');"></div>
+            <div class="absolute inset-0 bg-black/10"></div>
+            
+            <div class="max-w-7xl mx-auto px-10 w-full relative z-10">
+                <div class="max-w-2xl text-white">
+                    <h1 class="text-7xl mb-6 leading-tight">Belajar, berkembang, dan membangun ide menjadi sesuatu yang nyata</h1>
+                    <p class="text-lg mb-8 italic opacity-90">"</p>
+                    <button onclick="showPage('profile')" class="btn-peach">Read More</button>
+                </div>
+            </div>
         </div>
     </div>
 
-    <!-- 2. Profile Section -->
-    <section id="profile" class="max-w-6xl mx-auto">
-        <div class="grid md:grid-cols-2 gap-16 items-center">
-            <div class="relative">
-                <div class="absolute -top-4 -left-4 w-full h-full border-2 border-pink-100"></div>
-                <img src="foto-kamu.jpg" alt="Profile" class="relative z-10 w-full h-[600px] object-cover shadow-2xl">
-            </div>
-            <div>
-                <span class="text-pink-300 font-bold text-sm tracking-[0.5em] uppercase mb-4 block">About Me</span>
-                <h2 class="text-5xl mb-8">Hi, My Name Is Umdatu</h2>
-                <div class="text-gray-500 leading-relaxed space-y-6">
-                    <p>Saya adalah seseorang yang memiliki minat dalam bidang startup, bisnis digital, dan teknologi. Saya tertarik mempelajari bagaimana sebuah ide dapat dikembangkan menjadi produk atau usaha yang nyata.</p>
-                    <p>Pengalaman mempublikasikan website membuat saya semakin tertarik untuk terus belajar dan membangun usaha sendiri yang berbasis digital ke depannya.</p>
-                </div>
+    <!-- 2. PROFILE (Screenshot 2026-04-30 103421.png) -->
+    <div id="profile" class="page-content">
+        <div class="section-header" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80');">
+            <h2 class="text-5xl serif">About</h2>
+            <p class="mt-2 opacity-80 uppercase tracking-widest text-xs">Umdatu Rosdiyana</p>
+        </div>
+        <div class="max-w-4xl mx-auto px-10 py-24 text-center">
+            <div class="w-1 bg-pink-200 h-12 mx-auto mb-10"></div>
+            <h3 class="text-4xl mb-8 serif">Hai, Aku Umdatu Rosdiyana</h3>
+            <div class="text-gray-500 leading-relaxed space-y-6 text-lg">
+                <p>Saya adalah seseorang yang memiliki minat dalam bidang startup, bisnis digital, dan teknologi. Saya tertarik mempelajari bagaimana sebuah ide dapat dikembangkan menjadi produk atau usaha yang nyata.</p>
+                <p>Saya pernah membuat website dan aplikasi sederhana, serta berhasil mempublikasikan website. Pengalaman tersebut membuat saya semakin tertarik untuk terus belajar dan mengembangkan kemampuan di bidang teknologi.</p>
+                <p>Ke depannya, saya ingin terus berkembang dan membangun usaha sendiri yang berbasis digital.</p>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- 3. Keahlian (This Is What I Do) -->
-    <section id="skills" class="bg-white border-t border-gray-50">
-        <div class="text-center mb-20">
-            <h2 class="text-4xl mb-4">This Is What I Do</h2>
-            <div class="w-16 h-0.5 bg-pink-200 mx-auto"></div>
+    <!-- 3. KEAHLIAN (Screenshot 2026-04-30 103549.png) -->
+    <div id="skills" class="page-content pt-32">
+        <div class="max-w-6xl mx-auto px-10">
+            <div class="text-center mb-20">
+                <div class="w-1 bg-pink-200 h-10 mx-auto mb-6"></div>
+                <h2 class="text-4xl serif">This Is What I Do</h2>
+            </div>
+            <div class="grid md:grid-cols-3 gap-0 border-t border-gray-100">
+                <div class="p-16 text-center border-r border-gray-100 hover:bg-orange-50 transition">
+                    <div class="w-20 h-20 border border-pink-200 rounded-full flex items-center justify-center mx-auto mb-8">
+                        <i class="fas fa-laptop-code text-2xl text-pink-300"></i>
+                    </div>
+                    <h3 class="text-xl mb-4 serif">Basic Application Development</h3>
+                    <p class="text-gray-400 text-sm italic"></p>
+                </div>
+                <div class="p-16 text-center border-r border-gray-100 hover:bg-orange-50 transition">
+                    <div class="w-20 h-20 border border-pink-200 rounded-full flex items-center justify-center mx-auto mb-8">
+                        <i class="fas fa-tasks text-2xl text-pink-300"></i>
+                    </div>
+                    <h3 class="text-xl mb-4 serif">Basic Operational Management</h3>
+                    <p class="text-gray-400 text-sm italic"></p>
+                </div>
+                <div class="p-16 text-center hover:bg-orange-50 transition">
+                    <div class="w-20 h-20 border border-pink-200 rounded-full flex items-center justify-center mx-auto mb-8">
+                        <i class="fas fa-table text-2xl text-pink-300"></i>
+                    </div>
+                    <h3 class="text-xl mb-4 serif">Basic Excel</h3>
+                    <p class="text-gray-400 text-sm italic"></p>
+                </div>
+            </div>
         </div>
-        <div class="grid md:grid-cols-3 gap-0 max-w-7xl mx-auto border-t border-b border-pink-50">
-            <div class="p-20 text-center border-r border-pink-50 hover:bg-soft transition-all">
-                <i class="fas fa-laptop-code text-4xl mb-8 text-pink-200"></i>
-                <h3 class="text-2xl mb-4">I Develop</h3>
-                <p class="text-sm text-gray-400 font-light leading-relaxed">Basic Application Development</p>
-            </div>
-            <div class="p-20 text-center border-r border-pink-50 hover:bg-soft transition-all">
-                <i class="fas fa-briefcase text-4xl mb-8 text-pink-200"></i>
-                <h3 class="text-2xl mb-4">I Manage</h3>
-                <p class="text-sm text-gray-400 font-light leading-relaxed">Basic Operational Management</p>
-            </div>
-            <div class="p-20 text-center hover:bg-soft transition-all">
-                <i class="fas fa-file-invoice text-4xl mb-8 text-pink-200"></i>
-                <h3 class="text-2xl mb-4">I Analyze</h3>
-                <p class="text-sm text-gray-400 font-light leading-relaxed">Basic Excel Skills</p>
-            </div>
-        </div>
-    </section>
+    </div>
 
-    <!-- 4. Portfolio Grid -->
-    <section id="portfolio" class="max-w-7xl mx-auto">
-        <div class="text-center mb-16">
-            <h2 class="text-4xl mb-4">My Portfolio</h2>
-            <p class="text-gray-400 italic">Kumpulan karya dan proyek digital</p>
+    <!-- 4. PORTFOLIO (Screenshot 2026-04-30 103651.png) -->
+    <div id="portfolio" class="page-content">
+        <div class="section-header" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1454165833767-027ffea9e78b?auto=format&fit=crop&q=80');">
+            <h2 class="text-5xl serif">Projects</h2>
         </div>
-        <div class="grid md:grid-cols-3 gap-10">
-            <!-- Project 1 -->
-            <div class="group">
-                <div class="overflow-hidden mb-6 h-64 bg-gray-100">
-                    <img src="mansion-bakes.jpg" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700">
-                </div>
-                <h3 class="text-xl mb-2">Mansion de Bakes</h3>
-                <p class="text-gray-400 text-sm mb-4">Website pemesanan bakery dengan katalog dan WhatsApp order.</p>
-                <a href="https://umdaturosdiyana.github.io/Maison-de-bakes/" target="_blank" class="text-xs font-bold border-b border-pink-200 pb-1 uppercase tracking-widest">Live View</a>
+        <div class="max-w-7xl mx-auto px-10 py-24">
+            <div class="text-center mb-16">
+                <h3 class="text-3xl serif">My Courses & Work</h3>
+                <p class="text-gray-400 mt-2 text-sm italic">A selection of my recent projects</p>
             </div>
-            <!-- Project 2 -->
-            <div class="group">
-                <div class="overflow-hidden mb-6 h-64 bg-gray-100">
-                    <img src="app-dev.jpg" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700">
-                </div>
-                <h3 class="text-xl mb-2">Aplikasi Sederhana</h3>
-                <p class="text-gray-400 text-sm mb-4">Latihan pengembangan logika sistem dan antarmuka aplikasi.</p>
-            </div>
-            <!-- Project 3 -->
-            <div class="group">
-                <div class="overflow-hidden mb-6 h-64 bg-gray-100">
-                    <img src="logo-design.jpg" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700">
-                </div>
-                <h3 class="text-xl mb-2">Desain Logo</h3>
-                <p class="text-gray-400 text-sm mb-4">Pembuatan identitas visual untuk melatih estetika desain.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- 5. Business Idea Section -->
-    <section id="idea" class="bg-soft">
-        <div class="max-w-5xl mx-auto text-center px-10">
-            <span class="text-pink-300 font-bold text-xs tracking-[0.5em] uppercase mb-6 block">Startup Idea</span>
-            <h2 class="text-5xl mb-12">Mansion de Bakes</h2>
-            <div class="grid md:grid-cols-2 gap-16 text-left border-t border-white pt-16">
+            <div class="grid md:grid-cols-3 gap-12">
+                <!-- Project 1 -->
                 <div>
-                    <h4 class="serif text-2xl mb-4 italic">Filosofi & Layanan</h4>
-                    <p class="text-gray-500 text-sm leading-relaxed">Terinspirasi dari kata Maison (Rumah), mencerminkan bakery yang hangat. Kami menyediakan platform digital untuk pemesanan cake & dessert yang praktis.</p>
+                    <div class="bg-gray-100 h-64 mb-6 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1517433670267-08bbd4be890f?auto=format&fit=crop&q=80" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="text-xl serif mb-3">Mansion de Bakes</h4>
+                    <p class="text-gray-500 text-sm mb-4 leading-relaxed">Website pemesanan produk bakery dengan katalog dan sistem order WhatsApp,Dikembangkan sebagai prototype website untuk memudahkan proses pemesanan.</p>
+                    <a href="https://umdaturosdiyana.github.io/Maison-de-bakes/" target="_blank" class="btn-peach py-2 px-6 text-[10px]">View Project</a>
                 </div>
+                <!-- Project 2 -->
                 <div>
-                    <h4 class="serif text-2xl mb-4 italic">Target & Value</h4>
-                    <p class="text-gray-500 text-sm leading-relaxed">Menargetkan remaja hingga ibu rumah tangga dengan nilai kecepatan order melalui website prototype yang sudah dikembangkan.</p>
+                    <div class="bg-gray-100 h-64 mb-6 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="text-xl serif mb-3">Aplikasi Sederhana</h4>
+                    <p class="text-gray-500 text-sm mb-4 leading-relaxed">Membuat aplikasi sederhana sebagai latihan dalam memahami dasar pengembangan aplikasi.</p>
+                    <button class="btn-peach py-2 px-6 text-[10px] opacity-50 cursor-not-allowed">In Progress</button>
+                </div>
+                <!-- Project 3 -->
+                <div>
+                    <div class="bg-gray-100 h-64 mb-6 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&q=80" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="text-xl serif mb-3">Desain Logo</h4>
+                    <p class="text-gray-500 text-sm mb-4 leading-relaxed">Membuat desain logo sederhana sebagai bagian dari tugas proyek untuk melatih kemampuan dasar dalam desain.</p>
+                    <button class="btn-peach py-2 px-6 text-[10px] opacity-50 cursor-not-allowed">View Design</button>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- 6. Contact Section -->
-    <section id="contact" class="max-w-4xl mx-auto text-center">
-        <h2 class="text-5xl mb-16">Contact Me</h2>
-        <div class="flex justify-center space-x-12 mb-20">
-            <a href="https://wa.me/089677414850" target="_blank" class="text-gray-300 hover:text-pink-300 transition text-4xl"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://instagram.com/leonaxyna" target="_blank" class="text-gray-300 hover:text-pink-300 transition text-4xl"><i class="fab fa-instagram"></i></a>
-            <a href="https://tiktok.com/@_menelrch" target="_blank" class="text-gray-300 hover:text-pink-300 transition text-4xl"><i class="fab fa-tiktok"></i></a>
+    <!-- 5. BUSINESS IDEA (Screenshot 2026-04-30 103757.jpg) -->
+    <div id="business" class="page-content">
+        <div class="section-header" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1556742044-3c52d6e88c62?auto=format&fit=crop&q=80');">
+            <h2 class="text-5xl serif">Startup Idea</h2>
         </div>
-        <div class="bg-soft p-16">
-            <p class="text-gray-400 text-xs tracking-[0.5em] uppercase">Subscribe to My Newsletter</p>
-            <div class="mt-8 flex max-w-md mx-auto border-b border-gray-200 pb-2">
-                <input type="email" placeholder="Enter your email" class="bg-transparent w-full text-sm outline-none px-4">
-                <button class="text-xs font-bold uppercase tracking-widest text-pink-300">Submit</button>
+        <div class="max-w-6xl mx-auto px-10 py-24">
+            <div class="grid md:grid-cols-2 gap-0 items-center border border-gray-100">
+                <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&q=80" class="w-full h-[500px] object-cover">
+                <div class="p-16 bg-orange-50/30">
+                    <span class="text-pink-300 text-6xl serif italic opacity-50 block mb-4">01</span>
+                    <h3 class="text-3xl serif mb-6">Mansion de Bakes</h3>
+                    <p class="text-gray-600 leading-relaxed italic mb-6">"Maison" (Prancis) berarti rumah, mencerminkan bakery yang hangat dan penuh makna.</p>
+                    <div class="space-y-4">
+                        <p class="text-sm"><strong class="uppercase tracking-widest text-[10px]">Produk/ Layanan:</strong> Platform digital sederhana untuk menampilkan dan memesan produk bakery seperti cake dan dessert, dengan sistem pemesanan langsung melalui WhatsApp.</p>
+                        <p class="text-sm"><strong class="uppercase tracking-widest text-[10px]">Target:</strong> Berbagai kalangan, mulai dari remaja, mahasiswa, pekerja, hingga ibu rumah tangga dan masyarakat umum yang membutuhkan produk bakery untuk kebutuhan sehari-hari maupun momen spesial.</p>
+                        <p class="text-sm"><strong class="uppercase tracking-widest text-[10px]">value Proposition:</strong> Memberikan kemudahan dalam melihat produk dan melakukan pemesanan secara cepat melalui website, dengan tampilan yang sederhana dan proses order yang praktis.</p>
+                        <p class="text-sm"><strong class="uppercase tracking-widest text-[10px]">Pengembangan:</strong> Mansion de Bakes telah dikembangkan dalam bentuk website sederhana sebagai prototype untuk menampilkan produk dan memudahkan proses pemesanan.</p>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <footer class="py-10 text-center border-t border-gray-50">
-        <p class="text-[10px] text-gray-300 font-bold tracking-widest uppercase">&copy; 2026 Umdatu Rosdiyana. Digital Business Project.</p>
-    </footer>
+    <!-- 6. CONTACT (Screenshot 2026-04-30 103846.png) -->
+    <div id="contact" class="page-content py-40">
+        <div class="max-w-7xl mx-auto px-10 text-center">
+            <h2 class="text-6xl serif mb-12">Contact Me</h2>
+            <div class="flex justify-center space-x-12">
+                <a href="https://wa.me/6289677414850" target="_blank" class="group">
+                    <div class="w-20 h-20 rounded-full border border-gray-200 flex items-center justify-center group-hover:bg-pink-100 group-hover:border-pink-200 transition duration-300">
+                        <i class="fab fa-whatsapp text-3xl text-gray-400 group-hover:text-pink-400"></i>
+                    </div>
+                    <span class="text-[10px] uppercase tracking-widest mt-4 block text-gray-400">WhatsApp</span>
+                </a>
+                <a href="https://instagram.com/leonaxyna" target="_blank" class="group">
+                    <div class="w-20 h-20 rounded-full border border-gray-200 flex items-center justify-center group-hover:bg-pink-100 group-hover:border-pink-200 transition duration-300">
+                        <i class="fab fa-instagram text-3xl text-gray-400 group-hover:text-pink-400"></i>
+                    </div>
+                    <span class="text-[10px] uppercase tracking-widest mt-4 block text-gray-400">Instagram</span>
+                </a>
+                <a href="https://tiktok.com/@_menelrch" target="_blank" class="group">
+                    <div class="w-20 h-20 rounded-full border border-gray-200 flex items-center justify-center group-hover:bg-pink-100 group-hover:border-pink-200 transition duration-300">
+                        <i class="fab fa-tiktok text-3xl text-gray-400 group-hover:text-pink-400"></i>
+                    </div>
+                    <span class="text-[10px] uppercase tracking-widest mt-4 block text-gray-400">TikTok</span>
+                </a>
+            </div>
+        </div>
+    </div>
 
+    <script>
+        function showPage(pageId) {
+            // Sembunyikan semua halaman
+            const pages = document.querySelectorAll('.page-content');
+            pages.forEach(page => page.classList.remove('active'));
+
+            // Tampilkan halaman yang dipilih
+            document.getElementById(pageId).classList.add('active');
+
+            // Update status link di navbar
+            const links = document.querySelectorAll('.nav-link');
+            links.forEach(link => link.classList.remove('active'));
+            document.getElementById('link-' + pageId).classList.add('active');
+
+            // Scroll ke atas otomatis
+            window.scrollTo(0, 0);
+        }
+    </script>
 </body>
 </html>
