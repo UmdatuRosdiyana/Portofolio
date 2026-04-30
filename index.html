@@ -13,6 +13,7 @@
         .premium-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.08); border-color: #cb997e; }
         .nav-active { color: #cb997e !important; font-weight: 800; border-bottom: 2px solid #cb997e; }
         .soft-text-gradient { background: linear-gradient(135deg, #6b705c, #cb997e); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .all-sec { display: block; }
     </style>
 </head>
 <body class="antialiased">
@@ -20,24 +21,22 @@
     <nav class="fixed w-full z-50 top-6 px-6">
         <div class="max-w-4xl mx-auto bg-white/70 backdrop-blur-2xl rounded-full px-8 py-4 flex justify-between items-center shadow-sm border border-stone-100">
             <div class="hidden md:flex space-x-10 text-[10px] font-bold uppercase tracking-[0.2em] text-stone-400">
-                <a href="javascript:void(0)" onclick="showSection('all')" id="nav-all" class="hover:text-stone-800 transition nav-active">Home</a>
-                <a href="javascript:void(0)" onclick="showSection('profile')" id="nav-profile" class="hover:text-stone-800 transition">Profile</a>
-                <a href="javascript:void(0)" onclick="showSection('expertise')" id="nav-expertise" class="hover:text-stone-800 transition">Skill</a>
-                <a href="javascript:void(0)" onclick="showSection('work')" id="nav-work" class="hover:text-stone-800 transition">Portfolio</a>
-                <a href="javascript:void(0)" onclick="showSection('startup')" id="nav-startup" class="hover:text-stone-800 transition">Business Idea</a>
-                <a href="javascript:void(0)" onclick="showSection('contact')" id="nav-contact" class="hover:text-stone-800 transition">Contact</a>
+                <a href="javascript:void(0)" onclick="showSection('home-sec')" id="nav-home" class="hover:text-stone-800 transition nav-active">Home</a>
+                <a href="javascript:void(0)" onclick="showSection('profile-sec')" id="nav-profile" class="hover:text-stone-800 transition">Profile</a>
+                <a href="javascript:void(0)" onclick="showSection('work-sec')" id="nav-work" class="hover:text-stone-800 transition">Portfolio</a>
+                <a href="javascript:void(0)" onclick="showSection('startup-sec')" id="nav-startup" class="hover:text-stone-800 transition">Business Idea</a>
+                <a href="javascript:void(0)" onclick="showSection('contact-sec')" id="nav-contact" class="hover:text-stone-800 transition">Contact</a>
             </div>
             <button class="md:hidden text-stone-600 text-xl" onclick="toggleMobileMenu()">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
         <div id="mobile-menu" class="hidden md:hidden mt-4 mx-6 bg-white rounded-2xl shadow-lg border border-stone-100 p-6 flex flex-col space-y-4 text-center text-xs font-bold uppercase tracking-[0.2em] text-stone-600">
-            <a href="javascript:void(0)" onclick="showSection('all'); toggleMobileMenu()">Home</a>
-            <a href="javascript:void(0)" onclick="showSection('profile'); toggleMobileMenu()">Profile</a>
-            <a href="javascript:void(0)" onclick="showSection('expertise'); toggleMobileMenu()">Skill</a>
-            <a href="javascript:void(0)" onclick="showSection('work'); toggleMobileMenu()">Portfolio</a>
-            <a href="javascript:void(0)" onclick="showSection('startup'); toggleMobileMenu()">Business Idea</a>
-            <a href="javascript:void(0)" onclick="showSection('contact'); toggleMobileMenu()">Contact</a>
+            <a href="javascript:void(0)" onclick="showSection('home-sec'); toggleMobileMenu()">Home</a>
+            <a href="javascript:void(0)" onclick="showSection('profile-sec'); toggleMobileMenu()">Profile</a>
+            <a href="javascript:void(0)" onclick="showSection('work-sec'); toggleMobileMenu()">Portfolio</a>
+            <a href="javascript:void(0)" onclick="showSection('startup-sec'); toggleMobileMenu()">Business Idea</a>
+            <a href="javascript:void(0)" onclick="showSection('contact-sec'); toggleMobileMenu()">Contact</a>
         </div>
     </nav>
 
@@ -65,10 +64,10 @@
                     </div>
                 </div>
                 <div class="flex-grow">
-                    <span class="text-[#cb997e] font-bold text-[10px] uppercase tracking-[0.3em]">About Me</span>
-                    <h3 class="text-3xl font-bold text-stone-900 mt-2 mb-6">Tentang Saya</h3>
+                    <span class="text-[#cb997e] font-bold text-[10px] uppercase tracking-[0.3em]"></span>
+                    <h3 class="text-3xl font-bold text-stone-900 mt-2 mb-6"></h3>
                     <p class="text-stone-600 leading-loose text-lg font-light text-justify">
-                        Saya adalah seseorang yang memiliki minat dalam bidang startup, bisnis digital, dan teknologi. Saya tertarik mempelajari bagaimana sebuah ide dapat dikembangkan menjadi produk atau usaha yang nyata. Saya pernah membuat website dan aplikasi sederhana, serta berhasil mempublikasikan website. Pengalaman tersebut membuat saya semakin tertarik untuk terus belajar dan mengembangkan kemampuan di bidang teknologi. Ke depannya, saya ingin terus berkembang dan membangun usaha sendiri yang berbasis digital.
+                        Saya adalah seseorang yang memiliki minat dalam bidang startup, bisnis digital, dan teknologi. Saya tertarik mempelajari bagaimana sebuah ide dapat dikembangkan menjadi produk atau usaha yang nyata. Saya pernah membuat website dan aplikasi sederhana, serta berhasil mempublikasikan website. Pengalaman tersebut membuat saya semakin tertarik untuk terus belajar dan mengembangkan kemampuan di bidang teknologi.
                     </p>
                 </div>
             </div>
@@ -77,37 +76,24 @@
         <section id="work-sec" class="all-sec mb-20">
             <h2 class="text-xs font-bold text-stone-400 uppercase tracking-[0.4em] mb-12 text-center">Portfolio / Project</h2>
             <div class="space-y-8">
-                
                 <div class="premium-card grid grid-cols-1 md:grid-cols-2 overflow-hidden items-center">
                     <div class="h-64 md:h-full bg-stone-200">
-                        <img src="bakery.jpeg" alt="Project 1" class="w-full h-full object-cover">
+                        <img src="bakery.jpeg" alt="Website" class="w-full h-full object-cover">
                     </div>
                     <div class="p-10 md:p-16">
                         <h3 class="text-3xl font-bold text-stone-900 mb-4">Pengembangan Website</h3>
-                        <p class="text-stone-500 leading-relaxed mb-6">Website pemesanan produk bakery dengan tampilan katalog yang menarik dan sistem pemesanan terintegrasi langsung ke WhatsApp. Website ini membantu meningkatkan visibilitas bisnis dan mempermudah pelanggan dalam memesan produk.</p>
+                        <p class="text-stone-500 leading-relaxed mb-6">Website pemesanan produk bakery dengan katalog digital dan integrasi WhatsApp untuk memudahkan pelanggan.</p>
                     </div>
                 </div>
-
                 <div class="premium-card grid grid-cols-1 md:grid-cols-2 overflow-hidden items-center">
                     <div class="p-10 md:p-16 md:order-1 order-2">
                         <h3 class="text-3xl font-bold text-stone-900 mb-4">Desain Logo</h3>
-                        <p class="text-stone-500 leading-relaxed mb-6">Membuat desain logo sederhana sebagai bagian dari tugas proyek untuk melatih kemampuan dasar dalam desain dan branding.</p>
+                        <p class="text-stone-500 leading-relaxed mb-6">Pembuatan identitas visual sederhana sebagai bagian dari branding startup.</p>
                     </div>
                     <div class="h-64 md:h-full bg-stone-200 md:order-2 order-1">
-                        <img src="logo.jpeg" alt="Project 2" class="w-full h-full object-cover">
+                        <img src="logo.jpeg" alt="Logo" class="w-full h-full object-cover">
                     </div>
                 </div>
-
-                 <div class="premium-card grid grid-cols-1 md:grid-cols-2 overflow-hidden items-center">
-                    <div class="h-64 md:h-full bg-stone-200">
-                        <img src="apk.jpeg" alt="Project 3" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-10 md:p-16">
-                        <h3 class="text-3xl font-bold text-stone-900 mb-4">Aplikasi Sederhana</h3>
-                        <p class="text-stone-500 leading-relaxed mb-6">Membuat aplikasi sederhana sebagai latihan dalam memahami dasar pengembangan aplikasi dan logika pemrograman.</p>
-                    </div>
-                </div>
-
             </div>
         </section>
 
@@ -115,10 +101,21 @@
             <h2 class="text-xs font-bold text-stone-400 uppercase tracking-[0.4em] mb-12 text-center">Business Idea</h2>
             <div class="premium-card p-1 md:p-1 bg-gradient-to-br from-[#cb997e] to-[#a67c66] border-none shadow-xl">
                 <div class="bg-white p-10 md:p-16 rounded-[31px]">
-                    <div class="flex flex-col md:flex-row justify-between items-start mb-10">
+                    <h3 class="text-4xl font-bold text-stone-900 mb-6">Mansion de Bakes</h3>
+                    <p class="text-stone-500 text-lg italic mb-8">"Maison (Prancis) berarti rumah, mencerminkan bakery sebagai tempat yang hangat & penuh makna."</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 border-t border-stone-100 pt-8">
                         <div>
-                            <h3 class="text-5xl font-bold text-stone-900 mb-4">Mansion de Bakes</h3>
-                            <p class="text-stone-500 text-lg italic max-w-md">"Terinspirasi dari Maison (Prancis) berarti rumah, mencerminkan bakery sebagai tempat yang hangat & penuh makna."</p>
+                            <h4 class="font-bold text-stone-900 mb-2">Produk/Layanan</h4>
+                            <p class="text-stone-500 text-sm">Produk bakery (cake & dessert) dengan sistem pemesanan online melalui website & WhatsApp.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-stone-900 mb-2">Target Pasar</h4>
+                            <p class="text-stone-500 text-sm">Remaja, mahasiswa, dan pekerja yang menginginkan kemudahan pemesanan camilan secara cepat.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-stone-900 mb-2">Value Proposition</h4>
+                            <p class="text-stone-500 text-sm">Akses katalog digital yang mudah, tampilan UI bersih, dan proses order langsung (real-time) via WhatsApp.</p>
                         </div>
                     </div>
                 </div>
@@ -146,16 +143,10 @@
             const allNavs = document.querySelectorAll('nav a');
             allNavs.forEach(nav => nav.classList.remove('nav-active'));
             
-            if(id === 'all') {
-                allSections.forEach(sec => sec.style.display = 'block');
-                document.getElementById('nav-all').classList.add('nav-active');
-            } else {
-                allSections.forEach(sec => sec.style.display = 'none');
-                document.getElementById(id + '-sec').style.display = 'block';
-                // Menangani link di mobile menu agar tetap aktif
-                const activeNav = document.getElementById('nav-' + id);
-                if(activeNav) activeNav.classList.add('nav-active');
-            }
+            // Highlight active nav
+            const clickedNav = document.getElementById('nav-' + id.replace('-sec', ''));
+            if(clickedNav) clickedNav.classList.add('nav-active');
+
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
