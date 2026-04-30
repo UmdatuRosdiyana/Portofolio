@@ -3,180 +3,199 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Umdatu Rosdiyana | Portfolio</title>
+    <title>Umdatu Rosdiyana | Digital Business Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #fcfdfe;
-            color: #0f172a;
+            background-color: #fff5f7; /* Soft Pink Background */
+            color: #4a4e69;
             scroll-behavior: smooth;
         }
-        /* Apple-style Soft Shadow & Blur */
+        /* Glassmorphism & Modern Card */
         .bento-card {
-            background: #ffffff;
-            border: 1px solid rgba(226, 232, 240, 0.8);
-            border-radius: 32px;
-            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(255, 182, 193, 0.3);
+            border-radius: 28px;
+            padding: 2rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
         .bento-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 30px 60px -12px rgba(59, 130, 246, 0.12);
-            border-color: rgba(59, 130, 246, 0.3);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(255, 105, 180, 0.1);
+            border-color: #ffb6c1;
         }
-        .blue-gradient-text {
-            background: linear-gradient(135deg, #2563eb, #60a5fa);
+        .pink-gradient-text {
+            background: linear-gradient(135deg, #ff758c, #ff7eb3);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        .hero-pill {
-            background: rgba(59, 130, 246, 0.05);
-            border: 1px solid rgba(59, 130, 246, 0.1);
-            border-radius: 100px;
+        .nav-link {
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: #9a8c98;
+            transition: color 0.3s;
         }
+        .nav-link:hover { color: #ff758c; }
+        section { padding: 120px 20px; }
     </style>
 </head>
 <body class="antialiased">
 
-    <!-- Minimalist Navbar -->
+    <!-- Floating Navigation (6 Tabs) -->
     <nav class="fixed w-full z-50 top-6">
-        <div class="max-w-3xl mx-auto bg-white/70 backdrop-blur-xl border border-slate-200/50 rounded-full px-8 py-3 flex justify-between items-center shadow-sm">
-            <span class="font-bold text-lg tracking-tight blue-gradient-text">UR.</span>
-            <div class="flex space-x-8 text-[11px] font-bold uppercase tracking-[0.2em] text-slate-500">
-                <a href="#home" class="hover:text-blue-600 transition">Home</a>
-                <a href="#about" class="hover:text-blue-600 transition">About</a>
-                <a href="#work" class="hover:text-blue-600 transition">Work</a>
+        <div class="max-w-4xl mx-auto bg-white/80 backdrop-blur-xl border border-pink-100 rounded-full px-8 py-4 flex justify-between items-center shadow-sm">
+            <span class="font-black text-xl pink-gradient-text">UR.</span>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#profile" class="nav-link">Profile</a>
+                <a href="#skills" class="nav-link">Keahlian</a>
+                <a href="#work" class="nav-link">Portfolio</a>
+                <a href="#startup" class="nav-link">Business</a>
+                <a href="#contact" class="nav-link">Contact</a>
             </div>
         </div>
     </nav>
 
-    <!-- 1. Hero Section -->
-    <section id="home" class="pt-40 pb-20 px-6">
-        <div class="max-w-4xl mx-auto text-center">
-            <div class="inline-flex items-center px-4 py-1.5 hero-pill mb-8">
-                <span class="w-2 h-2 bg-blue-500 rounded-full animate-pulse mr-3"></span>
-                <span class="text-[10px] font-bold text-blue-600 uppercase tracking-widest">Available for Collaboration</span>
+    <!-- 1. Home Section -->
+    <section id="home" class="min-h-screen flex flex-col items-center justify-center text-center">
+        <div class="relative mb-10">
+            <div class="w-44 h-44 rounded-[40px] bg-gradient-to-tr from-pink-200 to-rose-300 absolute -rotate-6 scale-105"></div>
+            <div class="w-44 h-44 rounded-[40px] overflow-hidden relative shadow-lg">
+                <img src="foto-kamu.jpg" alt="Profile" class="w-full h-full object-cover">
             </div>
-            <h1 class="text-5xl md:text-7xl font-bold tracking-tight text-slate-900 mb-8">
-                Umdatu <span class="blue-gradient-text">Rosdiyana</span>
-            </h1>
-            <p class="text-xl text-slate-500 max-w-xl mx-auto leading-relaxed italic">
-                "Belajar, berkembang, dan membangun ide menjadi sesuatu yang nyata"
-            </p>
+        </div>
+        <h1 class="text-5xl md:text-7xl font-bold tracking-tight text-slate-900 mb-6">
+            Umdatu <span class="pink-gradient-text">Rosdiyana</span>
+        </h1>
+        <p class="text-xl text-slate-400 italic max-w-xl font-light leading-relaxed">
+            "Belajar, berkembang, dan membangun ide menjadi sesuatu yang nyata"
+        </p>
+    </section>
+
+    <!-- 2. Profile Section -->
+    <section id="profile" class="max-w-5xl mx-auto">
+        <h2 class="text-center font-bold text-pink-400 text-xs uppercase tracking-[0.4em] mb-12">Profile Overview</h2>
+        <div class="bento-card bg-white shadow-sm border-none">
+            <div class="grid md:grid-cols-3 gap-10">
+                <div class="md:col-span-2">
+                    <p class="text-lg text-slate-600 leading-relaxed mb-6">
+                        Saya adalah seseorang yang memiliki minat dalam bidang startup, bisnis digital, dan teknologi. Saya tertarik mempelajari bagaimana sebuah ide dapat dikembangkan menjadi produk atau usaha yang nyata.
+                    </p>
+                    <p class="text-lg text-slate-600 leading-relaxed">
+                        Pengalaman mempublikasikan website membuat saya semakin tertarik untuk terus belajar dan membangun usaha sendiri yang berbasis digital ke depannya.
+                    </p>
+                </div>
+                <div class="flex items-center justify-center p-6 bg-pink-50 rounded-3xl">
+                    <i class="fas fa-rocket text-5xl text-pink-300"></i>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- 2. Bento Profile & Skills -->
-    <section id="about" class="py-10 px-6 max-w-6xl mx-auto">
+    <!-- 3. Keahlian Section -->
+    <section id="skills" class="max-w-5xl mx-auto">
+        <h2 class="text-center font-bold text-pink-400 text-xs uppercase tracking-[0.4em] mb-12">My Expertise</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <!-- Photo Card -->
-            <div class="bento-card p-4 flex items-center justify-center overflow-hidden">
-                <img src="foto-kamu.jpg" alt="Profile" class="w-full h-full object-cover rounded-[24px]">
+            <div class="bento-card text-center group">
+                <div class="w-16 h-16 bg-pink-100 rounded-2xl flex items-center justify-center mx-auto mb-6 transition group-hover:bg-pink-400 group-hover:text-white">
+                    <i class="fas fa-layer-group text-2xl"></i>
+                </div>
+                <h3 class="font-bold text-slate-800">Basic App Development</h3>
             </div>
-            <!-- About Card -->
-            <div class="bento-card p-10 md:col-span-2">
-                <h3 class="text-blue-600 font-bold text-xs uppercase tracking-widest mb-4">The Profile</h3>
-                <p class="text-lg text-slate-600 leading-relaxed">
-                    Saya adalah mahasiswa Digital Business dengan minat besar di dunia startup dan teknologi. Ketertarikan saya berawal dari pengalaman membangun website dan aplikasi sederhana. Ke depannya, saya berkomitmen untuk terus berkembang dan membangun usaha digital sendiri.
-                </p>
+            <div class="bento-card text-center group">
+                <div class="w-16 h-16 bg-pink-100 rounded-2xl flex items-center justify-center mx-auto mb-6 transition group-hover:bg-pink-400 group-hover:text-white">
+                    <i class="fas fa-chart-line text-2xl"></i>
+                </div>
+                <h3 class="font-bold text-slate-800">Basic Operational Management</h3>
             </div>
-            <!-- Skills Card -->
-            <div class="bento-card p-10 bg-slate-900 text-white border-none">
-                <h3 class="text-blue-400 font-bold text-xs uppercase tracking-widest mb-8">Expertise</h3>
-                <div class="space-y-6">
+            <div class="bento-card text-center group">
+                <div class="w-16 h-16 bg-pink-100 rounded-2xl flex items-center justify-center mx-auto mb-6 transition group-hover:bg-pink-400 group-hover:text-white">
+                    <i class="fas fa-table text-2xl"></i>
+                </div>
+                <h3 class="font-bold text-slate-800">Basic Excel</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Portfolio Section -->
+    <section id="work" class="max-w-6xl mx-auto">
+        <h2 class="text-center font-bold text-pink-400 text-xs uppercase tracking-[0.4em] mb-12">Selected Projects</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bento-card flex flex-col">
+                <h3 class="font-bold text-lg mb-3">Mansion de Bakes</h3>
+                <p class="text-sm text-slate-500 mb-6 flex-grow">Website pemesanan bakery dengan tampilan katalog dan sistem order WhatsApp.</p>
+                <a href="https://umdaturosdiyana.github.io/Maison-de-bakes/" target="_blank" class="pink-gradient-text font-black text-[10px] uppercase tracking-tighter">View Website →</a>
+            </div>
+            <div class="bento-card">
+                <h3 class="font-bold text-lg mb-3">Aplikasi Sederhana</h3>
+                <p class="text-sm text-slate-500">Latihan dalam memahami dasar pengembangan aplikasi untuk alur logika sistem.</p>
+            </div>
+            <div class="bento-card">
+                <h3 class="font-bold text-lg mb-3">Desain Logo</h3>
+                <p class="text-sm text-slate-500">Pembuatan logo proyek untuk melatih kemampuan dasar branding dan estetika visual.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Business Idea Section -->
+    <section id="startup" class="max-w-6xl mx-auto">
+        <h2 class="text-center font-bold text-pink-400 text-xs uppercase tracking-[0.4em] mb-12">Business Concept</h2>
+        <div class="bento-card bg-white p-12 relative overflow-hidden">
+            <div class="absolute top-0 right-0 p-8 opacity-10">
+                <i class="fas fa-lightbulb text-9xl text-pink-500"></i>
+            </div>
+            <h3 class="text-3xl font-black mb-8 pink-gradient-text uppercase">Mansion de Bakes</h3>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="space-y-8">
                     <div>
-                        <p class="text-sm font-semibold mb-2">App Development</p>
-                        <div class="w-full bg-slate-800 h-1 rounded-full overflow-hidden">
-                            <div class="bg-blue-500 w-1/3 h-full"></div>
-                        </div>
+                        <h4 class="text-[10px] font-black text-pink-300 uppercase tracking-widest mb-2">Filosofi Nama</h4>
+                        <p class="text-sm italic">"Maison (Prancis) berarti rumah, mencerminkan bakery sebagai tempat yang hangat dan penuh makna."</p>
                     </div>
-                    <div>
-                        <p class="text-sm font-semibold mb-2">Management</p>
-                        <div class="w-full bg-slate-800 h-1 rounded-full overflow-hidden">
-                            <div class="bg-blue-400 w-1/2 h-full"></div>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="p-5 bg-pink-50 rounded-2xl shadow-inner">
+                            <h4 class="text-[9px] font-bold text-pink-400 uppercase mb-2">Target Pasar</h4>
+                            <p class="text-[11px] text-slate-600">Remaja, mahasiswa, hingga ibu rumah tangga.</p>
                         </div>
-                    </div>
-                    <div>
-                        <p class="text-sm font-semibold mb-2">Data Analysis (Excel)</p>
-                        <div class="w-full bg-slate-800 h-1 rounded-full overflow-hidden">
-                            <div class="bg-blue-300 w-1/2 h-full"></div>
+                        <div class="p-5 bg-pink-50 rounded-2xl shadow-inner">
+                            <h4 class="text-[9px] font-bold text-pink-400 uppercase mb-2">Value</h4>
+                            <p class="text-[11px] text-slate-600">Kemudahan order cepat secara praktis melalui website.</p>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- Startup Idea Card -->
-            <div class="bento-card p-10 bg-blue-50/50 border-blue-100 md:col-span-2">
-                <h3 class="text-blue-600 font-bold text-xs uppercase tracking-widest mb-4">Startup Vision</h3>
-                <h4 class="text-2xl font-bold mb-4 text-slate-800">Maison de Bakes</h4>
-                <p class="text-sm text-slate-500 leading-relaxed italic mb-6">
-                    "Maison (Prancis) berarti rumah, mencerminkan konsep bakery sebagai tempat yang hangat dan penuh makna"[cite: 1].
-                </p>
-                <div class="flex flex-wrap gap-3">
-                    <span class="px-4 py-2 bg-white rounded-full text-[10px] font-bold text-blue-600 shadow-sm border border-blue-50 uppercase">Digital Catalog</span>
-                    <span class="px-4 py-2 bg-white rounded-full text-[10px] font-bold text-blue-600 shadow-sm border border-blue-50 uppercase">WhatsApp Ordering</span>
+                <div class="space-y-6 flex flex-col justify-center">
+                    <div class="border-l-4 border-pink-100 pl-6">
+                        <h4 class="text-[10px] font-black text-pink-300 uppercase tracking-widest mb-2">Produk & Layanan</h4>
+                        <p class="text-sm text-slate-600">Platform digital untuk menampilkan dan memesan cake & dessert via WhatsApp.</p>
+                    </div>
+                    <div class="border-l-4 border-pink-100 pl-6">
+                        <h4 class="text-[10px] font-black text-pink-300 uppercase tracking-widest mb-2">Pengembangan</h4>
+                        <p class="text-sm text-slate-600">Telah dikembangkan dalam bentuk prototype website sederhana.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 3. Portfolio Projects -->
-    <section id="work" class="py-24 px-6 max-w-6xl mx-auto">
-        <div class="flex items-end justify-between mb-12">
-            <div>
-                <h2 class="text-3xl font-bold text-slate-900 mb-2">Portfolio</h2>
-                <p class="text-slate-500">Kumpulan proyek digital yang telah saya kembangkan[cite: 1].</p>
-            </div>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <!-- Project 1 -->
-            <a href="https://umdaturosdiyana.github.io/Maison-de-bakes/" target="_blank" class="bento-card group p-8 block">
-                <div class="flex justify-between items-start mb-6">
-                    <div class="w-12 h-12 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500">
-                        <i class="fas fa-external-link-alt"></i>
-                    </div>
-                    <span class="text-[10px] font-black text-slate-300 group-hover:text-blue-200 uppercase tracking-tighter">Live Web</span>
-                </div>
-                <h3 class="text-xl font-bold mb-3 group-hover:text-blue-600 transition">Maison de Bakes</h3>
-                <p class="text-sm text-slate-500 leading-relaxed mb-6">Prototype website katalog bakery dengan sistem pemesanan langsung melalui integrasi WhatsApp[cite: 1].</p>
+    <!-- 6. Contact Section -->
+    <footer id="contact" class="py-24 text-center">
+        <h2 class="font-bold text-pink-400 text-xs uppercase tracking-[0.4em] mb-12">Get In Touch</h2>
+        <div class="flex justify-center space-x-12 mb-16">
+            <a href="https://wa.me/089677414850" target="_blank" class="w-16 h-16 bg-white rounded-3xl flex items-center justify-center text-2xl text-slate-400 hover:text-green-500 hover:shadow-xl transition-all duration-300">
+                <i class="fab fa-whatsapp"></i>
             </a>
-            <!-- Project 2 & 3 Combined Mini -->
-            <div class="space-y-6">
-                <div class="bento-card p-8">
-                    <h3 class="font-bold mb-2">Aplikasi Sederhana</h3>
-                    <p class="text-xs text-slate-500">Latihan pengembangan aplikasi mobile untuk memahami alur logika dasar sistem digital[cite: 1].</p>
-                </div>
-                <div class="bento-card p-8">
-                    <h3 class="font-bold mb-2">Desain Identitas</h3>
-                    <p class="text-xs text-slate-500">Pembuatan desain logo untuk melatih kemampuan dasar branding dan estetika visual[cite: 1].</p>
-                </div>
-            </div>
+            <a href="https://instagram.com/leonaxyna" target="_blank" class="w-16 h-16 bg-white rounded-3xl flex items-center justify-center text-2xl text-slate-400 hover:text-pink-500 hover:shadow-xl transition-all duration-300">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://tiktok.com/@_menelrch" target="_blank" class="w-16 h-16 bg-white rounded-3xl flex items-center justify-center text-2xl text-slate-400 hover:text-black hover:shadow-xl transition-all duration-300">
+                <i class="fab fa-tiktok"></i>
+            </a>
         </div>
-    </section>
-
-    <!-- 4. Contact Footer -->
-    <footer class="py-20 bg-white border-t border-slate-100">
-        <div class="max-w-4xl mx-auto text-center px-6">
-            <h2 class="text-3xl font-bold mb-10">Mari Terhubung</h2>
-            <div class="flex justify-center space-x-12 mb-16">
-                <a href="https://wa.me/089677414850" class="group flex flex-col items-center">
-                    <i class="fab fa-whatsapp text-2xl text-slate-400 group-hover:text-green-500 transition-all duration-300"></i>
-                    <span class="text-[8px] font-bold text-slate-300 group-hover:text-green-500 uppercase mt-2">WhatsApp</span>
-                </a>
-                <a href="https://instagram.com/leonaxyna" class="group flex flex-col items-center">
-                    <i class="fab fa-instagram text-2xl text-slate-400 group-hover:text-pink-500 transition-all duration-300"></i>
-                    <span class="text-[8px] font-bold text-slate-300 group-hover:text-pink-500 uppercase mt-2">Instagram</span>
-                </a>
-                <a href="https://tiktok.com/@_menelrch" class="group flex flex-col items-center">
-                    <i class="fab fa-tiktok text-2xl text-slate-400 group-hover:text-black transition-all duration-300"></i>
-                    <span class="text-[8px] font-bold text-slate-300 group-hover:text-black uppercase mt-2">TikTok</span>
-                </a>
-            </div>
-            <p class="text-[10px] text-slate-400 font-semibold tracking-[0.4em] uppercase">
-                &copy; 2026 Umdatu Rosdiyana. Digital Business Project.
-            </p>
-        </div>
+        <p class="text-[10px] text-pink-300 font-bold tracking-[0.5em] uppercase">&copy; 2026 Umdatu Rosdiyana. Digital Business</p>
     </footer>
 
 </body>
