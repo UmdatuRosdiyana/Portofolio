@@ -13,7 +13,6 @@
         .premium-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.08); border-color: #cb997e; }
         .nav-active { color: #cb997e !important; font-weight: 800; border-bottom: 2px solid #cb997e; }
         .soft-text-gradient { background: linear-gradient(135deg, #6b705c, #cb997e); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .all-sec { display: block; }
     </style>
 </head>
 <body class="antialiased">
@@ -64,8 +63,8 @@
                     </div>
                 </div>
                 <div class="flex-grow">
-                    <span class="text-[#cb997e] font-bold text-[10px] uppercase tracking-[0.3em]"></span>
-                    <h3 class="text-3xl font-bold text-stone-900 mt-2 mb-6"></h3>
+                    <span class="text-[#cb997e] font-bold text-[10px] uppercase tracking-[0.3em]">About Me</span>
+                    <h3 class="text-3xl font-bold text-stone-900 mt-2 mb-6">Tentang Saya</h3>
                     <p class="text-stone-600 leading-loose text-lg font-light text-justify">
                         Saya adalah seseorang yang memiliki minat dalam bidang startup, bisnis digital, dan teknologi. Saya tertarik mempelajari bagaimana sebuah ide dapat dikembangkan menjadi produk atau usaha yang nyata. Saya pernah membuat website dan aplikasi sederhana, serta berhasil mempublikasikan website. Pengalaman tersebut membuat saya semakin tertarik untuk terus belajar dan mengembangkan kemampuan di bidang teknologi.
                     </p>
@@ -141,12 +140,25 @@
         function showSection(id) {
             const allSections = document.querySelectorAll('.all-sec');
             const allNavs = document.querySelectorAll('nav a');
+            
+            // 1. Reset Navigasi
             allNavs.forEach(nav => nav.classList.remove('nav-active'));
             
-            // Highlight active nav
-            const clickedNav = document.getElementById('nav-' + id.replace('-sec', ''));
-            if(clickedNav) clickedNav.classList.add('nav-active');
-
+            // 2. Logika Utama
+            if (id === 'home-sec') {
+                // Jika klik Home, tampilkan semua
+                allSections.forEach(sec => sec.style.display = 'block');
+                document.getElementById('nav-home').classList.add('nav-active');
+            } else {
+                // Jika klik menu lain, sembunyikan semua lalu tampilkan yang terpilih saja
+                allSections.forEach(sec => sec.style.display = 'none');
+                document.getElementById(id).style.display = 'block';
+                
+                // Aktifkan menu yang diklik
+                const navId = 'nav-' + id.replace('-sec', '');
+                document.getElementById(navId).classList.add('nav-active');
+            }
+            
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
