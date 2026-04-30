@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Umdatu Rosdiyana | Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fcfcfc; color: #334155; scroll-behavior: smooth; }
@@ -47,37 +47,32 @@
     <main class="max-w-5xl mx-auto px-6 pt-40 pb-20">
         
         <section id="home-sec" class="all-sec mb-24">
-            <div class="text-center py-20 px-6 premium-card border-none bg-gradient-to-b from-stone-50 to-white">
-                <div class="w-32 h-32 mx-auto mb-8 rounded-full border-4 border-white shadow-lg overflow-hidden">
-                    <img src="foto-utama.jpg" alt="Umdatu Rosdiyana" class="w-full h-full object-cover">
+            <div class="text-center py-16 px-6 flex flex-col items-center">
+                <div class="w-48 h-48 mb-8 rounded-full border-4 border-white shadow-2xl overflow-hidden ring-4 ring-stone-100">
+                    <img src="foto-kamu.jpg" alt="Umdatu Rosdiyana" class="w-full h-full object-cover">
                 </div>
-                <h1 class="text-6xl md:text-8xl font-bold tracking-tighter text-stone-900 mb-8">
+                <h1 class="text-6xl md:text-8xl font-bold tracking-tighter text-stone-900 mb-6">
                     Umdatu <span class="soft-text-gradient">Rosdiyana</span>
                 </h1>
-                <div class="w-20 h-[2px] bg-[#cb997e] mx-auto mb-8"></div>
-                <p class="text-lg md:text-xl text-stone-500 max-w-2xl mx-auto leading-relaxed italic">
+                <p class="text-xl text-stone-500 max-w-xl mx-auto leading-relaxed italic font-light">
                     "Belajar, berkembang, dan membangun ide menjadi sesuatu yang nyata"
                 </p>
             </div>
         </section>
 
         <section id="profile-sec" class="all-sec mb-20 min-h-[50vh]">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-                <div class="grid grid-cols-2 gap-3 aspect-square">
-                    <img src="foto1.jpg" class="w-full h-full object-cover rounded-2xl shadow-sm border border-stone-100" alt="Profile 1">
-                    <img src="foto2.jpg" class="w-full h-full object-cover rounded-2xl shadow-sm border border-stone-100" alt="Profile 2">
-                    <img src="foto3.jpg" class="w-full h-full object-cover rounded-2xl shadow-sm border border-stone-100" alt="Profile 3">
-                    <img src="foto4.jpg" class="w-full h-full object-cover rounded-2xl shadow-sm border border-stone-100" alt="Profile 4">
-                </div>
-                <div class="premium-card p-10 md:col-span-2 flex flex-col justify-center">
-                    <h3 class="text-stone-400 font-bold text-xs uppercase tracking-widest mb-6">About Me</h3>
-                    <p class="text-lg text-stone-600 leading-relaxed font-light text-justify mb-8">
-                        Saya adalah seseorang yang memiliki minat dalam bidang startup, bisnis digital, dan teknologi. Saya tertarik mempelajari bagaimana sebuah ide dapat dikembangkan menjadi produk atau usaha yang nyata. Pengalaman saya dalam membuat website dan aplikasi sederhana membuat saya semakin tertarik untuk terus berkembang.
-                    </p>
-                    <div class="border-t border-stone-100 pt-6">
-                        <h4 class="text-[10px] uppercase font-bold text-stone-400 mb-2 tracking-widest">Pendidikan</h4>
-                        <p class="text-sm font-semibold text-stone-700">Fakultas Teknologi dan Bisnis - Digital Business</p>
+            <div class="premium-card p-8 md:p-12 flex flex-col md:flex-row gap-10 items-center">
+                <div class="w-full md:w-1/3 flex-shrink-0">
+                    <div class="aspect-[3/4] overflow-hidden rounded-3xl shadow-lg border border-stone-100">
+                        <img src="foto-kamu.jpg" alt="Profile" class="w-full h-full object-cover">
                     </div>
+                </div>
+                <div class="flex-grow">
+                    <span class="text-[#cb997e] font-bold text-[10px] uppercase tracking-[0.3em]">About Me</span>
+                    <h3 class="text-3xl font-bold text-stone-900 mt-2 mb-6">Tentang Saya</h3>
+                    <p class="text-stone-600 leading-loose text-lg font-light text-justify">
+                        Saya adalah seseorang yang memiliki minat dalam bidang startup, bisnis digital, dan teknologi. Saya tertarik mempelajari bagaimana sebuah ide dapat dikembangkan menjadi produk atau usaha yang nyata. Saya pernah membuat website dan aplikasi sederhana, serta berhasil mempublikasikan website. Pengalaman tersebut membuat saya semakin tertarik untuk terus belajar dan mengembangkan kemampuan di bidang teknologi. Ke depannya, saya ingin terus berkembang dan membangun usaha sendiri yang berbasis digital.
+                    </p>
                 </div>
             </div>
         </section>
@@ -123,41 +118,52 @@
                         <a href="https://umdaturosdiyana.github.io/Maison-de-bakes/" class="inline-block px-8 py-3 bg-[#cb997e] text-white rounded-full font-bold hover:bg-[#a67c66] transition">READ MORE</a>
                     </div>
                 </div>
+                <div class="premium-card grid grid-cols-1 md:grid-cols-2 overflow-hidden items-center">
+                    <div class="p-10 md:p-16 order-2 md:order-1">
+                        <div class="flex items-baseline space-x-2 mb-4">
+                            <span class="text-6xl font-bold text-[#cb997e]">21</span>
+                            <span class="text-sm font-semibold text-stone-400 uppercase tracking-widest">Feb, 2026</span>
+                        </div>
+                        <h3 class="text-3xl font-bold text-stone-900 mb-4">SIPERKAT HMI</h3>
+                        <p class="text-stone-500 leading-relaxed mb-6">Sistem monitoring aktivitas anggota, poin, dan kehadiran menggunakan teknologi geofencing untuk efisiensi organisasi.</p>
+                        <a href="#" class="inline-block px-8 py-3 bg-[#cb997e] text-white rounded-full font-bold hover:bg-[#a67c66] transition">READ MORE</a>
+                    </div>
+                    <div class="h-64 md:h-full bg-stone-200 order-1 md:order-2">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800" alt="Project 2" class="w-full h-full object-cover">
+                    </div>
+                </div>
             </div>
         </section>
 
         <section id="startup-sec" class="all-sec mb-20">
             <h2 class="text-xs font-bold text-stone-400 uppercase tracking-[0.4em] mb-12 text-center">Business Idea</h2>
-            <div class="premium-card p-10 md:p-16 relative overflow-hidden">
-                <div class="absolute top-0 right-0 w-32 h-32 bg-[#cb997e]/5 rounded-bl-full"></div>
-                
-                <div class="max-w-3xl">
-                    <div class="flex items-center space-x-4 mb-8">
-                        <div class="w-12 h-12 bg-[#cb997e] rounded-2xl flex items-center justify-center text-white">
-                            <i class="fas fa-rocket"></i>
-                        </div>
+            <div class="premium-card p-1 md:p-1 bg-gradient-to-br from-[#cb997e] to-[#a67c66] border-none shadow-xl">
+                <div class="bg-white p-10 md:p-16 rounded-[31px]">
+                    <div class="flex flex-col md:flex-row justify-between items-start mb-10">
                         <div>
-                            <h3 class="text-4xl font-bold text-stone-900">Mansion de Bakes</h3>
-                            <p class="text-[#cb997e] font-semibold text-[10px] tracking-widest uppercase">Digital Startup Concept</p>
+                            <h3 class="text-5xl font-bold text-stone-900 mb-4">Mansion de Bakes</h3>
+                            <p class="text-stone-500 text-lg italic max-w-md">"Terinspirasi dari Maison (Prancis) berarti rumah, mencerminkan bakery sebagai tempat yang hangat & penuh makna."</p>
+                        </div>
+                        <div class="mt-6 md:mt-0 px-6 py-2 bg-[#cb997e]/10 text-[#cb997e] rounded-full font-bold text-sm">
+                            <i class="fas fa-star mr-2"></i> Startup Concept
                         </div>
                     </div>
                     
-                    <p class="text-stone-600 text-lg mb-12 italic leading-relaxed pl-6 border-l-2 border-[#cb997e]/20">
-                        "Terinspirasi dari Maison (Prancis) berarti rumah, mencerminkan bakery sebagai tempat yang hangat, nyaman, dan penuh makna bagi setiap penikmatnya."
-                    </p>
-                    
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div class="bg-stone-50/50 p-6 rounded-[24px] border border-stone-100 group hover:bg-white hover:border-[#cb997e]/30 transition-all">
-                            <h4 class="text-[10px] uppercase font-black text-[#cb997e] mb-3 tracking-widest">Produk</h4>
-                            <p class="text-sm font-medium text-stone-700">Katalog Digital terintegrasi sistem Order WhatsApp otomatis.</p>
+                        <div class="bg-stone-50 p-6 rounded-2xl border border-stone-100">
+                            <div class="text-[#cb997e] mb-3 text-xl"><i class="fas fa-box-open"></i></div>
+                            <h4 class="font-bold text-stone-900 mb-1">Produk</h4>
+                            <p class="text-sm text-stone-500">Katalog Digital & Sistem Order WA otomatis.</p>
                         </div>
-                        <div class="bg-stone-50/50 p-6 rounded-[24px] border border-stone-100 group hover:bg-white hover:border-[#cb997e]/30 transition-all">
-                            <h4 class="text-[10px] uppercase font-black text-[#cb997e] mb-3 tracking-widest">Target</h4>
-                            <p class="text-sm font-medium text-stone-700">Pelajar, mahasiswa, dan pekerja yang mencari hidangan manis berkualitas.</p>
+                        <div class="bg-stone-50 p-6 rounded-2xl border border-stone-100">
+                            <div class="text-[#cb997e] mb-3 text-xl"><i class="fas fa-users"></i></div>
+                            <h4 class="font-bold text-stone-900 mb-1">Target</h4>
+                            <p class="text-sm text-stone-500">Pelajar, Mahasiswa & Pekerja produktif.</p>
                         </div>
-                        <div class="bg-stone-50/50 p-6 rounded-[24px] border border-stone-100 group hover:bg-white hover:border-[#cb997e]/30 transition-all">
-                            <h4 class="text-[10px] uppercase font-black text-[#cb997e] mb-3 tracking-widest">Value</h4>
-                            <p class="text-sm font-medium text-stone-700">Aksesibilitas tinggi dan user-experience yang intuitif bagi pembeli.</p>
+                        <div class="bg-stone-50 p-6 rounded-2xl border border-stone-100">
+                            <div class="text-[#cb997e] mb-3 text-xl"><i class="fas fa-heart"></i></div>
+                            <h4 class="font-bold text-stone-900 mb-1">Value</h4>
+                            <p class="text-sm text-stone-500">Aksesibilitas, kenyamanan, & personal touch.</p>
                         </div>
                     </div>
                 </div>
@@ -165,25 +171,21 @@
         </section>
 
         <section id="contact-sec" class="all-sec min-h-[40vh]">
-            <div class="premium-card p-16 text-center">
-                <h2 class="text-3xl font-bold mb-12">Hubungi Saya</h2>
-                <div class="flex justify-center space-x-12">
-                    <a href="https://wa.me/089677414850" class="group flex flex-col items-center">
-                        <div class="w-16 h-16 rounded-full border border-stone-100 flex items-center justify-center text-stone-400 group-hover:text-green-500 group-hover:bg-green-50 transition-all"><i class="fab fa-whatsapp text-2xl"></i></div>
-                        <span class="text-[9px] font-bold mt-4 tracking-widest opacity-50">WHATSAPP</span>
+            <div class="premium-card p-12 text-center bg-stone-900 text-white">
+                <h2 class="text-3xl font-bold mb-12">Mari Terhubung</h2>
+                <div class="flex justify-center space-x-6 md:space-x-12">
+                    <a href="https://wa.me/089677414850" class="flex flex-col items-center hover:scale-110 transition-transform">
+                        <div class="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center text-white text-2xl hover:bg-green-500 transition-colors"><i class="fab fa-whatsapp"></i></div>
                     </a>
-                    <a href="https://instagram.com/leonaxyna" class="group flex flex-col items-center">
-                        <div class="w-16 h-16 rounded-full border border-stone-100 flex items-center justify-center text-stone-400 group-hover:text-pink-500 group-hover:bg-pink-50 transition-all"><i class="fab fa-instagram text-2xl"></i></div>
-                        <span class="text-[9px] font-bold mt-4 tracking-widest opacity-50">INSTAGRAM</span>
+                    <a href="https://instagram.com/leonaxyna" class="flex flex-col items-center hover:scale-110 transition-transform">
+                        <div class="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center text-white text-2xl hover:bg-pink-600 transition-colors"><i class="fab fa-instagram"></i></div>
                     </a>
-                    <a href="https://tiktok.com/@_menelrch" class="group flex flex-col items-center">
-                        <div class="w-16 h-16 rounded-full border border-stone-100 flex items-center justify-center text-stone-400 group-hover:text-black group-hover:bg-stone-50 transition-all"><i class="fab fa-tiktok text-2xl"></i></div>
-                        <span class="text-[9px] font-bold mt-4 tracking-widest opacity-50">TIKTOK</span>
+                    <a href="https://tiktok.com/@_menelrch" class="flex flex-col items-center hover:scale-110 transition-transform">
+                        <div class="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center text-white text-2xl hover:bg-black transition-colors"><i class="fab fa-tiktok"></i></div>
                     </a>
                 </div>
             </div>
         </section>
-
     </main>
 
     <script>
